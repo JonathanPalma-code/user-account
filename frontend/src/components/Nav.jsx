@@ -10,5 +10,8 @@ export default props =>
       <a href='#/users'>
         <i className='fa fa-users'></i> Users
       </a>
+      <a href='https://www.facebook.com/groups/410056133057002/' target='_blank' rel='noopener noreferrer'>
+        <i className='fa fa-facebook'></i> Join our Group
+      </a>
     </nav>
   </aside>
