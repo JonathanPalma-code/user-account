@@ -4,9 +4,8 @@ import './Main.css';
 
 export default props =>
   <Fragment>
-    <Header>
+    <Header />
       <main className='content'>
         Content
       </main>
-    </Header>
   </Fragment>
