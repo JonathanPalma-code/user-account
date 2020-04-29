@@ -7,4 +7,3 @@ export default props =>
       Developed with <i className='fa fa-heart text-danger'></i> by Jonathan Palma.
     </span>
   </footer>
-  

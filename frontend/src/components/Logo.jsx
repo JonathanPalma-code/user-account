@@ -9,4 +9,3 @@ export default props =>
       <img src={logo} alt='logo' />
     </a>
   </aside>
-  
