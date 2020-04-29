@@ -7,7 +7,9 @@ export default props =>
     {/* header will receive an object with all props 
     defined in App.jsx from the Main element*/}
     <Header {...props} /> 
-      <main className='content'>
-        Content
+      <main className='content container-fluid'>
+        <div className='p-3 mt-3'>
+          {props.children}
+        </div>
       </main>
   </Fragment>

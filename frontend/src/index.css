@@ -1,9 +1,9 @@
 @font-face { 
-  font-family: 'Robotomono';
-  src: url('./fonts/RobotoMono-Thin.ttf');
+  font-family: 'JosefineSlab';
+  src: url('./fonts/JosefinSlab-Regular.ttf');
 }
 
 * {
-  font-family: 'Robotomono', 'Courier New', Courier, monospace;
+  font-family: 'JosefineSlab', 'Courier New', Courier, monospace;
   font-weight: bold;
 }

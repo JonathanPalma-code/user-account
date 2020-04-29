@@ -1,6 +1,5 @@
 aside.menu-area {
   background-color: var(--bg-dark);
-  box-shadow: var(--shadow);
 }
 
 .menu a {
@@ -11,6 +10,7 @@ aside.menu-area {
 }
 
 .menu a:hover {
+  text-decoration: none;
   background: linear-gradient(135deg, #fff 50%, var(--bg-dark) 100%);
   color: var(--bg-dark);
 }

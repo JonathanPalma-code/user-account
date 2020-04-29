@@ -1,8 +1,8 @@
 import React from 'react';
-import Logo from '../components/Logo.jsx';
-import Nav from '../components/Nav.jsx';
-import Main from '../components/Main.jsx';
-import Footer from '../components/Footer.jsx';
+import Logo from '../components/templates/Logo';
+import Nav from '../components/templates/Nav';
+import Main from '../components/templates/Main';
+import Footer from '../components/templates/Footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -13,7 +13,10 @@ export default props =>
     <Logo />
     <Nav />
     <Main icon='home' title='Home'
-      subtitle='2nd Project in React...'
-    />
+      subtitle='2nd Project in React...'>
+      <div className='display-4'>Welcome!</div>
+      <hr />
+      <p className='mb-0'>This project is part of the International History Students & Historians Group, which gives the possibility for any person to report a monument vicinity that is damaged, in bad condition or scheduled for destruction.</p>
+    </Main>
     <Footer />
   </div>

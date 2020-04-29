@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import '../index.css'
 
 export default props =>
   <header className='header'>
