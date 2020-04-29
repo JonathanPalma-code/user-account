@@ -4,7 +4,9 @@ import './Main.css';
 
 export default props =>
   <Fragment>
-    <Header />
+    {/* header will receive an object with all props 
+    defined in App.jsx from the Main element*/}
+    <Header {...props} /> 
       <main className='content'>
         Content
       </main>
