@@ -3,10 +3,9 @@ import './Header.css';
 
 export default props =>
   <header className='header'>
-    <h1 className='mt-5'>
-      <i className={`fa fa-${props.icon}`}>
-        {props.title}
-      </i>
+    <i className={`fa fa-${props.icon}`} />
+    <h1 className='mt-1'>
+      {props.title}
     </h1>
     <p className='lead text-muted'>
       {props.subtitle}
