@@ -63,7 +63,7 @@ export default class UserCrud extends Component {
 
   renderForm() { // build the User table
     return (
-      <div className="form">
+      <div className="form mt-5">
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
@@ -114,19 +114,20 @@ export default class UserCrud extends Component {
 
   renderTable() {
     return (
-      <table className="table mt-4">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderRows()}
-        </tbody>
-      </table>
+      <div className="table-responsive">
+        <table className="table mt-4">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderRows()}
+          </tbody>
+        </table>
+      </div>
     )
   }
 
@@ -146,6 +147,8 @@ export default class UserCrud extends Component {
               onClick={() => this.update(user)}>
               <i className='fa fa-pencil'></i>
             </button>
+          </td>
+          <td>
             <button className="btn btn-danger ml-2"
               onClick={() => this.remove(user)}>
               <i className="fa fa-trash"></i>
