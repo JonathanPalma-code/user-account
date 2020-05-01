@@ -10,7 +10,7 @@ const headerProps = {
 
 const baseURL = 'http://localhost:3001/users';
 const initialState = {
-  user: { name: '', email: '' },
+  user: { id: '', name: '', email: '' },
   list: []
 }
 
