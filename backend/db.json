@@ -1,11 +1,24 @@
 {
-  "users": [{
-    "id": 1,
-    "name": "Jonathan Palma",
-    "email": "jonathan@example.com"
-  }, {
-    "id": 2,
-    "name": "Joao Viegas",
-    "email": "joao@example.com"
-  }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Jonathan Palma",
+      "email": "jonathan@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Joao Viegas",
+      "email": "joao@example.com"
+    },
+    {
+      "name": "Jean Williams",
+      "email": "jean@example.com",
+      "id": 3
+    },
+    {
+      "name": "Ted Rodrigues",
+      "email": "ted@example.com",
+      "id": 4
+    }
+  ]
 }
