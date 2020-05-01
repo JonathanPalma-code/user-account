@@ -24,7 +24,12 @@ export default class UserCrud extends Component {
     this.save = this.save.bind(this);
     this.updateField = this.updateField.bind(this);
   }
-
+  
+  componentDidMount() {
+    Axios(baseURL).then(resp => {
+      this.setState({ list: resp.data });
+    });
+  }
 
   clear() {
     this.setState({
@@ -43,15 +48,15 @@ export default class UserCrud extends Component {
       });
   }
 
-  getUpdatedList(user) {
+  getUpdatedList(user, add = true) {
     const list = this.state.list.filter(u => u.id !== user.id);
-    list.unshift(user); // put the elem to the 1st index of the array
+    if(add) list.unshift(user); // put the elem to the 1st index of the array
     return list;
   }
 
   updateField(event) {
     const user = {...this.state.user };
-    // this will get both fields (name and email)
+    // this will get both fields (id, name and email)
     user[event.target.name] = event.target.value; 
     this.setState({ user }); 
   }
@@ -84,7 +89,7 @@ export default class UserCrud extends Component {
           <div className="col-12 d-flex justify-content-end">
             <button className="btn btn-primary"
               onClick={this.save}>
-              Sign Up
+              Save
             </button>
             <button className="btn btn-secondary ml-2"
               onClick={this.clear}>
@@ -96,9 +101,65 @@ export default class UserCrud extends Component {
     )
   }
 
+  update(user) {
+    this.setState({ user });
+  }
+
+  remove(user) {
+    Axios.delete(`${baseURL}/${user.id}`).then(resp => {
+      const list = this.getUpdatedList(user, false);
+      this.setState({ list });
+    })
+  }
+
+  renderTable() {
+    return (
+      <table className="table mt-4">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.renderRows()}
+        </tbody>
+      </table>
+    )
+  }
+
+  renderRows() {
+    // display list by Id descending order
+    const list = this.state.list.sort((a, b) => 
+      b.id - a.id);
+      
+    return list.map(user => {
+      return (
+        <tr key={user.id}>
+          <td>{user.id}</td>
+          <td>{user.name}</td>
+          <td>{user.email}</td>
+          <td>
+            <button className="btn btn-warning"
+              onClick={() => this.update(user)}>
+              <i className='fa fa-pencil'></i>
+            </button>
+            <button className="btn btn-danger ml-2"
+              onClick={() => this.remove(user)}>
+              <i className="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      )
+    })
+  }
+
   render() {
     return (
       <Main {...headerProps}>
+        {this.renderTable()}
         {this.renderForm()}
       </Main>
     )
