@@ -10,7 +10,7 @@ const headerProps = {
 
 const baseURL = 'http://localhost:3001/users';
 const initialState = {
-  user: { id: '', name: '', email: '' },
+  user: { id: '', firstName: '', lastName: '', email: '' },
   list: []
 }
 
@@ -67,10 +67,19 @@ export default class UserCrud extends Component {
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label>Full Name:</label>
+              <label>First Name:</label>
               <input type='text' className='form-control'
-                name='name'
-                value={this.state.user.name}
+                name='firstName'
+                value={this.state.user.firstName}
+                onChange={this.updateField} />
+            </div>
+          </div>
+          <div className="col-12 col-md-6">
+            <div className="form-group">
+              <label>Last Name:</label>
+              <input type='text' className='form-control'
+                name='lastName'
+                value={this.state.user.lastName}
                 onChange={this.updateField} />
             </div>
           </div>
@@ -93,7 +102,7 @@ export default class UserCrud extends Component {
             </button>
             <button className="btn btn-secondary ml-2"
               onClick={this.clear}>
-              Cancel
+              Clear
             </button>
           </div>
         </div>
@@ -140,7 +149,7 @@ export default class UserCrud extends Component {
       return (
         <tr key={user.id}>
           <td>{user.id}</td>
-          <td>{user.name}</td>
+          <td>{`${user.firstName} ${user.lastName}`}</td>
           <td>{user.email}</td>
           <td>
             <button className="btn btn-warning"
