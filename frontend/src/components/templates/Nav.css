@@ -1,5 +1,6 @@
 aside.menu-area {
   background-color: var(--bg-dark);
+  box-shadow: var(--shadow);
 }
 
 .menu a {
@@ -15,21 +16,20 @@ aside.menu-area {
   color: var(--bg-dark);
 }
 
-@media(max-width: 780px) {
-  .menu {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
 
-  .menu a {
-    display: inline;
-    padding: 10px;
-    margin: 0px;
-  }
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  .menu {
-    height: 100%;
-    justify-content: space-around;
-  }
+.menu a {
+  display: inline;
+  padding: 10px;
+  margin: 0px;
+}
+
+.menu {
+  height: 100%;
+  justify-content: space-around;
 }

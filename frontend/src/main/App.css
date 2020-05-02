@@ -1,10 +1,10 @@
 :root {
   --bg-dark: #1a2f3a;
 
-  --logo-height: 200px;
-  --header-height: 200px;
+  --logo-height: 100px;
+  --header-height: 120px;
   --menu-top-height: 44px;
-  --aside-width: 225px;
+  --aside-width: 180px;
   --footer-height: 40px;
 
   --shadow:
@@ -16,15 +16,19 @@
 .app {
   margin: 0px;
   display: grid;
-  grid-template-columns: var(--aside-width) 1fr;
-  grid-template-rows: 
-    var(--header-height)
-    1fr
-    var(--footer-height);
-  grid-template-areas: 
-    'logo header'
-    'menu content'
-    'menu footer';
+ grid-template-rows: 
+      var(--header-height)
+      var(--menu-top-height)
+      1fr
+      var(--footer-height);
+    grid-template-columns: 
+      var(--aside-width)
+      1fr;
+    grid-template-areas:
+      'logo header'
+      'menu menu'
+      'content content'
+      'footer footer';
   height: 100vh;
   background-color: #f5f5f5;
 }
@@ -47,24 +51,6 @@ main.content {
 
 footer.footer {
   grid-area: footer;
-}
-
-@media(max-width: 780px) {
-  .app {
-    grid-template-rows: 
-      var(--header-height)
-      var(--menu-top-height)
-      1fr
-      var(--footer-height);
-    grid-template-columns: 
-      var(--aside-width)
-      1fr;
-    grid-template-areas:
-      'logo header'
-      'menu menu'
-      'content content'
-      'footer footer';
-    }
 }
 
 @media(max-width: 576px) {
