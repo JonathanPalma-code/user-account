@@ -5,4 +5,5 @@ footer.footer {
   padding: 0px 25px;
   background-color: #fff;
   box-shadow: var(--shadow);
+  font-size: xx-small;
 }
