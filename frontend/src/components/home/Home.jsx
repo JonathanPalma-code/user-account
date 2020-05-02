@@ -8,7 +8,7 @@ export default props =>
     subtitle='International History Students & Historians Group - connecting to history'>
     <div className='display-5 lead text-muted'>Welcome!</div>
     <hr />
-    <p className='mb-0 lead'>
+    <p className='mb-0'>
       This project is part of the International History Students & Historians Group. Our main goal is
       to protect the world of heritage and sharing/connecting between students and 
       professionals in the fields of History, Archaeology, Speleology and Anthropology.

@@ -3,11 +3,21 @@ aside.logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: span 2;
 }
 
 aside.logo img{
   padding: 0px;
-  width: 110px;
+  width: 200px;
+}
+
+.bg-image {
+  background-image: url("../../assets/imgs/historyBG.jpg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 @media(max-width: 576px) {
