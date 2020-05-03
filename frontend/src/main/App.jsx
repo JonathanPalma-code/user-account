@@ -10,12 +10,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 
-export default props => 
-  <BrowserRouter>
-  <div className='app'>
-    <Logo />
-    <Nav />
-    <Routes />
-    <Footer />
-  </div>
-  </BrowserRouter>
+const app = () => {
+  return (
+    <BrowserRouter>
+    <div className='app'>
+      <Logo />
+      <Nav />
+      <Routes />
+      <Footer />
+    </div>
+    </BrowserRouter>
+  )
+} 
+
+export default app;
