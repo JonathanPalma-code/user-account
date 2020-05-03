@@ -1,4 +1,4 @@
-aside.logo {
+section.logo {
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -6,7 +6,7 @@ aside.logo {
   grid-column: span 2;
 }
 
-aside.logo img{
+section.logo img{
   padding: 0px;
   width: 200px;
 }
@@ -21,7 +21,7 @@ aside.logo img{
 }
 
 @media(max-width: 576px) {
-  aside.logo img {
-    width: 110px;
+    section.logo img {
+      width: 110px;
   }
 }

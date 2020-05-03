@@ -4,8 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 
 const LoggedInLinks = () => {
   return (  
-    <Nav className='ml-auto mt-4' >
-      <Nav.Link eventKey='1' as={NavLink} to='/'>
+    <Nav className='ml-auto mt-3' >
+      <Nav.Link eventKey='1' as={NavLink} exact to='/'>
         <i className='fa fa-home' aria-hidden="true"></i> Home
       </Nav.Link>
       <Nav.Link eventKey='2' as={NavLink} to='/users'>
@@ -16,6 +16,9 @@ const LoggedInLinks = () => {
       </Nav.Link>
       <Nav.Link eventKey='3' as={NavLink} to='/logout'>
         <i className="fa fa-sign-out" aria-hidden="true"></i> Log Out
+      </Nav.Link>
+      <Nav.Link className='pt-1' as={NavLink} exact to='/'>
+        <button className="btn-style">JP</button>
       </Nav.Link>
     </Nav>
   )

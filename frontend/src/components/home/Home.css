@@ -1,4 +1,16 @@
-div > p {
+@media(min-width: 414px) {
+    h1 {
+      padding-top: 40px;
+  }
+}
+
+@media(max-width: 414px) {
+    h1 {
+      font-size: 4px;
+  }
+}
+
+p {
   font-style: italic;
   text-align: justify;
 }

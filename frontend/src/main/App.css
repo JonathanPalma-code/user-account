@@ -3,9 +3,8 @@
 
   --logo-height: 175px;
   --logo-height-native: 100px;
-  --menu-top-height: 100px;
+  --menu-top-height: 40px;
   --menu-top-height-native: 44px;
-  --aside-width: 525px;
   --footer-height: 40px;
 
   --shadow:
@@ -23,26 +22,21 @@
       1fr
       var(--footer-height);
     grid-template-columns: 
-      var(--aside-width)
       1fr;
     grid-template-areas:
-      'logo logo'
-      'header menu'
-      'content content'
-      'footer footer';
+      'logo'
+      'menu'
+      'content'
+      'footer';
   height: 100vh;
   background-color: var(--bg-white);
 }
 
-.aside.logo {
+section.logo {
   grid-area: logo;
 }
 
-header.header {
-  grid-area: header;
-}
-
-aside.menu-area {
+section.menu-area {
   grid-area: menu;
 }
 
@@ -54,7 +48,7 @@ footer.footer {
   grid-area: footer;
 }
 
-@media(max-width: 576px) {
+@media(max-width: 414px) {
   .app {
     grid-template-rows: 
       var(--logo-height-native)
@@ -67,6 +61,5 @@ footer.footer {
       'menu'
       'content'
       'footer';
-    overflow-x: hidden;
   }
 }

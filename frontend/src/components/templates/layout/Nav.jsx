@@ -1,31 +1,29 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import { NavLink } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 
 import LoggedInLinks from './LoggedInLinks';
 import LoggedOutLinks from './LoggedOutLinks';
 import './Nav.css';
 
-const nav = () => {
+export default props => {
   return (
-    <aside className='menu-area'>
-      <div className="container">
+    <section className='menu-area'>
+      <Container fluid={true}>
         <Navbar collapseOnSelect bg="light" variant='light' expand="lg">
           <Navbar.Brand>
-            <Nav.Link as={NavLink} to='/'>
-              <button className="btn-style">JP</button>
-            </Nav.Link>
+            <h2 className='mt-1 pt-2'>
+              <i className={`fa fa-${props.icon}`} />
+              {` ${props.title}`}
+            </h2>
           </Navbar.Brand>
-          <Navbar.Toggle className="border-1" aria-controls="navbar-toggle" />
+          <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
           <Navbar.Collapse id="navbar-toggle">
             <LoggedInLinks />
             <LoggedOutLinks />
           </Navbar.Collapse>
         </Navbar>
-      </div>
-    </aside>
+      </Container>
+    </section>
   )
 }
-
-export default nav;

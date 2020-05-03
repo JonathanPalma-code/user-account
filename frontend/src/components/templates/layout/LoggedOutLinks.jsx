@@ -4,8 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 
 const signedOutLinks = () => {
   return (
-    <Nav className='ml-auto mt-4' >
-      <Nav.Link as={NavLink} to='/'>
+    <Nav className='ml-auto mt-3' >
+      <Nav.Link as={NavLink} exact to='/'>
         <i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up
       </Nav.Link>
       <Nav.Link as={NavLink} to='/users'>

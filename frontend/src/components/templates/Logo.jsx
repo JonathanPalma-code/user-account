@@ -6,11 +6,11 @@ import './Logo.css';
 
 const logo = () => {
   return (
-    <aside className='logo bg-image'>
+    <section className='logo bg-image'>
       <Link to='/' className='logo'>
         <img src={Logo} alt='logo' />
       </Link>
-    </aside>
+    </section>
   )
 }
 

@@ -5,11 +5,10 @@ import './Home.css';
 
 const home = () => {
   return (
-    <Main icon='home' title='"Knowledge is Power"'
-      subtitle='International History Students & Historians Group - connecting to history'>
-      <div className='display-5 lead text-muted'>Welcome!</div>
+    <Main icon='home' title='"Knowledge is Power"'>
+      <h1>I.H. Students & Historians Group</h1>
       <hr />
-      <p className='mb-0'>
+      <p>
         This project is part of the International History Students & Historians Group. Our main goal is
         to protect the world of heritage and sharing/connecting between students and 
         professionals in the fields of History, Archaeology, Speleology and Anthropology.
