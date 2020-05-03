@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-// import Header from './Header';
 import Nav from './layout/Nav';
 import './Main.css';
 
