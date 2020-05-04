@@ -60,7 +60,7 @@ export default class UserCrud extends Component {
     this.setState({ user }); 
   }
 
-  renderForm() { // build the User table
+  renderForm() { // build the User Form
     return (
       <div className="form mt-5">
         <div className="row">
@@ -120,7 +120,7 @@ export default class UserCrud extends Component {
     })
   }
 
-  renderTable() {
+  renderTable() { //Build a User Table
     return (
       <div className="table-responsive">
         <table className="table mt-4">
