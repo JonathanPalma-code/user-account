@@ -3,7 +3,7 @@ import Main from '../templates/Main';
 
 import './Home.css';
 
-const home = () => {
+const Home = () => {
   return (
     <Main icon='home' title='"Knowledge is Power"'>
       <h1>I.H. Students & Historians Group</h1>
@@ -21,4 +21,4 @@ const home = () => {
   )
 }
 
-export default home;
+export default Home;

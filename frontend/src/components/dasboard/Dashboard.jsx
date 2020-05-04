@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 
 import Main from '../templates/Main';
 import Notifications from './Notifications';
@@ -23,7 +20,6 @@ class Dashboard extends Component {
           </div>
         </section>
       </Main>
-
     )
   }
 }

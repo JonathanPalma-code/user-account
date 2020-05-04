@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 
-const app = () => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className='app'>
@@ -23,4 +23,4 @@ const app = () => {
   )
 } 
 
-export default app;
+export default App;

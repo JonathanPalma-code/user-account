@@ -2,7 +2,7 @@ import React from 'react';
 
 import PostSummary from './PostSummary';
 
-const postList = () => {
+const PostList = () => {
   return (
     <div className="post-list section">
       <PostSummary />
@@ -13,4 +13,4 @@ const postList = () => {
   )
 }
 
-export default postList;
+export default PostList;

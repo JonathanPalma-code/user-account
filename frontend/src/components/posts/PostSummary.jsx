@@ -1,13 +1,13 @@
 import React from 'react';
 
-const postSummary = () => {
+const PostSummary = () => {
   return (
     <div className="card post-summary">
       <span className="card-title">Title</span>
       <p>Posted by Jonathan Palma</p>
-      <p>10pm, 3rd May 2020</p>
+      <p>3rd May 2020 at 10pm</p>
     </div>
   )
 }
 
-export default postSummary;
+export default PostSummary;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer className='footer'>
       <span>
@@ -11,4 +11,4 @@ const footer = () => {
   )
 }
 
-export default footer;
+export default Footer;
