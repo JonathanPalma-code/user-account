@@ -4,7 +4,7 @@ import Main from '../templates/Main';
 
 const headerProps = {
   icon: 'users',
-  title: 'User'
+  title: 'Users Details'
 }
 
 const baseURL = 'http://localhost:3001/users';
@@ -170,8 +170,6 @@ export default class UserCrud extends Component {
   render() {
     return (
       <Main {...headerProps}>
-        <h1>User Details</h1>
-        <hr />
         {this.renderTable()}
         {this.renderForm()}
       </Main>

@@ -35,13 +35,13 @@ class SignUp extends Component {
           <div className="col-12 col-md-6">
             <div className="form-group">
               <label htmlFor='firstName'>First Name:</label>
-              <input className='form-control' type='firstName' id='firstName' onChange={this.updateFields} />
+              <input className='form-control' type='text' id='firstName' onChange={this.updateFields} />
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="form-group">
               <label htmlFor='lastName'>Last Name:</label>
-              <input className='form-control' type='lastName' id='lastName' onChange={this.updateFields} />
+              <input className='form-control' type='text' id='lastName' onChange={this.updateFields} />
             </div>
           </div>
           <div className="col-12 col-md-6">
@@ -58,7 +58,7 @@ class SignUp extends Component {
           </div><div className="col-12 col-md-6">
             <div className="form-group">
               <label htmlFor='passwordConfirmation'>Password Confirmation:</label>
-              <input className='form-control' type='passwordConfirmation' id='passwordConfirmation' onChange={this.updateFields} />
+              <input className='form-control' type='password' id='passwordConfirmation' onChange={this.updateFields} />
             </div>
           </div>
         </div>
@@ -77,7 +77,6 @@ class SignUp extends Component {
   render() {
     return (
       <Main {...headerProps}>
-        <h1>Sign Up</h1>
         <hr />
         {this.renderForm()}
       </Main>

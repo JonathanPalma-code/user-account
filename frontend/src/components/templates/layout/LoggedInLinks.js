@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 const LoggedInLinks = () => {
   return (  
     <Nav className='ml-auto mt-3' >
-      <Nav.Link eventKey='1' as={NavLink} exact to='/'>
-        <i className='fa fa-home' aria-hidden="true"></i> Home
+      <Nav.Link eventKey='1' as={NavLink} to='/createpost'>
+        <i className='fa fa-plus-circle' aria-hidden="true"></i> Create Post
       </Nav.Link>
       <Nav.Link eventKey='2' as={NavLink} to='/users'>
         <i className='fa fa-users' aria-hidden="true"></i> Users

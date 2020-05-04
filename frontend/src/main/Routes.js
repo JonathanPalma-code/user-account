@@ -7,6 +7,7 @@ import Dashboard from '../components/dasboard/Dashboard';
 import PostDetails from '../components/posts/PostDetails';
 import LogIn from '../components/auth/LogIn';
 import SignUp from '../components/auth/SignUp';
+import CreatePost from '../components/posts/CreatePost';
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route path='/post/:id' component={PostDetails} />
       <Route path='/login' component={LogIn} />
       <Route path='/signup' component={SignUp} />
+      <Route path='/createpost' component={CreatePost} />
       <Redirect from='*' to='/' />
     </Switch>
   )
