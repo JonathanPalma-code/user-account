@@ -20,7 +20,7 @@ section.logo img{
   position: relative;
 }
 
-@media(max-width: 576px) {
+@media(max-width: 414px) {
     section.logo img {
       width: 110px;
   }
