@@ -69,10 +69,10 @@ class CreatePost extends Component {
   }
 }
 
-const mapDispatchtoProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    createPost: (project) => dispatch(createPost(project))
+    createPost: (post) => dispatch(createPost(post))
   }
 }
 
-export default connect(null, mapDispatchtoProps)(CreatePost);
+export default connect(null, mapDispatchToProps)(CreatePost);
