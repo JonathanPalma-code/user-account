@@ -6,6 +6,10 @@ const initState = {
   ]};
 
 const postReducers = (state = initState, action) => {
+  switch (action.action) {
+    case 'CREATE_POST':
+      console.log('Created post', action.post)
+  }
   return state;
 }
 

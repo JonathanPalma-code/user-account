@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import Main from '../templates/Main';
+import { connect } from 'react-redux';
+import { createPost } from '../../store/actions/postActions';
 
 const headerProps = {
   icon: 'plus-circle',
@@ -23,7 +25,7 @@ class CreatePost extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
-    console.log(this.state);
+    this.props.createPost(this.state);
   }
 
   renderForm() {
@@ -67,4 +69,10 @@ class CreatePost extends Component {
   }
 }
 
-export default CreatePost;
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    createPost: (project) => dispatch(createPost(project))
+  }
+}
+
+export default connect(null, mapDispatchtoProps)(CreatePost);

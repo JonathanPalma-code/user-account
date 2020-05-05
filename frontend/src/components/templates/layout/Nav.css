@@ -15,7 +15,7 @@ button.btn-style {
   background: linear-gradient(to right,	#D2691E, #ffb88c);
 }
 
-@media(max-width: 500px) {
+@media(max-width: 560px) {
   section h2 {
     font-size: 34px;
   }

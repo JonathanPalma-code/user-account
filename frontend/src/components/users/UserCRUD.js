@@ -24,7 +24,7 @@ export default class UserCrud extends Component {
     this.updateField = this.updateField.bind(this);
   }
   
-  componentDidMount() {
+  UNSAFE_componentWillMount() {
     Axios(baseURL).then(resp => {
       this.setState({ list: resp.data });
     });
