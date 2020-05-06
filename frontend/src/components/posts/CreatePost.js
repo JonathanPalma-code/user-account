@@ -25,6 +25,7 @@ class CreatePost extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
+    //calls the function mapDispatchToProps in createPost key
     this.props.createPost(this.state);
   }
 
@@ -71,7 +72,7 @@ class CreatePost extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createPost: (post) => dispatch(createPost(post))
+    createPost: (post) => dispatch(createPost(post)) // createPost comes from the import
   }
 }
 
