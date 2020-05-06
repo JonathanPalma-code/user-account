@@ -22,5 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# FIRE BASE API KEY
+# firebase config, API Key inc.
 fbConfig.js
