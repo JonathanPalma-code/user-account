@@ -8,6 +8,9 @@ import LoggedOutLinks from './LoggedOutLinks';
 import './Nav.css';
 
 const Nav =  (props) => {
+  const { auth } = props;
+  // console.log(auth);
+  const links = auth.uid ? <LoggedInLinks /> : <LoggedOutLinks />;
   return (
     <section className='menu-area'>
       <Container fluid={true}>
@@ -20,8 +23,7 @@ const Nav =  (props) => {
           </Navbar.Brand>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
           <Navbar.Collapse id="navbar-toggle">
-            <LoggedInLinks />
-            <LoggedOutLinks />
+            {links}
           </Navbar.Collapse>
         </Navbar>
       </Container>
@@ -30,9 +32,9 @@ const Nav =  (props) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   return {
-
+    auth: state.firebase.auth
   }
 }
 
