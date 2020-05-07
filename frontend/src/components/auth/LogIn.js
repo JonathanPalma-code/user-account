@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
 import Main from '../templates/Main';
+import { logIn } from '../../store/actions/authActions';
 
 const headerProps = {
   icon: 'sign-in',
@@ -23,10 +25,11 @@ class LogIn extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
-    console.log(this.state);
+    this.props.logIn(this.state);
   }
 
   renderForm() {
+    const { authError } = this.props
     return (
       <div className="form mt-5">
         <div className="row">
@@ -46,6 +49,9 @@ class LogIn extends Component {
         <hr />
         <div className="row">
           <div className="col-12 d-flex justify-content-end">
+            <div>
+              {authError ? <p>{authError}</p> : null}
+            </div>
             <button className="btn btn-primary" onClick={this.handleClick}>
               Log In
             </button>
@@ -65,4 +71,16 @@ class LogIn extends Component {
   }
 }
 
-export default LogIn;
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logIn: (creds) => dispatch(logIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);

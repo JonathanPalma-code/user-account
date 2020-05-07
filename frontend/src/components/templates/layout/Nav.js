@@ -1,12 +1,13 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import { connect } from 'react-redux';
 
 import LoggedInLinks from './LoggedInLinks';
 import LoggedOutLinks from './LoggedOutLinks';
 import './Nav.css';
 
-export default props => {
+const Nav =  (props) => {
   return (
     <section className='menu-area'>
       <Container fluid={true}>
@@ -27,3 +28,12 @@ export default props => {
     </section>
   )
 }
+
+const mapStateToProps = (state) => {
+  // console.log(state);
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps)(Nav);
