@@ -8,9 +8,9 @@ import LoggedOutLinks from './LoggedOutLinks';
 import './Nav.css';
 
 const Nav =  (props) => {
-  const { auth } = props;
+  const { auth, profile } = props;
   // console.log(auth);
-  const links = auth.uid ? <LoggedInLinks /> : <LoggedOutLinks />;
+  const links = auth.uid ? <LoggedInLinks profile={profile} /> : <LoggedOutLinks />;
   return (
     <section className='menu-area'>
       <Container fluid={true}>
@@ -34,7 +34,8 @@ const Nav =  (props) => {
 const mapStateToProps = (state) => {
   // console.log(state);
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
   }
 }
 

@@ -20,9 +20,17 @@ const store = createStore(RootReducer,
   )
 );
 
+const profileSpecificProps = {
+  ...fbConfig,
+  userProfile: 'users',
+  useFirestoreForProfile: true,
+  enableRedirectHandling: false,
+  resetBeforeLogin: false
+};
+
 const rrfProps = {
   firebase,
-  config: fbConfig,
+  config: profileSpecificProps,
   dispatch: store.dispatch,
   createFirestoreInstance
 };

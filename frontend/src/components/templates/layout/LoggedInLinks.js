@@ -21,7 +21,7 @@ const LoggedInLinks = (props) => {
         <i className="fa fa-sign-out" aria-hidden="true"></i> Log Out
       </Nav.Link>
       <Nav.Link className='pt-1' as={NavLink} exact to='/'>
-        <button className="btn-style">JP</button>
+        <button className="btn-style">{props.profile.initials}</button>
       </Nav.Link>
     </Nav>
   )
