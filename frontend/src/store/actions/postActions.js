@@ -5,12 +5,18 @@ export const createPost = (post) => {
     // use getFirestore to grab all data from post 
     const firestore = getFirestore();
 
+    // grabs the data from profile based in firebase
+    const profile = getState().firebase.profile;
+
+    const authorID = getState().firebase.auth.uid;
+
     // add the data into the post collection (Cloud FireStore)
     firestore.collection('posts').add(
       {
         ...post, // grab the title and the content
-        authorFirstName: 'Joao',
-        authorLastName: 'Viegas',
+        authorFirstName: profile.firstName,
+        authorLastName: profile.lastName,
+        authorID: authorID,
         createdAt: new Date()
       } 
       // as it is a async call, attach 

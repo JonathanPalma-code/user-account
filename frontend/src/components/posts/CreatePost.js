@@ -25,9 +25,10 @@ class CreatePost extends Component {
 
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
-    // event.preventDefault();
+    event.preventDefault();
     //calls the function mapDispatchToProps in createPost key
     this.props.createPost(this.state);
+    this.props.history.push('/dashboard');
   }
 
   renderForm() {
