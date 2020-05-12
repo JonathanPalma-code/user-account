@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux'; 
 import { Redirect } from 'react-router-dom';
+import moment from 'moment';
 
 import Main from '../templates/Main';
 
@@ -23,7 +24,7 @@ const PostDetails = (props) => {
           <hr />
           <div className="card-action">
             <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
-            <div>4th May 2020 at 4pm</div>
+            <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
           </div>
         </section>
       </Main>
