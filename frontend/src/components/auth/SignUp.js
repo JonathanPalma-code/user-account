@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 import Main from '../templates/Main';
+import { signUp } from '../../store/actions/authActions';
 
 const headerProps = {
   icon: 'user-plus',
@@ -26,12 +27,12 @@ class SignUp extends Component {
 
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
-    event.preventDefault();
-    console.log(this.state);
+    // event.preventDefault();
+    this.props.signUp(this.state);
   }
 
   renderForm() {
-    const { auth } = this.props
+    const { auth, authError } = this.props
     if (auth.uid) return <Redirect to="/dashboard" />
 
     return (
@@ -70,6 +71,9 @@ class SignUp extends Component {
         <hr />
         <div className="row">
           <div className="col-12 d-flex justify-content-end">
+            <div>
+              {authError ? <p>{authError}</p> : null}
+            </div>
             <button className="btn btn-primary" onClick={this.handleClick}>
               Sign Up
             </button>
@@ -92,8 +96,15 @@ class SignUp extends Component {
 const mapStateToProps = (state) => {
   // console.log(state);
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    authError: state.auth.authError
   }
 }
 
-export default connect(mapStateToProps)(SignUp);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
