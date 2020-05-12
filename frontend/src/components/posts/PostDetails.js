@@ -7,6 +7,11 @@ import moment from 'moment';
 
 import Main from '../templates/Main';
 
+const headerProps = {
+  icon: 'clipboard',
+  title: 'Post Details'
+}
+
 const PostDetails = (props) => {
   // console.log(props);
   const { post, auth } = props;
@@ -14,7 +19,8 @@ const PostDetails = (props) => {
   
   if (post) {
     return (
-      <Main>
+      <Main { ...headerProps }>
+        <hr />
         <section>
           <div className="card-content">
             <h1>{post.title}</h1>
@@ -32,7 +38,8 @@ const PostDetails = (props) => {
   }
   else {
     return (
-      <Main>
+      <Main { ...headerProps }>
+        <hr />
         <section className='container center'>
           <p>Loading post...</p>
         </section>

@@ -8,14 +8,19 @@ import Main from '../templates/Main';
 import Notifications from './Notifications';
 import PostList from '../posts/PostList';
 
+const headerProps = {
+  icon: 'home',
+  title: 'Home'
+}
+
 class Dashboard extends Component {
   render() {
     const { posts, auth } = this.props;
     if (!auth.uid) return <Redirect to="/login" />
     
     return (
-      <Main>
-        <h1>Dashboard</h1>
+      <Main { ...headerProps }>
+        <hr /> {/* Margin top to be amplified! */}
         <section className="dashboard container">
           <div className="row">
             <section className="col s12 m6">

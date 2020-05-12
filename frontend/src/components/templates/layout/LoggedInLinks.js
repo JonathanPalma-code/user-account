@@ -8,16 +8,19 @@ import { logOut } from '../../../store/actions/authActions';
 const LoggedInLinks = (props) => {
   return (  
     <Nav className='ml-auto mt-3' >
-      <Nav.Link eventKey='1' as={NavLink} to='/createpost'>
+      <Nav.Link eventKey='1' as={NavLink} to='/dashboard'>
+        <i className='fa fa-home' aria-hidden="true"></i> Home
+      </Nav.Link>
+      <Nav.Link eventKey='2' as={NavLink} to='/createpost'>
         <i className='fa fa-plus-circle' aria-hidden="true"></i> Create Post
       </Nav.Link>
-      <Nav.Link eventKey='2' as={NavLink} to='/users'>
+      <Nav.Link eventKey='3' as={NavLink} to='/users'>
         <i className='fa fa-users' aria-hidden="true"></i> Users
       </Nav.Link>
       <Nav.Link href='https://www.facebook.com/groups/410056133057002/' target='_blank' rel='noopener noreferrer'>
         <i className='fa fa-facebook'></i>  Join our Group
       </Nav.Link>
-      <Nav.Link eventKey='3' as={NavLink} onClick={props.logOut} to='/'>
+      <Nav.Link eventKey='4' as={NavLink} onClick={props.logOut} to='/'>
         <i className="fa fa-sign-out" aria-hidden="true"></i> Log Out
       </Nav.Link>
       <Nav.Link className='pt-1' as={NavLink} exact to='/'>
