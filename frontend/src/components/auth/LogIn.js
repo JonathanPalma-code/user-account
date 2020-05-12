@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
 import Main from '../templates/Main';
 import { logIn } from '../../store/actions/authActions';
@@ -24,12 +25,14 @@ class LogIn extends Component {
 
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
-    event.preventDefault();
+    // event.preventDefault();
     this.props.logIn(this.state);
   }
 
   renderForm() {
-    const { authError } = this.props
+    const { authError, auth } = this.props
+    if (auth.uid) return <Redirect to="/dashboard" />
+    
     return (
       <div className="form mt-5">
         <div className="row">
@@ -52,9 +55,11 @@ class LogIn extends Component {
             <div>
               {authError ? <p>{authError}</p> : null}
             </div>
+            <Link to='/dashboard'>
             <button className="btn btn-primary" onClick={this.handleClick}>
               Log In
             </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -72,8 +77,10 @@ class LogIn extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // console.log(state);
   return {
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth: state.firebase.auth
   }
 }
 

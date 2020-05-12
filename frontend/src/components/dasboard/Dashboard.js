@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+import { Redirect } from 'react-router-dom';
 
 import Main from '../templates/Main';
 import Notifications from './Notifications';
 import PostList from '../posts/PostList';
-import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
 
 class Dashboard extends Component {
   render() {
-    const { posts } = this.props;
+    const { posts, auth } = this.props;
+    if (!auth.uid) return <Redirect to="/login" />
     
     return (
       <Main>
@@ -33,7 +35,8 @@ const mapStateToProps = (state) => {
   // console.log(state);
   return {
     // posts: state.post.posts // get the random data from postReducer
-    posts: state.firestore.ordered.posts
+    posts: state.firestore.ordered.posts,
+    auth: state.firebase.auth
   }
 }
 

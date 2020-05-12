@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
 
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
@@ -24,7 +25,7 @@ class CreatePost extends Component {
 
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
-    event.preventDefault();
+    // event.preventDefault();
     //calls the function mapDispatchToProps in createPost key
     this.props.createPost(this.state);
   }
@@ -61,6 +62,9 @@ class CreatePost extends Component {
   }
 
   render() {
+    const { auth } = this.props
+    // console.log(auth);
+    if (!auth.uid) return <Redirect to="/login" />
     return (
       <Main {...headerProps}>
         <hr />
@@ -70,10 +74,16 @@ class CreatePost extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     createPost: (post) => dispatch(createPost(post)) // createPost comes from the import
   }
 }
 
-export default connect(null, mapDispatchToProps)(CreatePost);
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePost);

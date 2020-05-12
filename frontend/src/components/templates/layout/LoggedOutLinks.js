@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 const SignedOutLinks = () => {
   return (
     <Nav className='ml-auto mt-3' >
-      <Nav.Link as={NavLink} exact to='/signup'>
+      <Nav.Link as={NavLink} to='/signup'>
         <i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up
       </Nav.Link>
       <Nav.Link as={NavLink} to='/login'>

@@ -14,7 +14,7 @@ const Nav =  (props) => {
   return (
     <section className='menu-area'>
       <Container fluid={true}>
-        <Navbar collapseOnSelect bg="light" variant='light' expand="lg">
+        <Navbar collapseOnSelect bg="light" variant='light' expand="lg" sticky="top">
           <Navbar.Brand>
             <h2 className='mt-1 pt-2'>
               <i className={`fa fa-${props.icon}`} />
