@@ -15,7 +15,7 @@ const headerProps = {
 
 class Dashboard extends Component {
   render() {
-    const { posts, auth } = this.props;
+    const { posts, auth, notifications } = this.props;
     if (!auth.uid) return <Redirect to="/login" />
     
     return (
@@ -27,7 +27,7 @@ class Dashboard extends Component {
               <PostList posts={posts}/>
             </section>
             <section className="col s12 m5 offset-m1">
-              <Notifications />
+              <Notifications notifications={notifications}/>
             </section>
           </div>
         </section>
@@ -41,13 +41,15 @@ const mapStateToProps = (state) => {
   return {
     // posts: state.post.posts // get the random data from postReducer
     posts: state.firestore.ordered.posts,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    notifications: state.firestore.ordered.notifications
   }
 }
 
 export default compose(
   connect((mapStateToProps)),
   firestoreConnect([
-    { collection: 'posts' } // synced to rootReducer
+    { collection: 'posts' }, // synced to rootReducer
+    { collection: 'notifications', limit: 8 }
   ])
 )(Dashboard);
