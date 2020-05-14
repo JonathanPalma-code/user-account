@@ -49,7 +49,7 @@ const mapStateToProps = (state) => {
 export default compose(
   connect((mapStateToProps)),
   firestoreConnect([
-    { collection: 'posts' }, // synced to rootReducer
-    { collection: 'notifications', limit: 8 }
+    { collection: 'posts', orderBy: ['createdAt', 'desc'] }, // synced to rootReducer
+    { collection: 'notifications', limit: 8, orderBy: ['time', 'desc'] }
   ])
 )(Dashboard);
