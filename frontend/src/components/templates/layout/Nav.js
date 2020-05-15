@@ -13,16 +13,18 @@ const Nav =  (props) => {
   const links = auth.uid ? <LoggedInLinks profile={profile} /> : <LoggedOutLinks />;
   return (
     <section className='menu-area'>
-      <Container fluid={true}>
-        <Navbar collapseOnSelect bg="light" variant='light' expand="lg" sticky="top">
-          <Navbar.Brand>
-            <h2 className='mt-1 pt-2'>
-              <i className={`fa fa-${props.icon}`} />
+      <Container fluid={true} className='p-0'>
+        <Navbar className="p-1 ml-1" collapseOnSelect bg="transparent" variant='light' expand="lg" sticky="top">
+          <Navbar.Brand className='pb-0'>
+            <h2>
+              <small>
+                <i className={`fa fa-${props.icon}`} />
+              </small>
               {` ${props.title}`}
             </h2>
           </Navbar.Brand>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-          <Navbar.Collapse id="navbar-toggle">
+          <Navbar.Collapse id="navbar-toggle" className='mr-1'>
             {auth.isLoaded && links}
           </Navbar.Collapse>
         </Navbar>

@@ -3,24 +3,28 @@ section.logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-column: span 2;
+  /* grid-column: span 2; */
 }
 
 section.logo img{
   padding: 0px;
-  width: 200px;
+  width: 175px;
 }
 
 .bg-image {
-  background-image: url("../../assets/imgs/historyBG.jpg");
+  background-image: url("../../assets/imgs/world.jpg");
   background-color: #cccccc;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 }
 
 @media(max-width: 414px) {
+  .bg-image {
+    background-image: url("../../assets/imgs/portugal.jpg");
+  }
     section.logo img {
       width: 110px;
   }

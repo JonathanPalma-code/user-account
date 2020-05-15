@@ -8,13 +8,6 @@ section h2 {
   font-size: 40px;
 }
 
-button.btn-style {
-  border-radius: 50%;
-  height: 2em;
-  width: 2em;
-  background: linear-gradient(to right,	#D2691E, #ffb88c);
-}
-
 @media(max-width: 560px) {
   section h2 {
     font-size: 34px;

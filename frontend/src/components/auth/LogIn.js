@@ -69,7 +69,6 @@ class LogIn extends Component {
   render() {
     return (
       <Main {...headerProps}>
-        <hr />
         {this.renderForm()}
       </Main>
     )

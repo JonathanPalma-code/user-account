@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Logo from '../components/templates/Logo';
-import Nav from '../components/templates/layout/Nav';
+// import Nav from '../components/templates/layout/Nav';
 import Routes from './Routes';
 import Footer from '../components/templates/layout/Footer';
 
@@ -15,7 +15,6 @@ const App = () => {
     <BrowserRouter>
       <div className='app'>
         <Logo />
-        <Nav />
         <Routes />
         <Footer />
       </div>
