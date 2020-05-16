@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-import Main from '../templates/Main';
 import { logIn } from '../../store/actions/authActions';
-import '../templates/Main.css';
+import '../templates/layout/Nav.css'
 
-const headerProps = {
-  icon: 'sign-in',
-  title: 'Log In'
-}
+// const headerProps = {
+//   icon: 'sign-in',
+//   title: 'Log In'
+// }
 
 class LogIn extends Component {
   state = {
@@ -37,31 +36,29 @@ class LogIn extends Component {
     return (
       <div className="form">
         <div className="row">
-          <div className="col-12 col-md-6">
+          <div className="col-4">
             <div className="form-group">
               <input className='form-control' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
-              <label className='form-label'htmlFor='email'>
+              <label className='form-label-log'htmlFor='email'>
                 <span className='content-name'>Email</span>
               </label>
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-4">
             <div className="form-group">
               <input className='form-control' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
-              <label className='form-label' htmlFor='password'>
+              <label className='form-label-log' htmlFor='password'>
                 <span className='content-name'>Password</span>
               </label>
             </div>
           </div>
-        </div>
-        <hr />
-        <div className="row">
-          <div className="col-12 d-flex justify-content-end">
+          <div className="col-4 form-group">
             <div>
               {authError ? <p>{authError}</p> : null}
             </div>
             <Link to='/dashboard'>
             <button className="btn btn-primary" onClick={this.handleClick}>
+              <i className="fa fa-sign-in mr-2" aria-hidden="true"></i>
               Log In
             </button>
             </Link>
@@ -73,9 +70,9 @@ class LogIn extends Component {
 
   render() {
     return (
-      <Main {...headerProps}>
+      <div>
         {this.renderForm()}
-      </Main>
+      </div>
     )
   }
 }

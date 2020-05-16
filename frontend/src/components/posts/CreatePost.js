@@ -35,17 +35,19 @@ class CreatePost extends Component {
     return (
       <div className="form">
         <div className="row">
-          <div className="col-12 col-md-6">
+          <div className="col-12">
             <div className="form-group">
-              <label htmlFor='title'>Title:</label>
               <input className='form-control' type='text' 
-                id='title' onChange={this.updateFields} />
+                id='title' onChange={this.updateFields} required/>
+              <label className='form-label' htmlFor='title'>
+                <span className='content-name'>Title</span>
+              </label>
             </div>
           </div>
-          <div className="col-12 col-md-6">
-            <div className="form-group">
-              <label htmlFor='content'>Post Content:</label>
-              <textarea className='form-control' style={{ resize: 'none' }} 
+          <div className="col-12">
+            <div className="form-textarea">
+              <label className='textarea-label' htmlFor='content'>Post Content:</label>
+              <textarea className='textarea-input' style={{ resize: 'none' }} 
                 id='content' onChange={this.updateFields} />
             </div>
           </div>

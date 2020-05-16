@@ -26,3 +26,33 @@ button.btn-style {
     font-size: 23px;
   }
 }
+
+.form .form-label-log {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #cbad6d;
+}
+
+.form .form-label-log::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+}
+
+.form input:focus + .form-label-log .content-name, 
+.form input:valid + .form-label-log .content-name {
+  transform: translateY(-100%);
+  font-size: 0.8rem;
+  color: 	black;
+}
+
+div.form-group {
+  margin-top: 10px;
+}
+/* Align the LogIn Bar in NavBar */

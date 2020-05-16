@@ -10,6 +10,15 @@ main > div {
   section > div h5 {
   font-size: 0.9rem;
   }
+  div .sign-up-form {
+    margin: 0;
+  }
+  div > h1 {
+    font-size: 2rem;
+  }
+  div > h3 {
+    font-size: 1rem;
+  }
 }
 
 .form {
@@ -20,9 +29,9 @@ main > div {
 .form input {
   width: 100%;
   height: 100%;
-  color: lightsteelblue;
+  color: black;
   padding: 0;
-  padding-top: 15%;
+  padding-top: 8%;
   border: none;
   background-color: transparent;
 }
@@ -33,29 +42,29 @@ main > div {
   background-color: transparent;
 }
 
-.form label {
-  position: absolute;
+.form .form-label {
+  position: relative;
   bottom: 0px;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cbad6d;
 }
 
-.form label::after {
+.form .form-label::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -1px;
   height: 100%;
   width: 100%;
-  border-bottom: 3px solid	#D2691E;
+  border-bottom: 3px solid	black;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
 
 .content-name {
-  color: black;
+  color: #cbad6d;
   position: absolute;
   bottom: 5px;
   left: 0px;
@@ -63,26 +72,80 @@ main > div {
 }
 
 .form input:focus + .form-label .content-name, 
-.form input:valid + .form-label .content-name{
-  transform: translateY(-150%);
+.form input:valid + .form-label .content-name {
+  transform: translateY(-100%);
   font-size: 0.8rem;
-  color: 	#D2691E;
+  color: 	black;
 }
 
 .form input:focus + .form-label:after,
-.form imput:valid + .form-label:after {
+.form input:valid + .form-label:after {
   transform: translateX(0%);
 }
 
-/* div > .form-control {
-  border: none;
-  border-bottom: 2px solid lightsteelblue;
-  background-color: transparent;
-  font-family: inherit;
-  width: 100%;
-  outline: 0;
-  font-size: 1.3rem;
-  padding: 7px 0;
-  transition: border-color 0.2s;
-} */
+.form .form-textarea {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes bg {
+    0% {
+        background-size:    0 3px,
+                            3px 0,
+                            0 3px,
+                            3px 0;
+    }
+    25% {
+        background-size:    100% 3px,
+                            3px 0,
+                            0 3px,
+                            3px 0;
+    }
+    50% {
+        background-size:    100% 3px,
+                            3px 100%,
+                            0 3px,
+                            3px 0;
+    }
+    75% {
+        background-size:    100% 3px,
+                            3px 100%,
+                            100% 3px,
+                            3px 0;
+    }
+    100% {
+        background-size:    100% 3px,
+                            3px 100%,
+                            100% 3px,
+                            3px 100%;
+    }
+}
+
+.sign-up-form {
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, #cbad6d 100%, #cbad6d 100%),
+                        linear-gradient(to bottom, #cbad6d 100%, #cbad6d 100%),
+                        linear-gradient(to right, #cbad6d 100%, #cbad6d 100%),
+                        linear-gradient(to bottom, #cbad6d 100%, #cbad6d 100%);
+    background-size:    100% 3px,
+                        3px 100%,
+                        100% 3px,
+                        3px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%;
+    animation: bg 3s cubic-bezier(0.19, 1, 0.22, 1) 1;
+    animation-play-state: paused;
+}
+
+div .sign-up-form:hover {
+    animation-play-state: running;
+}
+
+div .form-group {
+  margin-bottom: 0;
+}
  
