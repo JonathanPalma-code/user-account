@@ -12,10 +12,10 @@ const Nav =  (props) => {
   // console.log(auth);
   const links = auth.uid ? <LoggedInLinks profile={profile} /> : <LoggedOutLinks />;
   return (
-    <section className='menu-area'>
+    <section className='menu-area sticky-top'>
       <Container fluid={true} className='p-0'>
-        <Navbar className="p-1 ml-1" collapseOnSelect bg="transparent" variant='light' expand="lg" sticky="top">
-          <Navbar.Brand className='pb-0'>
+        <Navbar className="p-0" collapseOnSelect bg="light" variant='light' expand="lg">
+          <Navbar.Brand className='pt-2 ml-1'>
             <h2>
               <small>
                 <i className={`fa fa-${props.icon}`} />
@@ -24,7 +24,7 @@ const Nav =  (props) => {
             </h2>
           </Navbar.Brand>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-          <Navbar.Collapse id="navbar-toggle" className='mr-1'>
+          <Navbar.Collapse id="navbar-toggle" className='mr-1 text-center'>
             {auth.isLoaded && links}
           </Navbar.Collapse>
         </Navbar>

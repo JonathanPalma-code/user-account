@@ -33,7 +33,7 @@ class CreatePost extends Component {
 
   renderForm() {
     return (
-      <div className="form mt-5">
+      <div className="form">
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
@@ -68,7 +68,6 @@ class CreatePost extends Component {
     if (!auth.uid) return <Redirect to="/login" />
     return (
       <Main {...headerProps}>
-        <hr />
         {this.renderForm()}
       </Main>
     )

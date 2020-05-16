@@ -20,13 +20,12 @@ class Dashboard extends Component {
     
     return (
       <Main { ...headerProps }>
-        <hr /> {/* Margin top to be amplified! */}
         <section className="dashboard container">
           <div className="row">
-            <section className="col s12 m6">
+            <section className="col-6">
               <PostList posts={posts}/>
             </section>
-            <section className="col s12 m5 offset-m1">
+            <section className="col-6">
               <Notifications notifications={notifications}/>
             </section>
           </div>

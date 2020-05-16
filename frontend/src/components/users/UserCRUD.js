@@ -62,7 +62,7 @@ export default class UserCrud extends Component {
 
   renderForm() { // build the User Form
     return (
-      <div className="form mt-5">
+      <div className="form">
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
@@ -92,7 +92,6 @@ export default class UserCrud extends Component {
             </div>
           </div>
         </div>
-        <hr />
         <div className="row">
           <div className="col-12 d-flex justify-content-end">
             <button className="btn btn-primary"
@@ -123,7 +122,7 @@ export default class UserCrud extends Component {
   renderTable() { //Build a User Table
     return (
       <div className="table-responsive">
-        <table className="table mt-4">
+        <table className="table">
           <thead>
             <tr>
               <th>Id</th>

@@ -7,7 +7,7 @@ import { logOut } from '../../../store/actions/authActions';
 
 const LoggedInLinks = (props) => {
   return (  
-    <Nav className='ml-auto' >
+    <Nav className='ml-auto'>
       <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
         <i className='fa fa-home' aria-hidden="true"></i> Home
       </Nav.Link>

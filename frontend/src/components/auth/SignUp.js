@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import Main from '../templates/Main';
 import { signUp } from '../../store/actions/authActions';
+import '../templates/Main.css'
 
 const headerProps = {
   icon: 'user-plus',
@@ -36,35 +37,45 @@ class SignUp extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
 
     return (
-      <div className="form mt-5">
+      <div className="form">
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label htmlFor='firstName'>First Name:</label>
-              <input className='form-control' type='text' id='firstName' onChange={this.updateFields} />
+              <input className='form-control' type='text' id='firstName' autoComplete='off' onChange={this.updateFields} required/>
+              <label className='form-label' htmlFor='firstName'>
+                <span className='content-name'>First Name</span>
+              </label>
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label htmlFor='lastName'>Last Name:</label>
-              <input className='form-control' type='text' id='lastName' onChange={this.updateFields} />
+              <input className='form-control' type='text' id='lastName' autoComplete='off' onChange={this.updateFields} required />
+              <label className='form-label' htmlFor='lastName'>
+                <span className='content-name'>Last Name</span>
+              </label>
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label htmlFor='email'>Email:</label>
-              <input className='form-control' type='email' id='email' onChange={this.updateFields} />
+              <input className='form-control' type='email' id='email' autoComplete='off' onChange={this.updateFields} required />
+              <label className='form-label' htmlFor='email'>
+                <span className='content-name'>Email</span>
+              </label>
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label htmlFor='password'>Password:</label>
-              <input className='form-control' type='password' id='password' onChange={this.updateFields} />
+              <input className='form-control' type='password' id='password' autoComplete='off' onChange={this.updateFields} required />
+              <label className='form-label' htmlFor='password'>
+                <span className='content-name'>Password</span>
+              </label>
             </div>
           </div><div className="col-12 col-md-6">
             <div className="form-group">
-              <label htmlFor='passwordConfirmation'>Password Confirmation:</label>
-              <input className='form-control' type='password' id='passwordConfirmation' onChange={this.updateFields} />
+              <input className='form-control' type='password' id='passwordConfirmation' autoComplete='off' onChange={this.updateFields} required />
+              <label className='form-label' htmlFor='passwordConfirmation'>
+                <span className='content-name'>Password Confirmation</span>
+              </label>
             </div>
           </div>
         </div>
