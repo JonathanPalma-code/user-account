@@ -19,6 +19,13 @@ main > div {
   div > h3 {
     font-size: 1rem;
   }
+
+  div > .form input:focus + .form-label .content-name, 
+  div > .form input:valid + .form-label .content-name {
+  transform: translateY(-100%);
+  font-size: 0.5rem;
+  color: 	black;
+  }
 }
 
 .form {
@@ -149,4 +156,6 @@ div .form-group {
   margin-bottom: 0;
   overflow: hidden;
 }
+
+
  

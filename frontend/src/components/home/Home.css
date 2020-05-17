@@ -14,3 +14,7 @@ p {
   font-style: italic;
   text-align: justify;
 }
+
+div.row a:hover {
+  text-decoration: none;
+}

@@ -56,4 +56,10 @@ div.form-group {
   margin-top: 10px;
 }
 
+div.form-group button {
+  height: 35px;
+  width: 95px;
+  margin-left: 25px;
+}
+
 /* Align the LogIn Bar in NavBar */

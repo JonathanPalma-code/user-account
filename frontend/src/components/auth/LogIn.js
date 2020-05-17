@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import Alert from 'react-bootstrap/Alert';
 
 import { logIn } from '../../store/actions/authActions';
 import '../templates/layout/Nav.css'
@@ -31,38 +32,39 @@ class LogIn extends Component {
 
   renderForm() {
     const { authError, auth } = this.props
+
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div className="form h6 pt-2">
+      <div className="form pt-2">
         <div className="row">
           <div className="col-4 pr-0">
-            <div className="form-group">
-              <input className='form-control' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
+            <div className="form-group m-0">
+              <input className='form-control pt-4' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log'htmlFor='email'>
                 <span className='content-name'>Email</span>
               </label>
             </div>
           </div>
           <div className="col-4 pr-0">
-            <div className="form-group">
-              <input className='form-control' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
+            <div className="form-group m-0">
+              <input className='form-control pt-4' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log' htmlFor='password'>
                 <span className='content-name'>Password</span>
               </label>
             </div>
           </div>
           <div className="col-3 form-group p-0">
-            <div>
-              {authError ? <p>{authError}</p> : null}
-            </div>
             <Link to='/dashboard'>
               <button className="btn btn-primary" onClick={this.handleClick}>
                 <i className="fa fa-sign-in mr-2" aria-hidden="true"></i>
               Log In
-            </button>
+              </button>
             </Link>
           </div>
+        </div>
+        <div>
+          {authError ? <Alert variant="danger" onDismiss={this.handleAlertDismiss}>{authError}</Alert> : null}
         </div>
       </div>
     )
