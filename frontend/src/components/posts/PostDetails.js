@@ -15,7 +15,7 @@ const headerProps = {
 const PostDetails = (props) => {
   // console.log(props);
   const { post, auth } = props;
-  if (!auth.uid) return <Redirect to="/login" />
+  if (!auth.uid) return <Redirect to="/" />
   
   if (post) {
     return (

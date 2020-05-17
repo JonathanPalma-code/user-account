@@ -33,7 +33,7 @@ button.btn-style {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  border-bottom: 1px solid #cbad6d;
+  border-bottom: 1px solid #cccccc;
 }
 
 .form .form-label-log::after {
@@ -55,4 +55,5 @@ button.btn-style {
 div.form-group {
   margin-top: 10px;
 }
+
 /* Align the LogIn Bar in NavBar */

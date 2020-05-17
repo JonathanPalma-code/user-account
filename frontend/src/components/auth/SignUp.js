@@ -38,21 +38,18 @@ class SignUp extends Component {
 
     return (
       <div className='sign-up-form'>
-        <h1 className='pt-0'>Create a new account</h1>
-        <h3>It's quick and easy.</h3>
-        <hr />
+        <h1 className='pt-0 m-0'>Create a new account</h1>
+        <h3 className='m-0'>It's quick and easy.</h3>
         <div className="form">
           <div className="row">
             <div className="col-12">
-              <div className="form-group">
+              <div className="form-group col-6 d-inline-block pt-3 pl-0">
                 <input className='form-control' type='text' id='firstName' autoComplete='off' onChange={this.updateFields} required/>
                 <label className='form-label' htmlFor='firstName'>
                   <span className='content-name'>First Name</span>
                 </label>
               </div>
-            </div>
-            <div className="col-12">
-              <div className="form-group">
+              <div className="form-group col-6 d-inline-block pt-3 pl-0">
                 <input className='form-control' type='text' id='lastName' autoComplete='off' onChange={this.updateFields} required />
                 <label className='form-label' htmlFor='lastName'>
                   <span className='content-name'>Last Name</span>
@@ -60,7 +57,7 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="col-12">
-              <div className="form-group">
+              <div className="form-group mt-0">
                 <input className='form-control' type='email' id='email' autoComplete='off' onChange={this.updateFields} required />
                 <label className='form-label' htmlFor='email'>
                   <span className='content-name'>Email</span>
@@ -68,14 +65,13 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="col-12">
-              <div className="form-group">
+              <div className="form-group col-6 d-inline-block mt-1 pt-3 pl-0">
                 <input className='form-control' type='password' id='password' autoComplete='off' onChange={this.updateFields} required />
                 <label className='form-label' htmlFor='password'>
                   <span className='content-name'>Password</span>
                 </label>
               </div>
-            </div><div className="col-12">
-              <div className="form-group">
+              <div className="form-group col-6 d-inline-block mt-1 pt-3 pl-0">
                 <input className='form-control' type='password' id='passwordConfirmation' autoComplete='off' onChange={this.updateFields} required />
                 <label className='form-label' htmlFor='passwordConfirmation'>
                   <span className='content-name'>Password Confirmation</span>
@@ -83,7 +79,6 @@ class SignUp extends Component {
               </div>
             </div>
           </div>
-          <hr />
           <div className="row">
             <div className="col-12 d-flex justify-content-end">
               <div>

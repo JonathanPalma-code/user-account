@@ -5,7 +5,7 @@ import Home from '../components/home/Home';
 import UserCrud from '../components/users/UserCRUD';
 import Dashboard from '../components/dasboard/Dashboard';
 import PostDetails from '../components/posts/PostDetails';
-import LogIn from '../components/auth/LogIn';
+// import LogIn from '../components/auth/LogIn';
 // import SignUp from '../components/auth/SignUp';
 import CreatePost from '../components/posts/CreatePost';
 
@@ -16,7 +16,7 @@ const Routes = () => {
       <Route path='/users' component={UserCrud} />
       <Route path='/dashboard' component={Dashboard} />
       <Route path='/post/:id' component={PostDetails} />
-      <Route path='/login' component={LogIn} />
+      {/* <Route path='/login' component={LogIn} /> */}
       {/* <Route path='/signup' component={SignUp} /> */}
       <Route path='/createpost' component={CreatePost} />
       <Redirect from='*' to='/' />

@@ -31,7 +31,7 @@ main > div {
   height: 100%;
   color: black;
   padding: 0;
-  padding-top: 8%;
+  padding-top: 5%;
   border: none;
   background-color: transparent;
 }
@@ -48,7 +48,7 @@ main > div {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  border-bottom: 1px solid #cbad6d;
+  border-bottom: 1px solid #cccccc;
 }
 
 .form .form-label::after {
@@ -64,7 +64,7 @@ main > div {
 }
 
 .content-name {
-  color: #cbad6d;
+  color: rgba(0,0,0,.5);
   position: absolute;
   bottom: 5px;
   left: 0px;
@@ -125,10 +125,10 @@ main > div {
 .sign-up-form {
     padding: 1em;
     background-repeat: no-repeat;
-    background-image:   linear-gradient(to right, #cbad6d 100%, #cbad6d 100%),
-                        linear-gradient(to bottom, #cbad6d 100%, #cbad6d 100%),
-                        linear-gradient(to right, #cbad6d 100%, #cbad6d 100%),
-                        linear-gradient(to bottom, #cbad6d 100%, #cbad6d 100%);
+    background-image:   linear-gradient(to right, #875322 100%, #875322 100%),
+                        linear-gradient(to bottom, #875322 100%, #875322 100%),
+                        linear-gradient(to right, #875322 100%, #875322 100%),
+                        linear-gradient(to bottom, #875322 100%, #875322 100%);
     background-size:    100% 3px,
                         3px 100%,
                         100% 3px,
@@ -147,5 +147,6 @@ div .sign-up-form:hover {
 
 div .form-group {
   margin-bottom: 0;
+  overflow: hidden;
 }
  

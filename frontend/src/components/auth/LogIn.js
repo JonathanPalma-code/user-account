@@ -34,9 +34,9 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div className="form">
+      <div className="form h6 pt-2">
         <div className="row">
-          <div className="col-4">
+          <div className="col-4 pr-0">
             <div className="form-group">
               <input className='form-control' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log'htmlFor='email'>
@@ -44,7 +44,7 @@ class LogIn extends Component {
               </label>
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-4 pr-0">
             <div className="form-group">
               <input className='form-control' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log' htmlFor='password'>
@@ -52,13 +52,13 @@ class LogIn extends Component {
               </label>
             </div>
           </div>
-          <div className="col-4 form-group">
+          <div className="col-3 form-group p-0">
             <div>
               {authError ? <p>{authError}</p> : null}
             </div>
             <Link to='/dashboard'>
-            <button className="btn btn-primary" onClick={this.handleClick}>
-              <i className="fa fa-sign-in mr-2" aria-hidden="true"></i>
+              <button className="btn btn-primary" onClick={this.handleClick}>
+                <i className="fa fa-sign-in mr-2" aria-hidden="true"></i>
               Log In
             </button>
             </Link>

@@ -16,7 +16,7 @@ const headerProps = {
 class Dashboard extends Component {
   render() {
     const { posts, auth, notifications } = this.props;
-    if (!auth.uid) return <Redirect to="/login" />
+    if (!auth.uid) return <Redirect to="/" />
     
     return (
       <Main { ...headerProps }>

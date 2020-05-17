@@ -67,7 +67,7 @@ class CreatePost extends Component {
   render() {
     const { auth } = this.props
     // console.log(auth);
-    if (!auth.uid) return <Redirect to="/login" />
+    if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
         {this.renderForm()}
