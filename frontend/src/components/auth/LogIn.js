@@ -36,9 +36,9 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div className="form pt-2">
-        <div className="row">
-          <div className="col-4 pr-0">
+      <div className="form-login pt-2">
+        <div className="row mr-0">
+          <div className="col-5 pr-0">
             <div className="form-group m-0">
               <input className='form-control pt-4' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log'htmlFor='email'>
@@ -46,7 +46,7 @@ class LogIn extends Component {
               </label>
             </div>
           </div>
-          <div className="col-4 pr-0">
+          <div className="col-5 pr-0">
             <div className="form-group m-0">
               <input className='form-control pt-4' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log' htmlFor='password'>
@@ -54,17 +54,16 @@ class LogIn extends Component {
               </label>
             </div>
           </div>
-          <div className="col-3 form-group p-0">
-            <Link to='/dashboard'>
-              <button className="btn btn-primary" onClick={this.handleClick}>
-                <i className="fa fa-sign-in mr-2" aria-hidden="true"></i>
-              Log In
-              </button>
-            </Link>
+          <div className="col-2 form-group m-0 mt-3">
+            <button className="btn btn-primary ml-2" onClick={this.handleClick}>
+              <Link to='/dashboard'>
+              </Link>
+              <i className="fa fa-sign-in mr-1" aria-hidden="true"></i>
+            </button>
           </div>
         </div>
         <div>
-          {authError ? <Alert variant="danger" onDismiss={this.handleAlertDismiss}>{authError}</Alert> : null}
+          {authError ? <Alert className='text-center' variant="danger" onDismiss={this.handleAlertDismiss}>{authError}</Alert> : null}
         </div>
       </div>
     )

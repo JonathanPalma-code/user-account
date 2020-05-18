@@ -144,7 +144,7 @@ main > div {
                             100% 0,
                             100% 100%,
                             0 100%;
-    animation: bg 3s cubic-bezier(0.19, 1, 0.22, 1) 1;
+    animation: bg 1.5s cubic-bezier(0.19, 1, 0.22, 1) 1;
     animation-play-state: paused;
 }
 
@@ -152,7 +152,7 @@ div .sign-up-form:hover {
     animation-play-state: running;
 }
 
-div .form-group {
+.form .form-group {
   margin-bottom: 0;
   overflow: hidden;
 }

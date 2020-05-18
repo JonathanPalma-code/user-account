@@ -24,7 +24,7 @@ const Nav =  (props) => {
             </h2>
           </Navbar.Brand>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-          <Navbar.Collapse id="navbar-toggle" className='text-center'>
+          <Navbar.Collapse id="navbar-toggle" className='text-left'>
             {auth.isLoaded && links}
           </Navbar.Collapse>
         </Navbar>
