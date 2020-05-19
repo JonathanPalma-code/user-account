@@ -99,3 +99,7 @@ button.btn-style {
   font-size: 0.8rem;
   color: 	black;
 }
+
+.form-login > div > div > .alert-login {
+  width: 100%;
+}

@@ -6,11 +6,6 @@ import Alert from 'react-bootstrap/Alert';
 import { logIn } from '../../store/actions/authActions';
 import '../templates/layout/Nav.css'
 
-// const headerProps = {
-//   icon: 'sign-in',
-//   title: 'Log In'
-// }
-
 class LogIn extends Component {
   state = {
     email: '',
@@ -61,9 +56,9 @@ class LogIn extends Component {
               <i className="fa fa-sign-in mr-1" aria-hidden="true"></i>
             </button>
           </div>
-        </div>
         <div>
-          {authError ? <Alert className='text-center' variant="danger" onDismiss={this.handleAlertDismiss}>{authError}</Alert> : null}
+          {authError ? <Alert className='alert-Login p-0' variant="danger" >{authError}</Alert> : null}
+        </div>
         </div>
       </div>
     )
