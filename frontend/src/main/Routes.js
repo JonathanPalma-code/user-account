@@ -16,7 +16,7 @@ const Routes = () => {
       <Route path='/dashboard' component={Dashboard} />
       <Route path='/post/:id' component={PostDetails} />
       <Route path='/createpost' component={CreatePost} />
-      <Route path='/map' component={Map} />
+      <Route path='/map' component={Map}  />
       <Redirect from='*' to='/' />
     </Switch>
   )

@@ -1,6 +1,7 @@
 main > div {
   background-color: var(--bg-white);
   box-shadow: var(--shadow);
+  width: 100%;
 }
 
 @media(max-width: 414px) {
