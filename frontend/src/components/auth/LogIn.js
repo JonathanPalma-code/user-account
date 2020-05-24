@@ -31,7 +31,7 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div className="form-login pt-2">
+      <div className="form-login pl-2 pt-2">
         <div className="row mr-0">
           <div className="col-5 pr-0">
             <div className="form-group m-0">

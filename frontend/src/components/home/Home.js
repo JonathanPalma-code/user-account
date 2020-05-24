@@ -10,7 +10,7 @@ const Home = () => {
       <h1>I.H. Students & Historians Group</h1>
       <hr />
       <div className='row'>
-        <div className='col-12 col-lg-7'>
+        <div className='col-12 col-lg-6'>
           <p>
             This project is part of the International History Students & Historians Group. Our main goal is
             to protect the world of heritage and sharing/connecting between students and 
@@ -24,6 +24,7 @@ const Home = () => {
             <i className='fa fa-facebook'></i> Join our Group
           </a>
         </div> 
+        <div className='col-lg-1' />
         <div className='sign-up col-12 col-lg-5'>
         <SignUp />
         </div>

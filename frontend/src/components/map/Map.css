@@ -1,0 +1,15 @@
+.map-container {
+position: relative;
+height: 400px;
+}
+
+.side-bar {
+  position: absolute;
+  display: inline-block;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+}
