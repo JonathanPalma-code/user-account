@@ -31,11 +31,11 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div className="form-login pl-2 pt-2">
-        <div className="row mr-0">
+      <div className="form-login pl-2">
+        <div className="row mr-0 mt-3">
           <div className="col-5 pr-0">
             <div className="form-group m-0">
-              <input className='form-control pt-4' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
+              <input className='form-control' type='email' id='email' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log'htmlFor='email'>
                 <span className='content-name'>Email</span>
               </label>
@@ -43,13 +43,13 @@ class LogIn extends Component {
           </div>
           <div className="col-5 pr-0">
             <div className="form-group m-0">
-              <input className='form-control pt-4' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
+              <input className='form-control' type='password' id='password' autoComplete='off' onChange={this.updateFields} required/>
               <label className='form-label-log' htmlFor='password'>
                 <span className='content-name'>Password</span>
               </label>
             </div>
           </div>
-          <div className="col-2 form-group m-0 mt-3">
+          <div className="col-2 form-group m-0">
             <button className="btn btn-primary ml-2" onClick={this.handleClick}>
               <Link to='/dashboard'>
               </Link>

@@ -9,7 +9,7 @@ mapboxgl.accessToken = process.env.REACT_APP_HISTORIANSGROUP_MAP;
 
 const headerProps = {
   icon: 'globe',
-  title: 'Heritage Protection'
+  title: 'Heritage in Danger'
 }
 
 class Map extends Component {

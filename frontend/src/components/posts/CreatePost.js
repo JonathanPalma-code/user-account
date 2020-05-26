@@ -46,8 +46,7 @@ class CreatePost extends Component {
           </div>
           <div className="col-12">
             <div className="form-textarea">
-              <label className='textarea-label' htmlFor='content'>Post Content:</label>
-              <textarea className='textarea-input' style={{ resize: 'none' }} 
+              <textarea placeholder='Post Content' rows='8' className='textarea-input' style={{ resize: 'none' }} 
                 id='content' onChange={this.updateFields} />
             </div>
           </div>
