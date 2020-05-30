@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Main from '../templates/Main';
 import mapboxgl from 'mapbox-gl';
+
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import './Map.css';
 
 require('dotenv').config();
@@ -20,11 +24,15 @@ class Map extends Component {
       lat: 51.509865,
       zoom: 6,
     };
+    
   }
 
   componentDidMount() {
+    const { auth } = this.props
+    // console.log(auth);
+    if (!auth.uid) return;
     const map = new mapboxgl.Map({
-      container: this.mapContainer,
+      container: 'map',
       style: "mapbox://styles/mapbox/streets-v11",
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
@@ -151,17 +159,26 @@ class Map extends Component {
   }
 
   render() {
+    const { auth } = this.props
+    // console.log(auth);
+    if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
-        <div>
+        <div className='map-container'>
           <div className='side-bar'>
             Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}
           </div>
-        <div ref={el => this.mapContainer = el} className='map-container' />
+        <div id='map' />
         </div>
       </Main>
     )
   }
 }
 
-export default Map;
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps)(Map);
