@@ -26,7 +26,7 @@ class LogIn extends Component {
   }
 
   renderForm() {
-    const { authError, auth } = this.props
+    const { authError2, auth } = this.props
 
     if (auth.uid) return <Redirect to="/dashboard" />
     
@@ -57,7 +57,7 @@ class LogIn extends Component {
             </button>
           </div>
         <div>
-          {authError ? <Alert className='alert-Login p-0' variant="danger" >{authError}</Alert> : null}
+          {authError2 ? <Alert className='alert-Login p-0' variant="danger" >{authError2}</Alert> : null}
         </div>
         </div>
       </div>
@@ -76,7 +76,7 @@ class LogIn extends Component {
 const mapStateToProps = (state) => {
   // console.log(state);
   return {
-    authError: state.auth.authError,
+    authError2: state.auth.authError2,
     auth: state.firebase.auth
   }
 }

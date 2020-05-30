@@ -2,14 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 
-// import Main from '../templates/Main';
 import { signUp } from '../../store/actions/authActions';
 import '../templates/Main.css'
-
-// const headerProps = {
-//   icon: 'user-plus',
-//   title: 'Sign Up'
-// }
 
 class SignUp extends Component {
   state = {
