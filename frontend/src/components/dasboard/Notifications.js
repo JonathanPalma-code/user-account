@@ -12,14 +12,11 @@ const Notifications = (props) => {
           <ul className='notification list-unstyled'>
             {notifications && notifications.map(elem => {
               return (
-                <li key={elem.id} className='p-4 text-center'>
-                  <div className='card-header p-0 text-success'>{elem.user}</div>
-                    <div className='bg-light'>
-                    <span>{elem.content}</span>
-                    <div className='text-muted font-italic font-weight-light'>
-                      {moment(elem.time.toDate()).fromNow()}
-                    </div>
-                  </div>
+                <li key={elem.id} className='p-4 bg-light'>
+                  <span className='h5 p-0 font-weight-bold'>{elem.user} </span>
+                  <span className='text-muted font-italic font-weight-light'>
+                    {elem.content}, {moment(elem.time.toDate()).fromNow()}
+                  </span>
                 </li>
             )})}
           </ul>
