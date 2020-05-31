@@ -7,8 +7,8 @@ const PostSummary = ({post}) => {
 
     <div className="card post-summary">
       <span className="card-header">{post.title}</span>
-      <p className='m-0 p-1'>Posted by {post.authorFirstName} {post.authorLastName}</p>
-      <p className='m-0 p-1 card-footer'>{moment(post.createdAt.toDate().toString()).calendar()}</p>
+      <p className='m-0 p-1'>Subject: {post.category}</p>
+      <p className='m-0 p-1 card-footer'>Posted by {post.authorFirstName} {post.authorLastName}. {moment(post.createdAt.toDate().toString()).calendar()}</p>
     </div>
     </div>
   )

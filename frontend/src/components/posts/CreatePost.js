@@ -13,7 +13,8 @@ const headerProps = {
 class CreatePost extends Component {
   state = {
     title: '',
-    content: ''
+    content: '',
+    category: ''
   }
 
   updateFields = (event) => {
@@ -26,16 +27,20 @@ class CreatePost extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
-    //calls the function mapDispatchToProps in createPost key
-    this.props.createPost(this.state);
-    this.props.history.push('/dashboard');
+    if (this.state.title !== '' && this.state.content !== '') {
+      this.props.createPost(this.state);
+      //calls the function mapDispatchToProps in createPost key
+      this.props.history.push('/dashboard');
+    } else {
+      alert("All fields most be field.");
+    }
   }
 
   renderForm() {
     return (
       <div className="form">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 col-lg-6">
             <div className="form-group">
               <input className='form-control' type='text' 
                 id='title' onChange={this.updateFields} required/>
@@ -44,10 +49,21 @@ class CreatePost extends Component {
               </label>
             </div>
           </div>
-          <div className="col-12">
+          <div className="col-12 col-lg-6 p-4">
+            <div className="form-group">
+              <label className='p-1' htmlFor="category">Category</label>
+              <select className='p-1' name="category" id="category" onChange={this.updateFields} required>
+                <option value="General">General</option>
+                <option value="Prehistoric">Prehistoric</option>
+                <option value="Ancient history">Ancient history</option>
+                <option value="Middle ages">Middle ages</option>
+                <option value="Modern ages">Modern ages</option>
+                <option value="Contemporary Ages">Contemporary Ages</option>
+              </select>
+            </div>
             <div className="form-textarea">
               <textarea placeholder='Post Content' rows='8' className='textarea-input' style={{ resize: 'none' }} 
-                id='content' onChange={this.updateFields} />
+                id='content' onChange={this.updateFields} required/>
             </div>
           </div>
         </div>

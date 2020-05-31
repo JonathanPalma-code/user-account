@@ -25,9 +25,9 @@ const PostDetails = (props) => {
         <hr />
         <section>
           <div className="card-content">
-            <h1>{post.title}</h1>
-            <p>{post.content}
-            </p>
+            <h2 className="pb-4" >{post.title}</h2>
+            <h4 className="pb-2">Subject: {post.category}</h4>
+            <p>{post.content}</p>
           </div>
           <hr />
           <div className="card-action">
