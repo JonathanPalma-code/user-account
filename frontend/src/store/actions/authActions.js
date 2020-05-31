@@ -3,8 +3,8 @@ export const logIn = (credentials) => {
     const firebase = getFirebase();
 
     firebase.auth().signInWithEmailAndPassword(
-      credentials.email,
-      credentials.password
+      credentials.emailLogin,
+      credentials.passwordLogin
     ).then(() => {
       dispatch({ type: 'LOGIN_SUCCESS' })
     }).catch((err) => {
@@ -35,6 +35,7 @@ export const signUp = (newUser) => {
       return firestore.collection('users').doc(resp.user.uid).set({
         firstName: newUser.firstName,
         lastName: newUser.lastName,
+        email: newUser.email,
         initials: newUser.firstName[0] + newUser.lastName[0]
       })
     }).then(() => {

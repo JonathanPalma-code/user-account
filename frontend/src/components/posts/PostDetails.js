@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 
 import Main from '../templates/Main';
+import Linkify from 'react-linkify-always-blank';
 
 const headerProps = {
   icon: 'clipboard',
@@ -20,6 +21,7 @@ const PostDetails = (props) => {
   if (post) {
     return (
       <Main { ...headerProps }>
+        <Linkify>
         <hr />
         <section>
           <div className="card-content">
@@ -33,6 +35,7 @@ const PostDetails = (props) => {
             <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
           </div>
         </section>
+        </Linkify>
       </Main>
     )
   }
