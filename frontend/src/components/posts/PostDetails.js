@@ -22,15 +22,14 @@ const PostDetails = (props) => {
     return (
       <Main { ...headerProps }>
         <Linkify>
-        <hr />
         <section>
           <div className="card-content">
-            <h2 className="pb-4" >{post.title}</h2>
+            <h2 className="pb-4 text-center" >{post.title}</h2>
             <h4 className="pb-2">Subject: {post.category}</h4>
             <p>{post.content}</p>
           </div>
           <hr />
-          <div className="card-action">
+          <div className="card-action text-right">
             <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
             <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
           </div>
