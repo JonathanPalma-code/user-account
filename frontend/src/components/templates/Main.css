@@ -27,6 +27,14 @@ main > div {
   font-size: 0.5rem;
   color: 	black;
   }
+
+  section.dashboard > .row {
+    font-size: 100%;
+  }
+
+  div > .card-header {
+    font-size: 18px;
+  }
 }
 
 .form {

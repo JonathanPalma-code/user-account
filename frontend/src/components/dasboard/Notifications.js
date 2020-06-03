@@ -8,12 +8,12 @@ const Notifications = (props) => {
   return (
     <section>
       <div className='card'>
-          <h5 className='card-header font-weight-bold'>Notifications</h5>
+          <div className='card-header font-weight-bold'>Notifications</div>
           <ul className='notification list-unstyled'>
             {notifications && notifications.map(elem => {
               return (
                 <li key={elem.id} className='p-4 bg-light'>
-                  <span className='h5 p-0 font-weight-bold'>{elem.user} </span>
+                  <span className='p-0 font-weight-bold'>{elem.user} </span>
                   <span className='text-muted font-italic font-weight-light'>
                     {elem.content}, {moment(elem.time.toDate()).fromNow()}
                   </span>

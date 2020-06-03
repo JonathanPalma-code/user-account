@@ -8,6 +8,8 @@ import Main from '../templates/Main';
 import Notifications from './Notifications';
 import PostList from '../posts/PostList';
 
+import '../templates/Main.css';
+
 const headerProps = {
   icon: 'home',
   title: 'Home'
@@ -20,11 +22,12 @@ class Dashboard extends Component {
     
     return (
       <Main { ...headerProps }>
-        <section className="dashboard container">
+        <section className="dashboard container pt-3">
           <div className="row">
-            <section className="col-12 col-lg-8">
+            <section className="col-12 col-lg-7">
               <PostList posts={posts}/>
             </section>
+            <section className="col-lg-1" />
             <section className="col-12 col-lg-4">
               <Notifications notifications={notifications}/>
             </section>
