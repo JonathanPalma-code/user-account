@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Main from '../templates/Main';
+import ReportForm from './ReportForm';
 import mapboxgl from 'mapbox-gl';
 
 import { Redirect } from 'react-router-dom';
@@ -164,12 +165,13 @@ class Map extends Component {
     if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
-        <div className='map-container'>
+        <div className='map-container container-fluid'>
           <div className='side-bar'>
             Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}
           </div>
-        <div id='map' />
+          <div id='map' />
         </div>
+        <ReportForm />
       </Main>
     )
   }
