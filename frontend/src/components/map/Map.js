@@ -165,13 +165,20 @@ class Map extends Component {
     if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
-        <div className='map-container container-fluid'>
-          <div className='side-bar'>
-            Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}
+        <div className='container-fluid'>
+          <h2 className='text-right'>Create a new report</h2>
+          <div className='row'>
+            <div className='map-container col-lg-6'>
+              <div className='side-bar'>
+                Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}
+              </div>
+              <div id='map' />
+            </div>
+            <div className='col-lg-6'>
+              <ReportForm />
+            </div>
           </div>
-          <div id='map' />
         </div>
-        <ReportForm />
       </Main>
     )
   }

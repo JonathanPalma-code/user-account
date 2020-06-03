@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
@@ -31,7 +31,7 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div>
+      <Fragment>
         <div className="form-login">
           <div className="row pl-2 pt-3 mr-1">
             <div className="col-5 pr-0">
@@ -64,7 +64,7 @@ class LogIn extends Component {
             {authError2 ? <Alert className='alert-Login' variant="danger" >{authError2}</Alert> : null}
           </div>
         </div>
-      </div>
+      </Fragment>
     )
   }
 

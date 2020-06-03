@@ -12,8 +12,7 @@ class SignUp extends Component {
     firstName: '',
     lastName: '',
     email: '',
-    password: '', 
-    passwordConfirmation: ''
+    password: ''
   }
 
   updateFields = (event) => {
