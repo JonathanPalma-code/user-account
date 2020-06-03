@@ -31,35 +31,37 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
     
     return (
-      <div className="form-login">
-        <div className="row pl-2 pt-3 mr-1">
-          <div className="col-5 pr-0">
-            <div className="form-group m-0">
-              <input className='form-control' type='email' id='emailLogin' autoComplete='off' onChange={this.updateFields} required/>
-              <label className='form-label-log'htmlFor='email'>
-                <span className='content-name'>Email</span>
-              </label>
+      <div>
+        <div className="form-login">
+          <div className="row pl-2 pt-3 mr-1">
+            <div className="col-5 pr-0">
+              <div className="form-group m-0">
+                <input className='form-control' type='email' id='emailLogin' autoComplete='off' onChange={this.updateFields} required/>
+                <label className='form-label-log'htmlFor='email'>
+                  <span className='content-name'>Email</span>
+                </label>
+              </div>
             </div>
-          </div>
-          <div className="col-5 pr-0">
-            <div className="form-group m-0">
-              <input className='form-control' type='password' id='passwordLogin' autoComplete='off' onChange={this.updateFields} required/>
-              <label className='form-label-log' htmlFor='password'>
-                <span className='content-name'>Password</span>
-              </label>
+            <div className="col-5 pr-0">
+              <div className="form-group m-0">
+                <input className='form-control' type='password' id='passwordLogin' autoComplete='off' onChange={this.updateFields} required/>
+                <label className='form-label-log' htmlFor='password'>
+                  <span className='content-name'>Password</span>
+                </label>
+              </div>
             </div>
-          </div>
-          <div className="col-2 form-group m-0">
-            <button className="btn btn-primary ml-2" onClick={this.handleClick}>
-              <Link to='/dashboard'>
-              </Link>
-              <i className="fa fa-sign-in mr-1" aria-hidden="true"></i>
-            </button>
+            <div className="col-2 form-group m-0">
+              <button className="btn btn-primary ml-2" onClick={this.handleClick}>
+                <Link to='/dashboard'>
+                </Link>
+                <i className="fa fa-sign-in mr-1" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
-        <div className="row">
-          <div className="alert-login-container col-12 d-flex justify-content-center">
-            {authError2 ? <Alert className='alert-Login p-1' variant="danger" >{authError2}</Alert> : null}
+        <div className="col-12">
+          <div className="alert-login-container d-flex justify-content-center">
+            {authError2 ? <Alert className='alert-Login' variant="danger" >{authError2}</Alert> : null}
           </div>
         </div>
       </div>

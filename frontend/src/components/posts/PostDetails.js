@@ -24,7 +24,7 @@ const PostDetails = (props) => {
     return (
       <Main { ...headerProps }>
         <Linkify>
-        <section>
+        <section className='container-fluid'>
           <div className="card-content">
             <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
             <h5 className="pb-2">Subject: {post.category}</h5>

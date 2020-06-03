@@ -3,8 +3,6 @@
   src: url('../../../fonts/Blkchcry.ttf');
 }
 
-
-
 section h2 {
   font-family: 'Blkchcry';
   font-size: 40px;
@@ -15,6 +13,10 @@ button.btn-style {
   height: 2em;
   width: 2em;
   background: linear-gradient(to right,	#D2691E, #ffb88c);
+}
+
+button.btn-style:active {
+  outline: none;
 }
 
 @media(max-width: 768px) {
@@ -111,4 +113,8 @@ button.btn-style {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.menu {
+  box-shadow: var(--shadow);
 }

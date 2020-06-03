@@ -9,7 +9,7 @@ const Notifications = (props) => {
     <section>
       <div className='card'>
           <div className='card-header font-weight-bold'>Notifications</div>
-          <ul className='notification list-unstyled'>
+          <ul className='notification list-unstyled m-0'>
             {notifications && notifications.map(elem => {
               return (
                 <li key={elem.id} className='p-4 bg-light'>

@@ -14,7 +14,7 @@ const Nav =  (props) => {
   return (
     <section className='menu-area sticky-top'>
       <Container fluid={true} className='p-0'>
-        <Navbar className="p-0" collapseOnSelect bg="light" variant='light' expand="lg">
+        <Navbar className="menu p-0" collapseOnSelect bg="light" variant='light' expand="lg">
           <Navbar.Brand className='p-0 ml-1'>
             <h2 className='m-0'>
               <small>
@@ -24,7 +24,7 @@ const Nav =  (props) => {
             </h2>
           </Navbar.Brand>
           <Navbar.Toggle className="border-0 p-2 m-2" aria-controls="navbar-toggle" />
-          <Navbar.Collapse id="navbar-toggle" className='text-left'>
+          <Navbar.Collapse id="navbar-toggle" className='text-center'>
             {auth.isLoaded && links}
           </Navbar.Collapse>
         </Navbar>

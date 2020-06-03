@@ -40,7 +40,7 @@ class CreatePost extends Component {
 
   renderForm() {
     return (
-      <div className="form container-fluid">
+      <div className="form container-fluid pb-3">
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="form-group">
