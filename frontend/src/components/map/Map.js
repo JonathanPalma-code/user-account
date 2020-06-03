@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import MapboxGeocoder from 'mapbox-gl-geocoder';
 import Main from '../templates/Main';
-import ReportForm from './ReportForm';
+// import ReportForm from './ReportForm';
 import mapboxgl from 'mapbox-gl';
 
 import { Redirect } from 'react-router-dom';
@@ -24,6 +25,11 @@ class Map extends Component {
       lng: -0.118092,
       lat: 51.509865,
       zoom: 6,
+      report: {
+        title: '',
+        description: '',
+        location: '',
+        type: ''}
     };
     
   }
@@ -38,6 +44,12 @@ class Map extends Component {
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
     });
+
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    });
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     // add navigation control (zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
@@ -159,6 +171,38 @@ class Map extends Component {
     return () => map.remove();
   }
 
+  renderForm() {
+    return (
+      <Fragment>
+        <div className='form pb-5'>
+          <div className="form-group col-12 d-inline-block pt-3 pl-0">
+            <input className='form-control' type='text' id='title' autoComplete='off' onChange={this.updateFields} required />
+            <label className='form-label' htmlFor='title'>
+              <span className='content-name'>Title</span>
+            </label>
+          </div>
+          <div className="form-group col-12 d-inline-block pt-3 pl-0">
+            <div className="form-textarea">
+              <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
+                id='description' onChange={this.updateFields} required />
+            </div>
+          </div>
+          <div className="form-group col-6 d-inline-block pt-3 pl-0">
+            <label className='pt-1 pr-1' htmlFor="type">Type:</label>
+            <select defaultValue='Monument' className='p-1' name="type" id="type" onChange={this.updateFields} required>
+              <option value="Monument">Monument</option>
+              <option value="Site">Site</option>
+              <option value="Building">Building</option>
+              <option value="Object">Object</option>
+              <option value="Archeological site">Archeological site</option>
+            </select>
+          </div>
+          <div className="geocoder" id="geocoder" required />
+        </div>
+      </Fragment>
+    )
+  }
+
   render() {
     const { auth } = this.props
     // console.log(auth);
@@ -175,7 +219,7 @@ class Map extends Component {
               <div id='map' />
             </div>
             <div className='col-lg-6'>
-              <ReportForm />
+              {this.renderForm()}
             </div>
           </div>
         </div>

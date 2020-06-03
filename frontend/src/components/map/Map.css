@@ -13,3 +13,12 @@ height: 400px;
   padding: 6px;
   font-weight: bold;
 }
+
+.geocoder {
+  z-index: 1;
+  width: 100%;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
