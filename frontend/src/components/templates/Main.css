@@ -2,6 +2,7 @@ main > div {
   background-color: var(--bg-white);
   box-shadow: var(--shadow);
   width: 100%;
+  padding-top: 5%;
 }
 
 @media(max-width: 414px) {
@@ -166,5 +167,7 @@ div .sign-up-form:hover {
   overflow: hidden;
 }
 
-
+#p_wrap {
+    white-space: pre-line;
+  }
  

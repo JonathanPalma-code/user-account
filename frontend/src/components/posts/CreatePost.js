@@ -5,6 +5,8 @@ import Main from '../templates/Main';
 import { connect } from 'react-redux';
 import { createPost } from '../../store/actions/postActions';
 
+import '../templates/Main.css'
+
 const headerProps = {
   icon: 'plus-circle',
   title: 'Create Post'
@@ -38,7 +40,7 @@ class CreatePost extends Component {
 
   renderForm() {
     return (
-      <div className="form">
+      <div className="form container-fluid">
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="form-group">
@@ -48,11 +50,9 @@ class CreatePost extends Component {
                 <span className='content-name'>Title</span>
               </label>
             </div>
-          </div>
-          <div className="col-12 col-lg-6 p-4">
-            <div className="form-group">
-              <label className='p-1' htmlFor="category">Category</label>
-              <select className='p-1' name="category" id="category" onChange={this.updateFields} required>
+            <div className="form-group pt-2">
+              <label className='pt-1 pr-1' htmlFor="category">Category:</label>
+              <select defaultValue='General' className='p-1' name="category" id="category" onChange={this.updateFields} required>
                 <option value="General">General</option>
                 <option value="Prehistoric">Prehistoric</option>
                 <option value="Ancient history">Ancient history</option>
@@ -61,6 +61,8 @@ class CreatePost extends Component {
                 <option value="Contemporary Ages">Contemporary Ages</option>
               </select>
             </div>
+          </div>
+          <div className="col-12 col-lg-6">
             <div className="form-textarea">
               <textarea placeholder='Post Content' rows='8' className='textarea-input' style={{ resize: 'none' }} 
                 id='content' onChange={this.updateFields} required/>

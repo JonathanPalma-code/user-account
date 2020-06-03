@@ -22,7 +22,7 @@ class Dashboard extends Component {
     
     return (
       <Main { ...headerProps }>
-        <section className="dashboard container pt-3">
+        <section className="dashboard container">
           <div className="row">
             <section className="col-12 col-lg-7">
               <PostList posts={posts}/>

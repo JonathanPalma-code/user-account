@@ -8,6 +8,8 @@ import moment from 'moment';
 import Main from '../templates/Main';
 import Linkify from 'react-linkify-always-blank';
 
+import '../templates/Main.css';
+
 const headerProps = {
   icon: 'clipboard',
   title: 'Post Details'
@@ -26,7 +28,7 @@ const PostDetails = (props) => {
           <div className="card-content">
             <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
             <h5 className="pb-2">Subject: {post.category}</h5>
-            <p>{post.content}</p>
+              <p id='p_wrap'>{post.content}</p>
           </div>
           <hr />
           <div className="card-action text-right">
