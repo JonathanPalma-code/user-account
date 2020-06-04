@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import Main from '../templates/Main';
-// import ReportForm from './ReportForm';
 import mapboxgl from 'mapbox-gl';
 
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createReport } from '../../store/actions/reportActions';
 
 import './Map.css';
 
@@ -59,7 +59,7 @@ class Map extends Component {
         trackUserLocation: true
       })
     );
-    
+
     // Listen for the `result` event from the Geocoder
     // `result` event is triggered when a user makes a selection
     //  Add a marker at the result's coordinates and retrieve location data
@@ -112,8 +112,8 @@ class Map extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
-    if (this.state !== '') {
-      console.log(this.state);
+    if (this.state.title && this.state.location && this.state.type && this.state.description !== '') {
+      this.props.createReport(this.state);
       this.props.history.push('/dashboard');
     } else {
       alert("All fields most be field.");
@@ -193,4 +193,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Map);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createReport: (report) => dispatch(createReport(report))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

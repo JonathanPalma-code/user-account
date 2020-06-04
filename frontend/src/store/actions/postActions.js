@@ -36,7 +36,5 @@ export const createPost = (post) => {
         }
       )
     });
-
-    
   }
 };
