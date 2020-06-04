@@ -19,20 +19,15 @@ const headerProps = {
 }
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lng: -0.118092,
+    state = {
+      title: '',
+      location: '',
+      type: '',
+      description: '',
+      lng: - 0.118092,
       lat: 51.509865,
       zoom: 6,
-      report: {
-        title: '',
-        description: '',
-        location: '',
-        type: ''}
     };
-    
-  }
 
   componentDidMount() {
     const { auth } = this.props
@@ -47,12 +42,10 @@ class Map extends Component {
 
     const geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
-      marker: {
-        color: 'orange'
-      },
+      placeholder: 'Location',
       mapboxgl: mapboxgl
     });
-    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    document.getElementById('location').appendChild(geocoder.onAdd(map));
 
     // add navigation control (zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
@@ -66,6 +59,16 @@ class Map extends Component {
         trackUserLocation: true
       })
     );
+    
+    // Listen for the `result` event from the Geocoder
+    // `result` event is triggered when a user makes a selection
+    //  Add a marker at the result's coordinates and retrieve location data
+    geocoder.on('result', (e) => {
+      map.getSource('single-point').setData(e.result.geometry);
+      this.setState({
+        location: e.result.place_name
+      });
+    })
 
     // update the lng, lat and zoom
     map.on('move', () => {
@@ -76,22 +79,59 @@ class Map extends Component {
       });
     });
 
+    map.on('load', function () {
+      map.addSource('single-point', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: []
+        }
+      });
+
+      map.addLayer({
+        id: 'point',
+        source: 'single-point',
+        type: 'circle',
+        paint: {
+          'circle-radius': 10,
+          'circle-color': 'red'
+        }
+      });
+    });
+
     // clean up on unmount
     return () => map.remove();
+  }
+
+  updateFields = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    })
+  }
+
+  handleClick = (event) => {
+    // prevent default action from submitting - prevent to refresh the page
+    event.preventDefault();
+    if (this.state !== '') {
+      console.log(this.state);
+      this.props.history.push('/dashboard');
+    } else {
+      alert("All fields most be field.");
+    }
   }
 
   renderForm() {
     return (
       <Fragment>
         <div className='form pb-5'>
-          <div className="form-group col-12 d-inline-block pt-3 pl-0">
+          <div className="form-group col-12 d-inline-block pl-0">
             <input className='form-control' type='text' id='title' autoComplete='off' onChange={this.updateFields} required />
             <label className='form-label' htmlFor='title'>
               <span className='content-name'>Title</span>
             </label>
           </div>
           <div className='row'>
-            <div className="geocoder col-12 col-lg-6 d-inline-block pl-4 p-3" id="geocoder" required />
+            <div className="geocoder col-12 col-lg-6 d-inline-block pl-4 p-3" id="location" onChange={this.updateFields} required />
             <div className="form-group col-12 col-lg-6 d-inline-block p-3">
               <label className='pt-1 pr-1' htmlFor="type">Type:</label>
               <select defaultValue='Monument' className='p-1' name="type" id="type" onChange={this.updateFields} required>
@@ -108,6 +148,14 @@ class Map extends Component {
               <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
                 id='description' onChange={this.updateFields} required />
             </div>
+          </div>
+            {/* <div className="col-12 d-flex justify-content-center">
+              {authError ? <Alert className='alert-Login p-1' variant="danger" >{authError}</Alert> : null}
+            </div> */}
+          <div className="col-12 d-flex justify-content-end">
+            <button className="btn btn-danger m-1" onClick={this.handleClick}>
+              Report!
+            </button>
           </div>
         </div>
       </Fragment>

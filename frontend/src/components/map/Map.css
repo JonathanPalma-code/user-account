@@ -1,6 +1,17 @@
+@media(max-width: 768px) {
+  #title {
+    padding-top: 10%;
+  }
+
+  #geocoder {
+    padding-left: 5% !important;
+  }
+}
+
 #map {
 position: relative;
 height: 400px;
+border-radius: 5% !important;
 }
 
 .side-bar {
@@ -14,7 +25,7 @@ height: 400px;
   font-weight: bold;
 }
 
-.geocoder {
+.location {
   z-index: 1;
   width: 100%;
 }

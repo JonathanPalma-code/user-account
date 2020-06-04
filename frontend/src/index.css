@@ -13,4 +13,10 @@
   background-color: rgb(233, 233, 233);
 }
 
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 @import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';
