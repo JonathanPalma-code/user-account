@@ -1,12 +1,14 @@
-@media(min-width: 414px) {
-  h1 {
-      padding-top: 40px;
+@media(min-width: 769px) {
+  h1.title:after {
+      content: "International History Students & H. Group";
   }
+
 }
 
-@media(max-width: 414px) {
-    h1 {
-      font-size: 4px;
+@media(max-width: 768px) {
+    h1.title:after {
+      /* font-size: 4px; */
+      content: "I.H.S.H.G";
   }
 }
 
