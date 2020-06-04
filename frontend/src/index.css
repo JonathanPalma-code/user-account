@@ -12,3 +12,5 @@
   color: #212529;
   background-color: rgb(233, 233, 233);
 }
+
+@import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';

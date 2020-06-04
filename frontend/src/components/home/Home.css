@@ -7,7 +7,6 @@
 
 @media(max-width: 768px) {
     h1.title:after {
-      /* font-size: 4px; */
       content: "I.H.S.H.G";
   }
 }

@@ -22,3 +22,8 @@ height: 400px;
 .mapboxgl-ctrl-geocoder {
   min-width: 100%;
 }
+
+#geocoder-container > div {
+min-width: 50%;
+margin-left: 25%;
+}
