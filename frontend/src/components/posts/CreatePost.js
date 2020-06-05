@@ -53,8 +53,8 @@ class CreatePost extends Component {
               </label>
             </div>
             <div className="form-group pt-2">
-              <label className='pt-1 pr-1' htmlFor="category">Category:</label>
-              <select defaultValue='General' className='p-1' name="category" id="category" onChange={this.updateFields} required>
+              <select defaultValue='Choose a Category...' className='p-1' name="category" id="category" onChange={this.updateFields} required>
+                <option disabled="disabled">Choose a Category...</option>
                 <option value="General">General</option>
                 <option value="Prehistoric">Prehistoric</option>
                 <option value="Ancient history">Ancient history</option>
