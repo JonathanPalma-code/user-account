@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
-import { createPost } from '../../store/actions/postActions';
+import { createPost } from '../../store/actions/addPostActions';
 
 import '../templates/Main.css'
 

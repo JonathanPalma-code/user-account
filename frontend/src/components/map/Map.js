@@ -134,7 +134,7 @@ class Map extends Component {
           </div>
           <div className='row'>
             <div className="geocoder col-12 col-lg-6 d-inline-block pl-4 p-3" id="location" onChange={this.updateFields} required />
-            <div className="form-group col-12 col-lg-6 d-inline-block p-3">
+            <div className="form-group col-12 col-lg-6 d-flex align-items-center p-3">
               <select defaultValue='Choose a Type...' className='p-1' name="type" id="type" onChange={this.updateFields} required>
                 <option disabled="disabled">Choose a Type...</option>
                 <option value="Monument">Monument</option>

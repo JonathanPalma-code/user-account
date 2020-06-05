@@ -33,15 +33,21 @@ const PostDetails = (props) => {
           </Nav.Link>
         </Nav>
         <section className='container-fluid'>
-          <div className="card-content">
+          <div className="content">
             <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
             <h5 className="pb-2">Subject: {post.category}</h5>
               <p id='p_wrap'>{post.content}</p>
           </div>
           <hr />
-          <div className="card-action text-right">
-            <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
-            <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
+            <div className='d-flex justify-content-between pb-2'>
+            <div className='post-actions'>
+              <button className="btn btn-warning">Update</button>
+              <button className="ml-2 btn btn-danger">Delete</button>
+            </div>
+            <div className="footer text-right">
+              <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
+              <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
+            </div>
           </div>
         </section>
         </Linkify>
