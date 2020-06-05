@@ -28,13 +28,4 @@ Organisation of the project:
 
 We focused on agile methodologies throughout the project. 
 
-# Quick Access
-
-First, clone this repository. Then:
-```
-$ cd frontend
-$ npm install
-$ npm start
-```
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
