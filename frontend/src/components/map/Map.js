@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import Main from '../templates/Main';
 import mapboxgl from 'mapbox-gl';
+import { NavLink } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -168,6 +170,11 @@ class Map extends Component {
     if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
+        <Nav className='m-auto'>
+          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+            <i className='fa fa-undo' aria-hidden="true"></i> Back
+          </Nav.Link>
+        </Nav>
         <div className='container-fluid'>
           <h2 className='text-right'>Create a new report</h2>
           <div className='row'>

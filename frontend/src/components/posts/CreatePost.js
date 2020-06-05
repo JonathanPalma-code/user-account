@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
@@ -29,7 +31,7 @@ class CreatePost extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
-    if (this.state.title !== '' && this.state.content !== '') {
+    if (this.state.title && this.state.content && this.state.category !== '') {
       this.props.createPost(this.state);
       //calls the function mapDispatchToProps in createPost key
       this.props.history.push('/dashboard');
@@ -87,6 +89,11 @@ class CreatePost extends Component {
     if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
+        <Nav className='m-auto'>
+          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+            <i className='fa fa-undo' aria-hidden="true"></i> Back
+          </Nav.Link>
+        </Nav>
         {this.renderForm()}
       </Main>
     )

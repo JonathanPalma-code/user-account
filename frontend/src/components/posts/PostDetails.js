@@ -5,6 +5,9 @@ import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 
+import { NavLink } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+
 import Main from '../templates/Main';
 import Linkify from 'react-linkify-always-blank';
 
@@ -24,6 +27,11 @@ const PostDetails = (props) => {
     return (
       <Main { ...headerProps }>
         <Linkify>
+        <Nav className='m-auto'>
+          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+            <i className='fa fa-undo' aria-hidden="true"></i> Back
+          </Nav.Link>
+        </Nav>
         <section className='container-fluid'>
           <div className="card-content">
             <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
