@@ -34,15 +34,8 @@ const MyVerticallyCenteredModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <UpdatePost post={props.post} />
+        <UpdatePost post={props.post} id={props.id}/>
       </Modal.Body>
-      <Modal.Footer>
-        <div className="d-flex justify-content-end m-auto">
-          <button className="btn btn-warning">
-            Update
-            </button>
-        </div>
-      </Modal.Footer>
     </Modal>
   );
 }
@@ -50,7 +43,7 @@ const MyVerticallyCenteredModal = (props) => {
 const PostDetails = (props) => {
   // console.log(props);
   const [modalShow, setModalShow] = React.useState(false);
-  const { post, auth } = props;
+  const { post, auth, id } = props;
   if (!auth.uid) return <Redirect to="/" />
 
   if (post) {
@@ -77,6 +70,7 @@ const PostDetails = (props) => {
                   show={modalShow}
                   onHide={() => setModalShow(false)}
                   post={post}
+                  id={id}
                 />
               </div>
               <div className="footer text-right">
@@ -106,6 +100,7 @@ const mapStateToProps = (state, ownProps) => {
   const posts = state.firestore.data.posts;
   const post = posts ? posts[id] : null
   return {
+    id: id,
     post: post,
     auth: state.firebase.auth
   }

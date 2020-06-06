@@ -1,40 +1,79 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { updatePost } from '../../store/actions/updatePostActions';
+import { connect } from 'react-redux';
 
 import '../templates/Main.css';
 
-const UpdatePost = (post) => {
-  return (
-    <div className="form container-fluid pb-3">
-      <div className="row">
-        <div className="col-12 col-lg-6">
-          <div className="form-group">
-            <input className='form-control' type='text' value={post.post.title}
-              id='title' />
-            <label className='form-label' htmlFor='title'>
-              <span className='content-name'>Title</span>
-            </label>
+class UpdatePost extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      title: props.post.title,
+      content: props.post.content,
+      category: props.post.category
+    }
+  }
+
+  updateFields = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleClick = (event) => {
+    // prevent default action from submitting - prevent to refresh the page
+    event.preventDefault();
+    if (this.state.title && this.state.content && this.state.category !== '') {
+      this.props.updatePost(this.state, this.props.id);
+    } else {
+      alert("All fields most be field.");
+    }
+  }
+
+  render() {
+    return(
+      <div className = "form container-fluid pb-3" >
+        <div className="row">
+          <div className="col-12 col-lg-6">
+            <div className="form-group">
+              <input className='form-control' type='text' value={this.state.title}
+                id='title' onChange={this.updateFields} required/>
+              <label className='form-label' htmlFor='title'>
+                <span className='content-name'>Title</span>
+              </label>
+            </div>
+            <div className="form-group pt-2">
+              <select value={this.state.category} className='p-1' name="category" id="category" onChange={this.updateFields}>
+                <option value="General">General</option>
+                <option value="Prehistoric">Prehistoric</option>
+                <option value="Ancient history">Ancient history</option>
+                <option value="Middle ages">Middle ages</option>
+                <option value="Modern ages">Modern ages</option>
+                <option value="Contemporary Ages">Contemporary Ages</option>
+              </select>
+            </div>
           </div>
-          <div className="form-group pt-2">
-            <select value={post.post.category} className='p-1' name="category" id="category">
-              <option disabled="disabled">Choose a Category...</option>
-              <option value="General">General</option>
-              <option value="Prehistoric">Prehistoric</option>
-              <option value="Ancient history">Ancient history</option>
-              <option value="Middle ages">Middle ages</option>
-              <option value="Modern ages">Modern ages</option>
-              <option value="Contemporary Ages">Contemporary Ages</option>
-            </select>
+          <div className="col-12 col-lg-6">
+            <div className="form-textarea">
+              <textarea value={this.state.content} rows='8' className='textarea-input' style={{ resize: 'none' }}
+                id='content' onChange={this.updateFields}/>
+            </div>
           </div>
         </div>
-        <div className="col-12 col-lg-6">
-          <div className="form-textarea">
-            <textarea value={post.post.content} rows='8' className='textarea-input' style={{ resize: 'none' }}
-              id='content' />
-          </div>
+        <div className="d-flex justify-content-end m-auto">
+          <button className="btn btn-warning" onClick={this.handleClick}>
+            Update
+            </button>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
-export default UpdatePost;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updatePost: (post, id) => dispatch(updatePost(post, id)) // updatePost comes from the import
+  }
+}
+
+export default connect(null, mapDispatchToProps)(UpdatePost);

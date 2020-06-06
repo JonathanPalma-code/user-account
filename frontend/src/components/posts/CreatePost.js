@@ -25,7 +25,7 @@ class CreatePost extends Component {
     // grabs the id from one of the fields
     this.setState({
       [event.target.id]: event.target.value
-    })
+    });
   }
 
   handleClick = (event) => {
