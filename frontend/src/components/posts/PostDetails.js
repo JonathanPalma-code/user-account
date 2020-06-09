@@ -36,6 +36,9 @@ const MyVerticallyCenteredModal = (props) => {
       <Modal.Body>
         <UpdatePost post={props.post} id={props.id}/>
       </Modal.Body>
+      <Modal.Footer className="d-flex justify-content-center">
+        <button className='btn btn-light' onClick={props.onHide}>Close</button>
+      </Modal.Footer>
     </Modal>
   );
 }
