@@ -31,7 +31,7 @@ class UpdatePost extends Component {
       }
     }
     else {
-      alert("Create your own post.\nThere is no need to hack others posts. =)");
+      alert("Create your own post.\nThere is no need to hack others people posts. =)");
     }
   }
 

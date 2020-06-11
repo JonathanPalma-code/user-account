@@ -56,13 +56,12 @@ const PostDetails = (props) => {
       props.deletePost(id);
       props.history.push('/dashboard');
     } else {
-      alert("Create your own post.\nThere is no need to hack others posts. =)");
+      alert("Create your own post.\nThere is no need to hack others people posts. =)");
     }
   }
 
   const ActionVisibility = () => {
     if(post.authorID === auth.uid) {
-      // refButtons.current.style.display = 'none';
       return 'inline';
     } else {
       return 'none';
