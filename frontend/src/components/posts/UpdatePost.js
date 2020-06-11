@@ -12,6 +12,7 @@ class UpdatePost extends Component {
       content: props.post.content,
       category: props.post.category
     }
+    console.log(this.props.post.authorID, this.props.auth.uid);
   }
 
   updateFields = (event) => {
@@ -21,12 +22,16 @@ class UpdatePost extends Component {
   }
 
   handleClick = (event) => {
-    // prevent default action from submitting - prevent to refresh the page
-    event.preventDefault();
-    if (this.state.title && this.state.content && this.state.category !== '') {
-      this.props.updatePost(this.state, this.props.id);
-    } else {
-      alert("All fields most be field.");
+    if (this.props.post.authorID === this.props.auth.uid) {
+      event.preventDefault();
+      if (this.state.title && this.state.content && this.state.category !== '') {
+        this.props.updatePost(this.state, this.props.id);
+      } else {
+        alert("All fields most be field.");
+      }
+    }
+    else {
+      alert("Create your own post.\nThere is no need to hack others posts. =)");
     }
   }
 
@@ -34,8 +39,8 @@ class UpdatePost extends Component {
     return(
       <div className = "form container-fluid pb-3" >
         <div className="row">
-          <div className="col-12 col-lg-6">
-            <div className="form-group">
+          <div className="col-12 col-lg-5">
+            <div className="form-group pt-2">
               <input className='form-control' type='text' value={this.state.title}
                 id='title' onChange={this.updateFields} required/>
               <label className='form-label' htmlFor='title'>
@@ -53,14 +58,14 @@ class UpdatePost extends Component {
               </select>
             </div>
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-7">
             <div className="form-textarea">
               <textarea value={this.state.content} rows='8' className='textarea-input' style={{ resize: 'none' }}
                 id='content' onChange={this.updateFields}/>
             </div>
           </div>
         </div>
-        <div className="d-flex justify-content-end m-auto">
+        <div className="d-flex justify-content-end m-auto pt-5">
           <button className="btn btn-warning" onClick={this.handleClick}>
             Update
             </button>

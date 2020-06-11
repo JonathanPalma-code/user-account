@@ -35,10 +35,10 @@ const MyVerticallyCenteredModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <UpdatePost post={props.post} id={props.id}/>
+        <UpdatePost auth={props.auth} post={props.post} id={props.id}/>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-center">
-        <button className='btn btn-light' onClick={props.onHide}>Close</button>
+        <button className='btn btn-outline-info' onClick={props.onHide}>Close</button>
       </Modal.Footer>
     </Modal>
   );
@@ -46,15 +46,28 @@ const MyVerticallyCenteredModal = (props) => {
 
 const PostDetails = (props) => {
   // console.log(props);
-
-  const deleteClick = (id) => {
-    props.deletePost(id);
-    props.history.push('/dashboard');
-  }
-
   const [modalShow, setModalShow] = React.useState(false);
   const { post, auth, id } = props;
+
   if (!auth.uid) return <Redirect to="/" />
+
+  const deleteClick = (id) => {
+    if (post.authorID === auth.uid) {
+      props.deletePost(id);
+      props.history.push('/dashboard');
+    } else {
+      alert("Create your own post.\nThere is no need to hack others posts. =)");
+    }
+  }
+
+  const ActionVisibility = () => {
+    if(post.authorID === auth.uid) {
+      // refButtons.current.style.display = 'none';
+      return 'inline';
+    } else {
+      return 'none';
+    }
+  }
 
   if (post) {
     return (
@@ -73,7 +86,7 @@ const PostDetails = (props) => {
             </div>
             <hr />
             <div className='d-flex justify-content-between pb-2'>
-              <div className='post-actions'>
+              <div id='post-actions' className='post-actions' style={{ display: ActionVisibility() }}>
                 <button className="btn btn-warning" onClick={() => setModalShow(true)}>Update</button>
                 <button className="ml-2 btn btn-danger" onClick={() => deleteClick(id)}>Delete</button>
                 <MyVerticallyCenteredModal
@@ -81,9 +94,10 @@ const PostDetails = (props) => {
                   onHide={() => setModalShow(false)}
                   post={post}
                   id={id}
+                  auth={auth}
                 />
               </div>
-              <div className="footer text-right">
+              <div className="footer text-center">
                 <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
                 <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
               </div>
