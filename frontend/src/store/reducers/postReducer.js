@@ -12,7 +12,13 @@ const postReducers = (state = initState, action) => {
       console.log('Updated post', action.post);
       return state;
     case 'UPDATE_POST_ERR':
-      console.log('Updated post', action.post);
+      console.log('Updated post error', action.err);
+      return state;
+    case 'DELETE_POST':
+      console.log('Deleted post');
+      return state;
+    case 'DELETE_POST_ERR':
+      console.log("Deleted post error", action.err);
       return state;
     default:
       return state;

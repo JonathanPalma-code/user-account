@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import Modal from 'react-bootstrap/Modal';
 import UpdatePost from './UpdatePost';
+import { deletePost } from '../../store/actions/deletePostActions';
 
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
@@ -45,6 +46,12 @@ const MyVerticallyCenteredModal = (props) => {
 
 const PostDetails = (props) => {
   // console.log(props);
+
+  const deleteClick = (id) => {
+    props.deletePost(id);
+    props.history.push('/dashboard');
+  }
+
   const [modalShow, setModalShow] = React.useState(false);
   const { post, auth, id } = props;
   if (!auth.uid) return <Redirect to="/" />
@@ -68,7 +75,7 @@ const PostDetails = (props) => {
             <div className='d-flex justify-content-between pb-2'>
               <div className='post-actions'>
                 <button className="btn btn-warning" onClick={() => setModalShow(true)}>Update</button>
-                <button className="ml-2 btn btn-danger">Delete</button>
+                <button className="ml-2 btn btn-danger" onClick={() => deleteClick(id)}>Delete</button>
                 <MyVerticallyCenteredModal
                   show={modalShow}
                   onHide={() => setModalShow(false)}
@@ -109,8 +116,14 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deletePost: (id) => dispatch(deletePost(id))
+  }
+}
+
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: 'posts' }
   ])
