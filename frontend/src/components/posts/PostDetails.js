@@ -53,8 +53,12 @@ const PostDetails = (props) => {
 
   const deleteClick = (id) => {
     if (post.authorID === auth.uid) {
-      props.deletePost(id);
-      props.history.push('/dashboard');
+      if (window.confirm("Are you sure you want to remove the post?")) {
+        props.deletePost(id);
+        props.history.push('/dashboard');
+      } else {
+        return;
+      }
     } else {
       alert("Create your own post.\nThere is no need to hack others people posts. =)");
     }
