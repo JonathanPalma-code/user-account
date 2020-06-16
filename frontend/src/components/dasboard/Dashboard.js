@@ -24,11 +24,11 @@ class Dashboard extends Component {
       <Main { ...headerProps }>
         <section className="dashboard container">
           <div className="row">
-            <section className="col-12 col-lg-7">
+            <section className="col-12 col-lg-7 mb-5">
               <PostList posts={posts}/>
             </section>
             <section className="col-lg-1" />
-            <section className="col-12 col-lg-4">
+            <section className="col-12 col-lg-4 mb-5">
               <Notifications notifications={notifications}/>
             </section>
           </div>

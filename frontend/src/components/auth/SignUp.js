@@ -12,20 +12,33 @@ class SignUp extends Component {
     firstName: '',
     lastName: '',
     email: '',
-    password: ''
+    password: '',
+    error: false
   }
 
   updateFields = (event) => {
     // grabs the id from one of the fields
     this.setState({
-      [event.target.id]: event.target.value
+      [event.target.id]: event.target.value,
+      error: false
     })
   }
 
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     // event.preventDefault();
-    this.props.signUp(this.state);
+    // this.setState({
+      
+    // })
+    const letters = /^[A-Za-z]+$/;
+    if (this.state.firstName.match(letters) && this.state.lastName.match(letters)) {
+      this.props.signUp(this.state);
+    }
+    else { 
+      this.setState({
+        error: true
+      })
+    }
   }
 
   renderForm() {
@@ -33,7 +46,7 @@ class SignUp extends Component {
     if (auth.uid) return <Redirect to="/dashboard" />
 
     return (
-      <div className='sign-up-form'>
+      <div className='sign-up-form mb-3'>
         <h1 className='pt-0 m-0'>Create a new account</h1>
         <h3 className='m-0'>It's quick and easy.</h3>
         <div className="form">
@@ -69,10 +82,10 @@ class SignUp extends Component {
           </div>
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
-                {authError ? <Alert className='alert-Login p-1' variant="danger" >{authError}</Alert> : null}
+              {authError || this.state.error ? <Alert className='alert-Login p-1' variant="danger" >{authError || "First and Last name are required. Diacritical marks are not accepted."}</Alert> : null}
             </div>
             <div className="col-12 d-flex justify-content-end">
-              <button className="btn btn-primary m-1" onClick={this.handleClick}>
+              <button className="btn btn-primary" onClick={this.handleClick}>
                 Sign Up
               </button>
             </div>

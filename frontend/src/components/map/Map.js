@@ -125,39 +125,43 @@ class Map extends Component {
   renderForm() {
     return (
       <Fragment>
-        <div className='form pb-5'>
-          <div className="form-group col-12 d-inline-block pl-0">
-            <input className='form-control' type='text' id='title' autoComplete='off' onChange={this.updateFields} required />
-            <label className='form-label' htmlFor='title'>
-              <span className='content-name'>Title</span>
-            </label>
-          </div>
-          <div className='row'>
-            <div className="geocoder col-12 col-lg-6 d-inline-block pl-4 p-3" id="location" onChange={this.updateFields} required />
-            <div className="form-group col-12 col-lg-6 d-flex align-items-center p-3">
-              <select defaultValue='Choose a Type...' className='p-1' name="type" id="type" onChange={this.updateFields} required>
-                <option disabled="disabled">Choose a Type...</option>
-                <option value="Monument">Monument</option>
-                <option value="Site">Site</option>
-                <option value="Building">Building</option>
-                <option value="Object">Object</option>
-                <option value="Archeological site">Archeological site</option>
-              </select>
-            </div>
-          </div>
-          <div className="form-group col-12 d-inline-block pl-0">
-            <div className="form-textarea">
-              <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
-                id='description' onChange={this.updateFields} required />
-            </div>
-          </div>
+        <div className='form pb-2'>
+          <div className="row">
+            <div className="col-12">
+              <div className="form-group">
+                <input className='form-control' type='text' id='title' autoComplete='off' onChange={this.updateFields} required />
+                <label className='form-label' htmlFor='title'>
+                  <span className='content-name'>Title</span>
+                </label>
+              </div>
+              <div className='row'>
+                <div className="geocoder col-12 col-lg-6 d-inline-block p-3" id="location" onChange={this.updateFields} required />
+                <div className="form-group col-12 col-lg-6 d-flex align-items-center p-3">
+                  <select defaultValue='Choose a Type...' className='p-1' name="type" id="type" onChange={this.updateFields} required>
+                    <option disabled="disabled">Choose a Type...</option>
+                    <option value="Monument">Monument</option>
+                    <option value="Site">Site</option>
+                    <option value="Building">Building</option>
+                    <option value="Object">Object</option>
+                    <option value="Archeological site">Archeological site</option>
+                  </select>
+                </div>
+              </div>
+              <div className="form-textarea">
+                <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
+                  id='description' onChange={this.updateFields} required />
+              </div>
             {/* <div className="col-12 d-flex justify-content-center">
               {authError ? <Alert className='alert-Login p-1' variant="danger" >{authError}</Alert> : null}
             </div> */}
-          <div className="col-12 d-flex justify-content-end">
-            <button className="btn btn-danger m-1" onClick={this.handleClick}>
-              Report!
-            </button>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 d-flex justify-content-end">
+              <button className="btn btn-danger mt-2" onClick={this.handleClick}>
+                Report!
+              </button>
+            </div>
           </div>
         </div>
       </Fragment>

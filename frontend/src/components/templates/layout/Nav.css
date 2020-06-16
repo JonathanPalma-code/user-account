@@ -49,8 +49,8 @@ button.btn-style:active {
     padding: 5px;
     font-size: 10px;
   }
-  div > .form-login input:focus + .form-label .content-name, 
-  div > .form-login input:valid + .form-label .content-name {
+  div.form-login input:focus + .form-label-log .content-name, 
+  div.form-login input:valid + .form-label-log .content-name {
   transform: translateY(-100%);
   font-size: 0.5rem;
   color: 	black;
