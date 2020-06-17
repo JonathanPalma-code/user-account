@@ -117,4 +117,5 @@ button.btn-style:active {
 
 .menu {
   box-shadow: var(--shadow);
+  background: var(--bg-beige);
 }

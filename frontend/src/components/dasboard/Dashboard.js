@@ -22,7 +22,7 @@ class Dashboard extends Component {
     
     return (
       <Main { ...headerProps }>
-        <section className="dashboard container">
+        <section className="dashboard container-fluid">
           <div className="row">
             <section className="col-12 col-lg-7 mb-5">
               <PostList posts={posts}/>

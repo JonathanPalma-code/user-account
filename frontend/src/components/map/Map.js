@@ -156,9 +156,10 @@ class Map extends Component {
             </div> */}
             </div>
           </div>
+          <hr />
           <div className="row">
             <div className="col-12 d-flex justify-content-end">
-              <button className="btn btn-danger mt-2" onClick={this.handleClick}>
+              <button className="btn btn-danger" onClick={this.handleClick}>
                 Report!
               </button>
             </div>

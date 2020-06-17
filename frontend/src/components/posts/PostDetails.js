@@ -81,7 +81,7 @@ const PostDetails = (props) => {
               <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
           </Nav>
-          <section className='container-fluid'>
+          <section className='container'>
             <div className="content">
               <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
               <h5 className="pb-2">Subject: {post.category}</h5>

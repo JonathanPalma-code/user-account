@@ -1,5 +1,5 @@
 main > div {
-  background-color: var(--bg-white);
+  background-color: var(--bg-beige);
   box-shadow: var(--shadow);
   width: 100%;
   padding-top: 5%;
@@ -161,6 +161,7 @@ main > div {
                             0 100%;
     animation: bg 1.5s cubic-bezier(0.19, 1, 0.22, 1) 1;
     animation-play-state: paused;
+    background-color: var(--bg-white);
 }
 
 div .sign-up-form:hover {
@@ -172,7 +173,34 @@ div .sign-up-form:hover {
   overflow: hidden;
 }
 
+/* posts */
+
+div.post-summary {
+  background-color: transparent;
+  border: transparent;
+}
+
+.header-post-summary {
+  font-size: large;
+  text-align: center;
+}
+
+.footer-post-summary {
+  font-size: small;
+  border: transparent;
+}
+
 #p_wrap {
-    white-space: pre-line;
-  }
- 
+  white-space: pre-line;
+}
+
+/* Notifications */
+
+span.notification {
+  font-size: small;
+}
+
+div.card-notification {
+  border: transparent;
+  background: transparent;
+}

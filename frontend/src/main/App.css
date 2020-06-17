@@ -1,11 +1,12 @@
 :root {
-  --bg-white: #F8F8F8;
+  --bg-white: #F9F8F5;
+  --bg-beige: #F9F7F2;
 
   --logo-height: 500px;
   --logo-height-native: 150px;
   --menu-top-height: 48px;
   --menu-top-height-native: 44px;
-  --footer-height: 40px;
+  --footer-height: 30px;
 
   --shadow:
     0 2px 12px 12px rgba(0, 0, 0, 0.1),
