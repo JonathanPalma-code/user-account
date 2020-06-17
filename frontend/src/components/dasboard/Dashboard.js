@@ -41,7 +41,6 @@ class Dashboard extends Component {
 const mapStateToProps = (state) => {
   // console.log(state);
   return {
-    // posts: state.post.posts // get the random data from postReducer
     posts: state.firestore.ordered.posts,
     auth: state.firebase.auth,
     notifications: state.firestore.ordered.notifications
