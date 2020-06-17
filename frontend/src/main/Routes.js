@@ -7,6 +7,7 @@ import Dashboard from '../components/dasboard/Dashboard';
 import PostDetails from '../components/posts/PostDetails';
 import CreatePost from '../components/posts/CreatePost';
 import Map from '../components/map/Map';
+import UserDetails from '../components/users/UserDetails';
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route path='/post/:id' component={PostDetails} />
       <Route path='/createpost' component={CreatePost} />
       <Route path='/map' component={Map}  />
+      <Route path='/:firstname:lastName' component={UserDetails} />
       <Redirect from='*' to='/' />
     </Switch>
   )

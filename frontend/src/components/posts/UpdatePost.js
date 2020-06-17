@@ -12,7 +12,6 @@ class UpdatePost extends Component {
       content: props.post.content,
       category: props.post.category
     }
-    // console.log(this.props.post.authorID, this.props.auth.uid);
   }
 
   updateFields = (event) => {

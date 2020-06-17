@@ -27,9 +27,6 @@ class SignUp extends Component {
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     // event.preventDefault();
-    // this.setState({
-      
-    // })
     const letters = /^[A-Za-z]+$/;
     if (this.state.firstName.match(letters) && this.state.lastName.match(letters)) {
       this.props.signUp(this.state);
@@ -100,14 +97,11 @@ class SignUp extends Component {
       <div>
         {this.renderForm()}
       </div>
-      // <Main {...headerProps}>
-      // </Main>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
   return {
     auth: state.firebase.auth,
     authError: state.auth.authError
