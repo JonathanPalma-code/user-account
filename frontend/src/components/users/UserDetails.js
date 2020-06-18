@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
+import ProfilePicture from './ProfilePicture';
 
 import '../templates/Main.css';
 
@@ -19,7 +20,7 @@ const UserDetails = (props) => {
         </center>
         <div className="row pt-5 pb-5">
           <div className="col-12 col-lg-4">
-            <p>Profile Picture</p>
+            <ProfilePicture />
           </div>
           <div className="col-12 col-lg-8">
             <label>First Name</label>

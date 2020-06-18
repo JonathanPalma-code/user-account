@@ -36,8 +36,10 @@ button.btn-style:active {
 }
 
 @media(min-width:768px) {
-  .menu {
-    height: 60px;
+  .login-menu {
+    height: 64.7px;
+    display: flex;
+    align-items: center;
   }
 }
 

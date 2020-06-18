@@ -5,9 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import { connect } from 'react-redux';
 import { logOut } from '../../../store/actions/authActions';
 
+import './Nav.css'
+
 const LoggedInLinks = (props) => {
   return (  
-    <Nav className='ml-auto'>
+    <Nav className='ml-auto login-menu'>
       <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
         <i className='fa fa-home' aria-hidden="true"></i> Home
       </Nav.Link>

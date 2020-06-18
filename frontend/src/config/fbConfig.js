@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
 
 require('dotenv').config();
 
@@ -16,4 +17,8 @@ const fbConfig = firebase.initializeApp({
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 });
 
-export default fbConfig;
+const storage = firebase.storage();
+
+export { 
+  storage, fbConfig as default 
+};
