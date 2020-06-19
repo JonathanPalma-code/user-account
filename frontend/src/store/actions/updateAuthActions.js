@@ -1,4 +1,4 @@
-export const updatePost = (email, profile, pictureURL) => {
+export const updateUser = (profile) => {
 
   return (dispatch, getState, { getFirebase, getFirestore }) => {
 
@@ -7,16 +7,13 @@ export const updatePost = (email, profile, pictureURL) => {
     const authorID = getState().firebase.auth.uid;
 
     firestore.collection('users').doc(authorID).update({
-      firstName: profile.firstName,
-      lastName: profile.lastName,
-      email: email,
-      pictureURL: pictureURL,
+      ...profile,
       createdAt: new Date()
     }).then(() => {
       dispatch(
         {
           type: 'UPDATE_USER',
-          email, profile, pictureURL
+          ...profile
         }
       )
     }).catch((err) => {

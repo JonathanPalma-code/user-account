@@ -1,41 +1,58 @@
 import React, { Component } from 'react'
 import PicturePreview from './PicturePreview';
 
+import { storage } from '../../config/fbConfig';
+
 class PictureField extends Component {
-  constructor(props, state) {
-    super(props, state);
+  constructor(props) {
+    super(props);
     this.state = {
       picture: null,
-      pictureUrl: null
+      pictureURL: props.pictureURL,
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleChange(event) {
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    reader.onloadend = () => {
-      this.setState({ 
-        picture: file,
-        pictureUrl: reader.result
-      });
-    };
-    reader.readAsDataURL(file);
+    if (event.target.files[0]) {
+      const picture = event.target.files[0];
+      this.setState({
+        picture: picture
+      })
+    }
   }
 
   handleUpload() {
-    this.props.signUp(this.state.pictureUrl);
-  } 
-
-  render() {
-    const { auth, profile } = this.props
-    console.log(auth, profile)
-    return (
-      <div className='container'>        
+    const { picture } = this.state;
+    const uploadPic = storage.ref(`images/${picture.name}`).put(picture);
+    uploadPic.on('state_changed', 
+    (snapshot) => {
+      
+    },
+    (error) => {
+      console.log(error);
+    },
+    () => {
+      storage.ref('images').child(picture.name).getDownloadURL()
+          .then(url => {
+            console.log(url);
+            this.setState({
+              pictureUrl: url
+            });
+          })
+        })
+      }
+      
+      render() {
+        const { pictureUrl } = this.state;
+        console.log(pictureUrl)
+        return (
+          <div className='container'>        
         <input 
           type='file' 
           onChange={this.handleChange}
-        />
+          />
         <button onClick={this.handleUpload}>Upload Profile Picture</button>
         <PicturePreview pictureUrl={this.state.pictureUrl} />
       </div>

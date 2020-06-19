@@ -1,7 +1,6 @@
 import React from 'react';
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
-import PictureField from './PictureField';
 import Modal from 'react-bootstrap/Modal';
 
 import UpdateUser from './UpdateUser';
@@ -22,7 +21,7 @@ const MyVerticallyCenteredModal = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Update YourSpace
+          {props.profile.pictureURL}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -38,7 +37,6 @@ const MyVerticallyCenteredModal = (props) => {
 const UserDetails = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const { auth, profile } = props;
-
   return (
     <Main {...headerProps}>
       <div className='container'>
@@ -48,7 +46,7 @@ const UserDetails = (props) => {
         </center>
         <div className="row pt-5 pb-5">
           <div className="col-12 col-lg-4">
-            <PictureField auth={auth} profile={profile}/>
+            {profile.pictureURL}
           </div>
           <div className="col-12 col-lg-8">
             <label>First Name</label>
