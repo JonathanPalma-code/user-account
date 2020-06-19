@@ -44,6 +44,9 @@ button.btn-style:active {
 }
 
 @media(max-width: 414px) {
+  span.pipe {
+    display: none;
+  }
   section h2 {
     font-size: 23px;
   }
@@ -126,4 +129,9 @@ button.btn-style:active {
 .menu {
   box-shadow: var(--shadow);
   background-color: var(--bg-beige);
+}
+
+.pipe {
+  opacity: 0.2;
+  font-size: x-large;
 }

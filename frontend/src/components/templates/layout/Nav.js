@@ -17,9 +17,6 @@ const Nav =  (props) => {
         <Navbar className="menu p-0" collapseOnSelect expand="lg">
           <Navbar.Brand className='p-0 ml-3'>
             <h2 className='m-0'>
-              <small>
-                <i className={`fa fa-${props.icon}`} />
-              </small>
               {` ${props.title}`}
             </h2>
           </Navbar.Brand>

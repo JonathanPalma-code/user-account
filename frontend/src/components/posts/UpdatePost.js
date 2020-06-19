@@ -25,6 +25,7 @@ class UpdatePost extends Component {
       event.preventDefault();
       if (this.state.title && this.state.content && this.state.category !== '') {
         this.props.updatePost(this.state, this.props.id);
+        alert("Post updated with success.")
       } else {
         alert("All fields most be field.");
       }

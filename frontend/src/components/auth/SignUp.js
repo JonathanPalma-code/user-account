@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import Alert from 'react-bootstrap/Alert';
 
 

@@ -17,7 +17,6 @@ import Linkify from 'react-linkify-always-blank';
 import '../templates/Main.css';
 
 const headerProps = {
-  icon: 'clipboard',
   title: 'Post Details'
 }
 

@@ -10,7 +10,6 @@ import { createPost } from '../../store/actions/addPostActions';
 import '../templates/Main.css'
 
 const headerProps = {
-  icon: 'plus-circle',
   title: 'Create Post'
 }
 

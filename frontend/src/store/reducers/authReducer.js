@@ -32,6 +32,15 @@ const authReducers = (state = initState, action) => {
         ...state,
         authError: action.err.message
       }
+    case 'UPDATE_USER':
+      console.log('Updated user');
+      return state;
+    case 'UPDATE_USER_ERROR':
+      console.log('Update user error');
+      return {
+        ...state,
+        authError: action.err.message
+      }
     default:
       return state;
   }

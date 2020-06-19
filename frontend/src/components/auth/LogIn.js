@@ -36,7 +36,7 @@ class LogIn extends Component {
           <div className="row pl-2 pt-3 mr-1">
             <div className="col-5 pr-0">
               <div className="form-group m-0">
-                <input className='form-control' type='email' id='emailLogin' autoComplete='on' onChange={this.updateFields} required/>
+                <input className='form-control' type='email' id='emailLogin' autoComplete='off' onChange={this.updateFields} required/>
                 <label className='form-label-log'htmlFor='email'>
                   <span className='content-name'>Email</span>
                 </label>

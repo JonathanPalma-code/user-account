@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import Linkify from 'react-linkify-always-blank';
 
 import '../templates/Main.css';
 
@@ -18,9 +17,7 @@ const PostSummary = ({post}) => {
         {post.title}
         </span>
         <p className='m-0 p-1'>Subject: {post.category}</p>
-        <Linkify>
           <p id='p_wrap' className='m-0 p-1'>{introduction(post.content, 500)}</p>
-        </Linkify>
         <p className='m-0 p-1 footer-post-summary'>Posted by {post.authorFirstName} {post.authorLastName}. {moment(post.createdAt.toDate().toString()).calendar()}</p>
       </div>
     </div>

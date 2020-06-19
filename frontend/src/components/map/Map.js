@@ -16,7 +16,6 @@ require('dotenv').config();
 mapboxgl.accessToken = process.env.REACT_APP_HISTORIANSGROUP_MAP;
 
 const headerProps = {
-  icon: 'globe',
   title: 'Heritage in Danger'
 }
 
