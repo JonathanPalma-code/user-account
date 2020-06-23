@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import PostSummary from './PostSummary';
+
+import '../templates/Main.css';
 
 const PostList = ({posts}) => {
 
@@ -15,7 +15,7 @@ const PostList = ({posts}) => {
   })
 
   return (
-    <div className="post-list section">
+    <div className="post-list section container-fluid">
       {allPosts}
     </div>
   )

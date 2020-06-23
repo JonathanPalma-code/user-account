@@ -27,7 +27,7 @@ class UpdatePost extends Component {
         this.props.updatePost(this.state, this.props.id);
         alert("Post updated with success.")
       } else {
-        alert("All fields most be field.");
+        alert("All fields most be fielded.");
       }
     }
     else {

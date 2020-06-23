@@ -35,13 +35,13 @@ class CreatePost extends Component {
       //calls the function mapDispatchToProps in createPost key
       this.props.history.push('/dashboard');
     } else {
-      alert("All fields most be field.");
+      alert("All fields most be fielded.");
     }
   }
 
   renderForm() {
     return (
-      <div className="form container-fluid pb-3">
+      <div className="form container pb-2">
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="form-group">

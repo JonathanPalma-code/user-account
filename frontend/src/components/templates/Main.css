@@ -204,3 +204,9 @@ div.card-notification {
   border: transparent;
   background: transparent;
 }
+
+/* User Details */
+
+.image-container img.picture-profile {
+    width: 100%;
+}

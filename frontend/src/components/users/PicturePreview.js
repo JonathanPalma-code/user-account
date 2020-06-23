@@ -1,9 +1,9 @@
 import React from 'react';
 
 const PicturePreview = (props) => {
-  const { pictureUrl } = props;
+  const { pictureURL } = props;
   return (
-    <img className='img-fluid p-1' src={pictureUrl} alt="profile" />
+    <img className='img-fluid p-1' src={pictureURL} alt="profile" />
   )
 }
 

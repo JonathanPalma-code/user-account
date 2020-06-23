@@ -21,7 +21,7 @@ const MyVerticallyCenteredModal = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.profile.pictureURL}
+          Edit your details
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -39,16 +39,16 @@ const UserDetails = (props) => {
   const { auth, profile } = props;
   return (
     <Main {...headerProps}>
-      <div className='container'>
+      <div className='form container pb-2'>
         <center>
           <h2 className='user-title'>{profile.firstName} {profile.lastName}</h2>
           <h3>Welcome to YourSpace.</h3>
         </center>
-        <div className="row pt-5 pb-5">
-          <div className="col-12 col-lg-4">
-            {profile.pictureURL}
+        <div className="row pt-2 pb-5">
+          <div className="col-12 col-lg-4 image-container">
+            <img className='picture-profile' src={profile.pictureURL} alt='pictureProfile' />
           </div>
-          <div className="col-12 col-lg-8">
+          <div className="col-12 col-lg-8 pt-3">
             <label>First Name</label>
             <h5>{profile.firstName}</h5>
             <label>Last Name</label>
@@ -56,13 +56,16 @@ const UserDetails = (props) => {
             <label>Email</label>
             <h5>{auth.email}</h5>
           </div>
-          <button className="btn btn-warning" onClick={() => setModalShow(true)}>Update</button>
           <MyVerticallyCenteredModal
             show={modalShow}
             onHide={() => setModalShow(false)}
             profile={profile}
             auth={auth}
           />
+        </div>
+        <hr />
+        <div className="d-flex justify-content-end">
+          <button className="btn btn-warning" onClick={() => setModalShow(true)}>Update</button>
         </div>
       </div>
     </Main>

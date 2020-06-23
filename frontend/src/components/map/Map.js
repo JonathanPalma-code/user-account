@@ -117,7 +117,7 @@ class Map extends Component {
       this.props.createReport(this.state);
       this.props.history.push('/dashboard');
     } else {
-      alert("All fields most be field.");
+      alert("All fields most be fielded.");
     }
   }
 
@@ -150,9 +150,6 @@ class Map extends Component {
                 <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
                   id='description' onChange={this.updateFields} required />
               </div>
-            {/* <div className="col-12 d-flex justify-content-center">
-              {authError ? <Alert className='alert-Login p-1' variant="danger" >{authError}</Alert> : null}
-            </div> */}
             </div>
           </div>
           <hr />
@@ -179,7 +176,7 @@ class Map extends Component {
             <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
         </Nav>
-        <div className='container-fluid'>
+        <div className='container'>
           <h2 className='text-right'>Create a new report</h2>
           <div className='row'>
             <div className='map-container col-lg-6'>
