@@ -18,7 +18,6 @@ section.logo img{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
 
 @media(max-width: 414px) {

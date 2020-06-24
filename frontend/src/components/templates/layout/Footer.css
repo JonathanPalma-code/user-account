@@ -1,9 +1,11 @@
 footer.footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   padding: 0px 25px;
   background-color: #fff;
   box-shadow: var(--shadow);
-  font-size: xx-small;
+  font-size: x-small;
+}
+
+img { 
+  padding: 0px;
+  width: 100px;
 }
