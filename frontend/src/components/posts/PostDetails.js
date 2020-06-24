@@ -44,7 +44,6 @@ const MyVerticallyCenteredModal = (props) => {
 }
 
 const PostDetails = (props) => {
-  // console.log(props);
   const [modalShow, setModalShow] = React.useState(false);
   const { post, auth, id } = props;
 
@@ -75,12 +74,12 @@ const PostDetails = (props) => {
     return (
       <Main {...headerProps}>
         <Linkify>
+          <section className='container'>
           <Nav className='m-auto'>
             <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
               <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
           </Nav>
-          <section className='container'>
             <div className="content">
               <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
               <h5 className="pb-2">Subject: {post.category}</h5>

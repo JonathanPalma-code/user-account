@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 const Home = () => {
   return (
     <Main icon='home' title='"Knowledge is Power"'>
-      <Container fluid={true}>
+      <Container>
         <h1 className='title'>Welcome to </h1>
         <hr />
         <div className='row'>

@@ -2,6 +2,8 @@ import React from 'react';
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
+import { NavLink } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 import UpdateUser from './UpdateUser';
 
@@ -40,6 +42,11 @@ const UserDetails = (props) => {
   return (
     <Main {...headerProps}>
       <div className='form container pb-2'>
+        <Nav className='m-auto'>
+          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+            <i className='fa fa-undo' aria-hidden="true"></i> Back
+          </Nav.Link>
+        </Nav>
         <center>
           <h2 className='user-title'>{profile.firstName} {profile.lastName}</h2>
           <h3>Welcome to YourSpace.</h3>

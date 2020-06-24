@@ -19,12 +19,12 @@ const LoggedInLinks = (props) => {
       <Nav.Link eventKey='2' as={NavLink} to='/map'>
         <i className='fa fa-globe' aria-hidden="true"></i> Heritage in Danger
       </Nav.Link><span className='pipe'>|</span>
-      <Nav.Link eventKey='3' as={NavLink} to='/users'>
+      {/* <Nav.Link eventKey='3' as={NavLink} to='/users'>
         <i className='fa fa-users' aria-hidden="true"></i> Users
       </Nav.Link><span className='pipe'>|</span>
       <Nav.Link href='https://www.facebook.com/groups/410056133057002/' target='_blank' rel='noopener noreferrer'>
         <i className='fa fa-facebook'></i>  Join our Group
-      </Nav.Link><span className='pipe'>|</span>
+      </Nav.Link><span className='pipe'>|</span> */}
       <Nav.Link className='pt-1' as={NavLink} exact to={'/' + props.profile.firstName + props.profile.lastName}>
         <button className="btn-style">{props.profile.initials}</button>
       </Nav.Link><span className='pipe'>|</span>

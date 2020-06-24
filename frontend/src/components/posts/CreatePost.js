@@ -42,6 +42,11 @@ class CreatePost extends Component {
   renderForm() {
     return (
       <div className="form container pb-2">
+        <Nav className='m-auto'>
+          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+            <i className='fa fa-undo' aria-hidden="true"></i> Back
+          </Nav.Link>
+        </Nav>
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="form-group">
@@ -88,11 +93,6 @@ class CreatePost extends Component {
     if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
-        <Nav className='m-auto'>
-          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
-            <i className='fa fa-undo' aria-hidden="true"></i> Back
-          </Nav.Link>
-        </Nav>
         {this.renderForm()}
       </Main>
     )

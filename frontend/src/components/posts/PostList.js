@@ -15,7 +15,7 @@ const PostList = ({posts}) => {
   })
 
   return (
-    <div className="post-list section container-fluid">
+    <div className="post-list section">
       {allPosts}
     </div>
   )

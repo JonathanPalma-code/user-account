@@ -171,12 +171,12 @@ class Map extends Component {
     if (!auth.uid) return <Redirect to="/" />
     return (
       <Main {...headerProps}>
+        <div className='container'>
         <Nav className='m-auto'>
           <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
             <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
         </Nav>
-        <div className='container'>
           <h2 className='text-right'>Create a new report</h2>
           <div className='row'>
             <div className='map-container col-lg-6'>

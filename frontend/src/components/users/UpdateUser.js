@@ -9,7 +9,6 @@ import { updateUser } from '../../store/actions/updateAuthActions';
 class UpdateUser extends Component {
   constructor(props){
     super(props);
-    console.log(props)
     this.state = {
       profile: {
         firstName: props.profile.firstName,
@@ -38,7 +37,6 @@ class UpdateUser extends Component {
   handleClick = (event) => {
     event.preventDefault();
     const { picture } = this.state;
-    console.log(picture)
     const uploadPic = storage.ref(`images/${picture.name}`).put(picture);
     uploadPic.on('state_changed',
       (snapshot) => {
@@ -58,7 +56,6 @@ class UpdateUser extends Component {
             });
           }).then(() => {
             if (this.state.profile.firstName && this.state.profile.lastName && this.state.profile.email !== '') {
-              console.log(this.state.profile)
               this.props.updateUser(this.state.profile);
               alert("Post updated with success.")
             } else {
@@ -101,7 +98,7 @@ class UpdateUser extends Component {
             </div>
           </div>
         </div>
-        <div>
+        <div className='d-flex justify-content-center'>
           <input
             type='file'
             onChange={this.updateFields}
