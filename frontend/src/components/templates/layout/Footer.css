@@ -11,6 +11,10 @@ footer.footer {
   color: black;
 }
 
+.copyrights {
+  font-size: x-small;
+}
+
 .link-content {
   font-size: normal;
 }
@@ -73,10 +77,6 @@ i.fa {
 
 i.fa:hover {
   color: var(--bg-beige);
-}
-
-.copyrights {
-  font-size: small;
 }
 
 .btn-subs {

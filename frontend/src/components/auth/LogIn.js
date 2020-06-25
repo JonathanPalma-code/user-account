@@ -51,7 +51,7 @@ class LogIn extends Component {
               </div>
             </div>
             <div className="col-2 form-group m-0">
-              <button className="btn btn-primary ml-2" onClick={this.handleClick}>
+              <button className="btn-login ml-2" onClick={this.handleClick}>
                 <Link to='/dashboard'>
                 </Link>
                 <i className="fa fa-sign-in mr-1" aria-hidden="true"></i>
