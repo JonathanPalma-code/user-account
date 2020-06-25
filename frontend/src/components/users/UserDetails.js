@@ -30,7 +30,7 @@ const MyVerticallyCenteredModal = (props) => {
         <UpdateUser profile={props.profile} auth={props.auth}/>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-center">
-        <button className='btn btn-outline-info' onClick={props.onHide}>Close</button>
+        <button className='btn-input' onClick={props.onHide}>Close</button>
       </Modal.Footer>
     </Modal>
   );
@@ -72,7 +72,7 @@ const UserDetails = (props) => {
         </div>
         <hr />
         <div className="d-flex justify-content-end">
-          <button className="btn btn-warning" onClick={() => setModalShow(true)}>Update</button>
+          <button className="btn-input" onClick={() => setModalShow(true)}>Update</button>
         </div>
       </div>
     </Main>

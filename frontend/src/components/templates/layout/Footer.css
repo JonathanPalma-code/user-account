@@ -70,13 +70,13 @@ img {
   color: var(--bg-beige);
 }
 
-i.fa {
+i.footer-fa {
   color: black;
   font-size: large;
 }
 
-i.fa:hover {
-  color: var(--bg-beige);
+i.footer-fa:hover {
+  color: var(--bg-beige) !important;
 }
 
 .btn-subs {

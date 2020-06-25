@@ -106,7 +106,7 @@ class UpdateUser extends Component {
           <PicturePreview pictureURL={pictureURL} />
         </div>
         <div className="d-flex justify-content-end m-auto pt-5">
-          <button className="btn btn-warning" onClick={this.handleClick}>
+          <button className="btn-input" onClick={this.handleClick}>
             Update
             </button>
         </div>

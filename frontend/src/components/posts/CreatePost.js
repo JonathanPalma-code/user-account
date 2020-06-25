@@ -42,7 +42,7 @@ class CreatePost extends Component {
   renderForm() {
     return (
       <div className="form container pb-2">
-        <Nav className='m-auto'>
+        <Nav className='m-auto pb-3'>
           <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
             <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
@@ -77,8 +77,8 @@ class CreatePost extends Component {
         </div>
         <hr />
         <div className="row">
-          <div className="col-12 d-flex justify-content-end">
-            <button className="btn btn-primary" onClick={this.handleClick}>
+          <div className="col-12 d-flex justify-content-center">
+            <button className="btn-input" onClick={this.handleClick}>
               Post
             </button>
           </div>

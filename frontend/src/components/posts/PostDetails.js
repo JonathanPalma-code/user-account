@@ -37,7 +37,7 @@ const MyVerticallyCenteredModal = (props) => {
         <UpdatePost auth={props.auth} post={props.post} id={props.id}/>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-center">
-        <button className='btn btn-outline-info' onClick={props.onHide}>Close</button>
+        <button className='btn-input' onClick={props.onHide}>Close</button>
       </Modal.Footer>
     </Modal>
   );
@@ -86,10 +86,18 @@ const PostDetails = (props) => {
               <p id='p_wrap'>{post.content}</p>
             </div>
             <hr />
-            <div className='d-flex justify-content-between pb-2'>
+            <div className='pb-2'>
+              <div className="footer text-center pb-5">
+                <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
+                <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
+              </div>
               <div id='post-actions' className='post-actions' style={{ display: ActionVisibility() }}>
-                <button className="btn btn-warning" onClick={() => setModalShow(true)}>Update</button>
-                <button className="ml-2 btn btn-danger" onClick={() => deleteClick(id)}>Delete</button>
+                <span className='btn-container pb-1'>
+                  <button className="btn-input" onClick={() => setModalShow(true)}>Update</button>
+                </span>
+                <span className='btn-container'>
+                  <button className="btn-input" onClick={() => deleteClick(id)}>Delete</button>
+                </span>
                 <MyVerticallyCenteredModal
                   show={modalShow}
                   onHide={() => setModalShow(false)}
@@ -97,10 +105,6 @@ const PostDetails = (props) => {
                   id={id}
                   auth={auth}
                 />
-              </div>
-              <div className="footer text-center">
-                <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
-                <div>{moment(post.createdAt.toDate().toString()).calendar()}</div>
               </div>
             </div>
           </section>

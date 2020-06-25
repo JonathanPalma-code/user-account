@@ -43,6 +43,8 @@ main > div {
   }
 }
 
+/* Signup & Map */
+
 .form {
   position: relative;
   overflow: hidden;
@@ -173,7 +175,33 @@ div .sign-up-form:hover {
   overflow: hidden;
 }
 
+/* general */
+
+.btn-input {
+  width: 50%;
+  height: 100%;
+  background: #222;
+  border-radius: 20px;
+  position: relative;
+  transition: 1s;
+  color: var(--bg-beige);
+}
+
+.btn-input:hover {
+  outline: none;
+}
+
 /* posts */
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.post-actions > .btn-input {
+  width: 25%;
+}
+
 
 div.post-summary {
   background-color: transparent;

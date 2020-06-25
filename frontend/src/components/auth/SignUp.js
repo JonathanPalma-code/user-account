@@ -82,7 +82,7 @@ class SignUp extends Component {
               {authError || this.state.error ? <Alert className='alert-Login p-1' variant="danger" >{authError || "First and Last name are required. Diacritical marks are not accepted."}</Alert> : null}
             </div>
             <div className="col-12 d-flex justify-content-end">
-              <button className="btn btn-primary" onClick={this.handleClick}>
+              <button className="btn-input" onClick={this.handleClick}>
                 Sign Up
               </button>
             </div>

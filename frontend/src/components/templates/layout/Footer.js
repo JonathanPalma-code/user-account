@@ -22,16 +22,16 @@ const Footer = () => {
                 <div className='table-header'>Follow us
                   <Nav className='ml-auto d-flex justify-content-center'>
                     <Nav.Link href='https://www.facebook.com/groups/410056133057002/' target='_blank' rel='noopener noreferrer'>
-                      <i className='fa fa-facebook'></i>
+                      <i className='footer-fa fa fa-facebook'></i>
                     </Nav.Link>
                     <Nav.Link href='https://www.instagram.com/ihshg1/?hl=pt' target='_blank' rel='noopener noreferrer'>
-                      <i className='fa fa-instagram'></i>
+                      <i className='footer-fa fa fa-instagram'></i>
                     </Nav.Link>
                     <Nav.Link href='https://www.youtube.com/channel/UCPStMEjwVivd40NrjweA44A' target='_blank' rel='noopener noreferrer'>
-                      <i className='fa fa-youtube'></i>
+                      <i className='footer-fa fa fa-youtube'></i>
                     </Nav.Link>
                     <Nav.Link href='https://www.twitter.com/IHSHG2?s=09' target='_blank' rel='noopener noreferrer'>
-                      <i className='fa fa-twitter'></i>
+                      <i className='footer-fa fa fa-twitter'></i>
                     </Nav.Link>
                   </Nav>
                 </div>
