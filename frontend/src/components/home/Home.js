@@ -22,9 +22,6 @@ const Home = () => {
               This website gives the possibility for any person to report a monument vicinity that is damaged, 
               in bad condition or scheduled for destruction in real time!
             </p>
-            <a className='pt-4 pr-3' href='https://www.facebook.com/groups/410056133057002/' target='_blank' rel='noopener noreferrer'>
-              <p><i className='fa fa-facebook'></i> Join our Group</p>
-            </a>
           </div> 
           <div className='col-lg-1' />
           <div className='sign-up col-12 col-lg-5'>
