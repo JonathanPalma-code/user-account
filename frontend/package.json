@@ -27,6 +27,9 @@
     "redux-firestore": "^0.13.0",
     "redux-thunk": "^2.3.0"
   },
+  "devDependencies": {
+    "lodash": ">=4.17.19"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

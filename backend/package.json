@@ -18,5 +18,8 @@
   "homepage": "https://github.com/JonathanPalma-code/user-account#readme",
   "dependencies": {
     "json-server": "0.16.1"
+  },
+  "devDependencies": {
+    "lodash": ">=4.17.19"
   }
 }
