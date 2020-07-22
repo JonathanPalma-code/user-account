@@ -1,24 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PostSummary from './PostSummary';
+import React, { Component } from 'react';
+import Search from '../dasboard/Search';
 
 import '../templates/Main.css';
 
-const PostList = ({posts}) => {
+class PostList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchTerm: ''
+    }
+  }
 
-  const allPosts = posts && posts.map(post => {
+  editSearchTerm = (event) => {
+    this.setState({ searchTerm: event.target.value })
+  }
+
+  render() {
+    const { posts } = this.props;
     return (
-      <Link to={'/post/' + post.id} key={post.id} >
-        <PostSummary post={post} />
-      </Link>
-    );
-  })
-
-  return (
-    <div className="post-list section">
-      {allPosts}
-    </div>
-  )
+      <section>
+        <input type='text'
+          value={this.state.searchTerm}
+          onChange={this.editSearchTerm}
+          placeholder='Search by Categories' />
+        <Search posts={posts} searchTerm={this.state.searchTerm} />
+      </section>
+    )
+  }
 }
 
 export default PostList;
