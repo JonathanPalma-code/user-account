@@ -19,10 +19,16 @@ class PostList extends Component {
     const { posts } = this.props;
     return (
       <section>
-        <input type='text'
-          value={this.state.searchTerm}
-          onChange={this.editSearchTerm}
-          placeholder='Search by Categories' />
+        <div className="form ml-5 mr-5 mb-5">
+          <input className='form-control'
+            type='text' id='search'
+            value={this.state.searchTerm}
+            onChange={this.editSearchTerm}
+            required />
+          <label className='form-label' htmlFor='search'>
+            <span className='content-name'>Search by subject</span>
+          </label>
+        </div>
         <Search posts={posts} searchTerm={this.state.searchTerm} />
       </section>
     )
