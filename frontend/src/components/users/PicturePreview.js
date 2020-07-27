@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+import '../templates/Main.css';
+
 const PicturePreview = (props) => {
   const { pictureURL } = props;
   return (

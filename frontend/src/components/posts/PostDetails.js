@@ -7,6 +7,7 @@ import moment from 'moment';
 import Modal from 'react-bootstrap/Modal';
 import UpdatePost from './UpdatePost';
 import { deletePost } from '../../store/actions/deletePostActions';
+import PicturePreview from '../users/PicturePreview';
 
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
@@ -34,7 +35,7 @@ const MyVerticallyCenteredModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <UpdatePost auth={props.auth} post={props.post} id={props.id}/>
+        <UpdatePost auth={props.auth} post={props.post} id={props.id} />
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-center">
         <button className='btn-input' onClick={props.onHide}>Close</button>
@@ -63,7 +64,7 @@ const PostDetails = (props) => {
   }
 
   const ActionVisibility = () => {
-    if(post.authorID === auth.uid) {
+    if (post.authorID === auth.uid) {
       return 'inline';
     } else {
       return 'none';
@@ -75,15 +76,20 @@ const PostDetails = (props) => {
       <Main {...headerProps}>
         <Linkify>
           <section className='container'>
-          <Nav className='m-auto'>
-            <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
-              <i className='fa fa-undo' aria-hidden="true"></i> Back
+            <Nav className='m-auto'>
+              <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+                <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
-          </Nav>
-            <div className="content">
-              <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
-              <h5 className="pb-2">Subject: {post.category}</h5>
-              <p id='p_wrap'>{post.content}</p>
+            </Nav>
+            <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
+            <h5 className="pb-2">Subject: {post.category}</h5>
+            <div className='row'>
+              <div className="content col-12 col-lg-6">
+                <p id='p_wrap'>{post.content}</p>
+              </div>
+              <div className="image-size col-12 col-lg-6">
+                <PicturePreview pictureURL={post.pictureURL} />
+              </div>
             </div>
             <hr />
             <div className='pb-2'>

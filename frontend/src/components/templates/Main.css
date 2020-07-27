@@ -238,3 +238,9 @@ div.card-notification {
 .image-container img.picture-profile {
     width: 100%;
 }
+
+/* Image Post Size */
+
+.img-fluid {
+  width: 100% !important;
+}
