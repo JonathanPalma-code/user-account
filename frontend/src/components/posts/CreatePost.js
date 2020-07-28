@@ -115,8 +115,10 @@ class CreatePost extends Component {
             <div className="form-group pt-2">
               <input
                 type='file'
+                accept='image/*'
                 onChange={this.handleUpload}
               />
+              <p className='img-restriction'>Only image format accepted (.jpg, .jpeg, .png, .gif, .ico)</p>
             </div>
           </div>
           <div className="col-12 col-lg-6">

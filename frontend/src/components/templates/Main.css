@@ -244,3 +244,9 @@ div.card-notification {
 .img-fluid {
   width: 100% !important;
 }
+
+.img-restriction {
+  padding-top: 10px;
+  font-weight: lighter;
+  font-size: 10px;
+}
