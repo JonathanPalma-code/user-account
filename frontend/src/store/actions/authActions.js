@@ -43,6 +43,9 @@ export const signUp = (newUser) => {
       dispatch({ type: 'SIGNUP_SUCCESS' })
     }).catch((err) => {
       dispatch({ type: 'SIGNUP_ERROR', err })
+    }).then(() => {
+      const user = firebase.auth().currentUser;
+      user.sendEmailVerification();
     })
   }
 }

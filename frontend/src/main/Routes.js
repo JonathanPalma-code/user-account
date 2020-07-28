@@ -8,11 +8,13 @@ import PostDetails from '../components/posts/PostDetails';
 import CreatePost from '../components/posts/CreatePost';
 import Map from '../components/map/Map';
 import UserDetails from '../components/users/UserDetails';
+import VerifyEmail from '../components/auth/VerifyEmail';
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route path='/verifyemail' component={VerifyEmail} />
       <Route path='/users' component={UserCrud} />
       <Route path='/dashboard' component={Dashboard} />
       <Route path='/post/:id' component={PostDetails} />

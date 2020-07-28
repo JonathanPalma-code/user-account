@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from '../templates/Main';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import { NavLink } from 'react-router-dom';
@@ -39,6 +40,7 @@ const MyVerticallyCenteredModal = (props) => {
 const UserDetails = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const { auth, profile } = props;
+  if (!auth.uid) return <Redirect to="/" />
   return (
     <Main {...headerProps}>
       <div className='form container pb-2'>

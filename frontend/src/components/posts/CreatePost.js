@@ -143,7 +143,9 @@ class CreatePost extends Component {
   render() {
     const { auth } = this.props
     // console.log(auth);
-    if (!auth.uid) return <Redirect to="/" />
+    if (!auth.uid && !auth.emailVerified) return <Redirect to="/" />
+    if (!auth.emailVerified) return <Redirect to="/verifyemail" />
+    
     return (
       <Main {...headerProps}>
         {this.renderForm()}

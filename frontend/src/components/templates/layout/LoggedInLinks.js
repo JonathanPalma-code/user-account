@@ -22,7 +22,7 @@ const LoggedInLinks = (props) => {
       <Nav.Link className='pt-1' as={NavLink} exact to={'/' + props.profile.firstName + props.profile.lastName}>
         <button className="btn-style">{props.profile.initials}</button>
       </Nav.Link><span className='pipe'>|</span>
-      <Nav.Link eventKey='4' as={NavLink} onClick={props.logOut} to='/'>
+      <Nav.Link eventKey='4' as={NavLink} onClick={props.logOut} exact to='/'>
         <i className="fa fa-sign-out" aria-hidden="true"></i> Log Out
       </Nav.Link>
     </Nav>

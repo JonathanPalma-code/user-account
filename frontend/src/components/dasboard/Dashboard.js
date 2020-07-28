@@ -17,8 +17,9 @@ const headerProps = {
 
 class Dashboard extends Component {
   render() {
-    const { posts, auth, notifications } = this.props;
-    if (!auth.uid) return <Redirect to="/" />
+    const { posts, auth, notifications, emailVerified } = this.props;
+
+    if (!auth.uid && !emailVerified) return <Redirect to="/" />
     
     return (
       <Main { ...headerProps }>
@@ -43,7 +44,8 @@ const mapStateToProps = (state) => {
   return {
     posts: state.firestore.ordered.posts,
     auth: state.firebase.auth,
-    notifications: state.firestore.ordered.notifications
+    notifications: state.firestore.ordered.notifications,
+    emailVerified: state.firebase.auth.emailVerified
   }
 }
 

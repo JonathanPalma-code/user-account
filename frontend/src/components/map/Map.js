@@ -33,7 +33,7 @@ class Map extends Component {
   componentDidMount() {
     const { auth } = this.props
     // console.log(auth);
-    if (!auth.uid) return;
+    if (!auth.uid || !auth.emailVerified) return;
     const map = new mapboxgl.Map({
       container: 'map',
       style: "mapbox://styles/mapbox/streets-v11",
@@ -168,7 +168,9 @@ class Map extends Component {
   render() {
     const { auth } = this.props
     // console.log(auth);
-    if (!auth.uid) return <Redirect to="/" />
+    if (!auth.uid && !auth.emailVerified) return <Redirect to="/" />
+    if (!auth.emailVerified) return <Redirect to="/verifyemail" />
+    
     return (
       <Main {...headerProps}>
         <div className='container'>
