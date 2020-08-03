@@ -14,6 +14,7 @@ class UpdateUser extends Component {
         firstName: props.profile.firstName,
         lastName: props.profile.lastName,
         email: props.profile.email,
+        initials: props.profile.initials,
         pictureURL: props.profile.pictureURL
       },
       picture: null
@@ -22,16 +23,17 @@ class UpdateUser extends Component {
     this.handleUpload = this.handleUpload.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-
+  
   updateFields = (event) => {
     this.setState({
       profile: {
         ...this.state.profile,
-        [event.target.id]: event.target.value
+        [event.target.id]: event.target.value,
+        initials: this.state.profile.firstName[0] + this.state.profile.lastName[0]
       }
     });
   }
-
+  
   handleUpload = (event) => {
     if (event.target.files[0]) {
       const picture = event.target.files[0];
@@ -40,48 +42,49 @@ class UpdateUser extends Component {
       })
     }
   }
-
+  
   handleClick = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     const { picture } = this.state;
     if (this.state.profile.firstName && this.state.profile.lastName && this.state.profile.email !== '') {
       if (picture) {
         const uploadPic = storage.ref(`images/${picture.name}`).put(picture);
         uploadPic.on('state_changed',
-          (snapshot) => {
-
-          },
-          (error) => {
-            console.log(error);
-          },
-          () => {
-            storage.ref('images').child(picture.name).getDownloadURL()
-              .then(url => {
-                this.setState({
-                  profile: {
-                    ...this.state.profile,
-                    pictureURL: url
-                  }
-                });
-              }).then(() => {
-                this.props.updateUser(this.state.profile);
-                alert("Post updated with success.")
-              })
-
+        (snapshot) => {
+          
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          storage.ref('images').child(picture.name).getDownloadURL()
+          .then(url => {
+            this.setState({
+              profile: {
+                ...this.state.profile,
+                pictureURL: url
+              }
+            });
+          }).then(() => {
+            this.props.updateUser(this.state.profile);
+            alert("User updated with success.")
           })
+          
+        })
       }
       else {
         this.props.updateUser(this.state.profile);
-        alert("Post updated with success.")
+        alert("User updated with success.")
       }
     }
     else {
       alert("All fields most be fielded.");
     }
   }
-
-
+  
+  
   render() {
+    console.log(this.state.profile.initials)
     const { pictureURL } = this.state.profile;
     return (
       <div className="form container pb-2">
