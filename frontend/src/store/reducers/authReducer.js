@@ -41,6 +41,15 @@ const authReducers = (state = initState, action) => {
         ...state,
         authError: action.err.message
       }
+    case 'VERIFY_SUCCESS':
+      console.log('Verify Email link sent');
+      return state;
+    case 'VERIFY_ERROR':
+      console.log('Verify Email error');
+      return {
+        ...state,
+        authError: action.err.message
+      }
     default:
       return state;
   }

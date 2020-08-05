@@ -84,7 +84,6 @@ class UpdateUser extends Component {
   
   
   render() {
-    console.log(this.state.profile.initials)
     const { pictureURL } = this.state.profile;
     return (
       <div className="form container pb-2">

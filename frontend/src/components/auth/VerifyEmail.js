@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { verifyEmail } from '../../store/actions/authActions' 
 
 import Main from '../templates/Main';
 
@@ -13,7 +14,16 @@ const headerProps = {
 
 const VerifyEmail = (props) => {
   const { auth } = props;
-  console.log(auth);
+
+  const handleClick = () => {
+    if (!auth.emailVerified) {
+      props.verifyEmail();
+      alert("The link was sent with success.");
+    } else {
+      alert("The link was already sent. Please check your email inbox.");
+    }
+  }
+
   return (
     <Main {...headerProps}>
       <div className='container bg-container'>
@@ -22,7 +32,7 @@ const VerifyEmail = (props) => {
           <div>Your email is not verified.</div>
           <div className='message'>To have full access on your account, you need to go to your email inbox and verify your email.</div>
           <div className='button-container'>
-            <button className='btn-subs mt-5 col-12 col-md-6'>Re-send verification email<span className='circle'></span></button>
+            <button className='btn-subs mt-5 col-12 col-md-6' onClick={() => handleClick()}>Re-send verification email<span className='circle'></span></button>
           </div>
         </div>
       </div>
@@ -36,4 +46,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(VerifyEmail);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    verifyEmail: () => dispatch(verifyEmail())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VerifyEmail);

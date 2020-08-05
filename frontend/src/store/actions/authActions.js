@@ -49,3 +49,16 @@ export const signUp = (newUser) => {
     })
   }
 }
+
+export const verifyEmail = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+
+    const user = firebase.auth().currentUser;
+    user.sendEmailVerification().then(() => {
+      dispatch({ type: 'VERIFY_SUCCESS' })
+    }).catch((err) => {
+      dispatch({ type: 'VERIFY_ERROR', err})
+    })
+  }
+}
