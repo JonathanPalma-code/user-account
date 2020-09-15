@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import Main from '../templates/Main';
 import mapboxgl from 'mapbox-gl';
@@ -21,10 +21,12 @@ const headerProps = {
 
 class Map extends Component {
   state = {
-    title: '',
-    location: '',
-    type: '',
-    description: '',
+    report: {
+      title: '',
+      location: '',
+      type: '',
+      description: '',
+    },
     lng: - 0.118092,
     lat: 51.509865,
     zoom: 6,
@@ -69,7 +71,10 @@ class Map extends Component {
     geocoder.on('result', (e) => {
       map.getSource('single-point').setData(e.result.geometry);
       this.setState({
-        location: e.result.place_name
+        report: {
+          ...this.state.report,
+          location: e.result.place_name
+        }
       });
     })
 
@@ -108,14 +113,17 @@ class Map extends Component {
 
   updateFields = (event) => {
     this.setState({
-      [event.target.id]: event.target.value,
+      report: {
+        ...this.state.report,
+        [event.target.id]: event.target.value,
+      }
     })
   }
 
   handleClick = (event) => {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
-    if (this.state.title && this.state.location && this.state.type && this.state.description !== '') {
+    if (this.state.report.title && this.state.report.location && this.state.report.type && this.state.report.description !== '') {
       this.props.createReport(this.state);
       this.setState({
         disabled: true,
@@ -128,49 +136,47 @@ class Map extends Component {
 
   renderForm() {
     return (
-      <Fragment>
-        <div className='form pb-2'>
-          <div className="row">
-            <div className="col-12">
-              <div className="form-group">
-                <input className='form-control' type='text' id='title' autoComplete='off' onChange={this.updateFields} required />
-                <label className='form-label' htmlFor='title'>
-                  <span className='content-name'>Title</span>
-                </label>
-              </div>
-              <div className='row'>
-                <div className="geocoder col-12 col-lg-6 d-inline-block p-3" id="location" onChange={this.updateFields} required />
-                <div className="form-group col-12 col-lg-6 d-flex align-items-center p-3">
-                  <select defaultValue='Choose a Type...' className='p-1' name="type" id="type" onChange={this.updateFields} required>
-                    <option disabled="disabled">Choose a Type...</option>
-                    <option value="Monument">Monument</option>
-                    <option value="Site">Site</option>
-                    <option value="Building">Building</option>
-                    <option value="Object">Object</option>
-                    <option value="Archeological site">Archeological site</option>
-                  </select>
-                </div>
-              </div>
-              <div className="form-textarea">
-                <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
-                  id='description' onChange={this.updateFields} required />
+      <div className='form pb-2'>
+        <div className="row">
+          <div className="col-12">
+            <div className="form-group">
+              <input className='form-control' type='text' id='title' autoComplete='off' onChange={this.updateFields} required />
+              <label className='form-label' htmlFor='title'>
+                <span className='content-name'>Title</span>
+              </label>
+            </div>
+            <div className='row'>
+              <div className="geocoder col-12 col-lg-6 d-inline-block p-3" id="location" onChange={this.updateFields} required />
+              <div className="form-group col-12 col-lg-6 d-flex align-items-center p-3">
+                <select defaultValue='Choose a Type...' className='p-1' name="type" id="type" onChange={this.updateFields} required>
+                  <option disabled="disabled">Choose a Type...</option>
+                  <option value="Monument">Monument</option>
+                  <option value="Site">Site</option>
+                  <option value="Building">Building</option>
+                  <option value="Object">Object</option>
+                  <option value="Archeological site">Archeological site</option>
+                </select>
               </div>
             </div>
-          </div>
-          <hr />
-          <div className="row">
-            <div className="col-12 d-flex justify-content-end">
-              <div className='pt-2 pr-2'>
-                {this.state.emailSent === null && <p className='success-msg'>Email Report Sent!</p>}
-                {this.state.emailSent === false && <p className='err-msg'>Email Report Not Sent.</p>}
-              </div>
-              <button className="btn-input" onClick={this.handleClick}>
-                Send
-              </button>
+            <div className="form-textarea">
+              <textarea placeholder='Describe what you have discovered...' rows='8' className='textarea-input' style={{ resize: 'none' }}
+                id='description' onChange={this.updateFields} required />
             </div>
           </div>
         </div>
-      </Fragment>
+        <hr />
+        <div className="row">
+          <div className="col-12 d-flex justify-content-end">
+            <div className='pt-2 pr-2'>
+              {this.state.emailSent === null && <p className='success-msg'>Email Report Sent!</p>}
+              {this.state.emailSent === false && <p className='err-msg'>Email Report Not Sent.</p>}
+            </div>
+            <button className="btn-input" onClick={this.handleClick}>
+              Send
+              </button>
+          </div>
+        </div>
+      </div>
     )
   }
 
