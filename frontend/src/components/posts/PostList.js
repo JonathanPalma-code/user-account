@@ -19,7 +19,7 @@ class PostList extends Component {
     const { posts } = this.props;
     return (
       <section>
-        <div className="form ml-5 mr-5 mb-5">
+        <div className="form pt-5 mr-5 mb-5 ml-5">
           <input className='form-control'
             type='text' id='search'
             value={this.state.searchTerm}

@@ -84,11 +84,11 @@ const PostDetails = (props) => {
             <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
             <h5 className="pb-2">Subject: {post.category}</h5>
             <div className='row'>
-              <div className="content col-12 col-lg-6">
-                <p id='p_wrap'>{post.content}</p>
-              </div>
-              <div className="image-size col-12 col-lg-6">
+              <div className="image-size col-12 pb-3">
                 <PicturePreview pictureURL={post.pictureURL} />
+              </div>
+              <div className="content col-12">
+                <p id='p_wrap'>{post.content}</p>
               </div>
             </div>
             <hr />
