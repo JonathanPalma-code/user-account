@@ -278,3 +278,13 @@ div.card-notification {
 .bg-container div.message {
   font-size: small;
 }
+
+/* Email Report Sent? */
+
+.success-msg {
+  color: #57A773;
+}
+
+.err-msg  {
+  color: #EE6352;
+}

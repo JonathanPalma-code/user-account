@@ -53,6 +53,6 @@ export default compose(
   connect((mapStateToProps)),
   firestoreConnect([
     { collection: 'posts', orderBy: ['createdAt', 'desc'] }, // synced to rootReducer
-    { collection: 'notifications', limit: 8, orderBy: ['time', 'desc'] }
+    { collection: 'notifications', limit: 15, orderBy: ['time', 'desc'] }
   ])
 )(Dashboard);

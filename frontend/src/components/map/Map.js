@@ -20,15 +20,17 @@ const headerProps = {
 }
 
 class Map extends Component {
-    state = {
-      title: '',
-      location: '',
-      type: '',
-      description: '',
-      lng: - 0.118092,
-      lat: 51.509865,
-      zoom: 6,
-    };
+  state = {
+    title: '',
+    location: '',
+    type: '',
+    description: '',
+    lng: - 0.118092,
+    lat: 51.509865,
+    zoom: 6,
+    disabled: true,
+    emailSent: null
+  };
 
   componentDidMount() {
     const { auth } = this.props
@@ -115,7 +117,10 @@ class Map extends Component {
     event.preventDefault();
     if (this.state.title && this.state.location && this.state.type && this.state.description !== '') {
       this.props.createReport(this.state);
-      this.props.history.push('/dashboard');
+      this.setState({
+        disabled: true,
+        emailSent: false
+      })
     } else {
       alert("All fields most be fielded.");
     }
@@ -155,8 +160,12 @@ class Map extends Component {
           <hr />
           <div className="row">
             <div className="col-12 d-flex justify-content-end">
+              <div className='pt-2 pr-2'>
+                {this.state.emailSent === null && <p className='success-msg'>Email Report Sent!</p>}
+                {this.state.emailSent === false && <p className='err-msg'>Email Report Not Sent.</p>}
+              </div>
               <button className="btn-input" onClick={this.handleClick}>
-                Report!
+                Send
               </button>
             </div>
           </div>
@@ -167,18 +176,17 @@ class Map extends Component {
 
   render() {
     const { auth } = this.props
-    // console.log(auth);
     if (!auth.uid && !auth.emailVerified) return <Redirect to="/" />
     if (!auth.emailVerified) return <Redirect to="/verifyemail" />
-    
+
     return (
       <Main {...headerProps}>
         <div className='container'>
-        <Nav className='m-auto'>
-          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
-            <i className='fa fa-undo' aria-hidden="true"></i> Back
+          <Nav className='m-auto'>
+            <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
+              <i className='fa fa-undo' aria-hidden="true"></i> Back
           </Nav.Link>
-        </Nav>
+          </Nav>
           <h2 className='text-right'>Create a new report</h2>
           <div className='row'>
             <div className='map-container col-lg-6'>
