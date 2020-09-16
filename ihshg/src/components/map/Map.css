@@ -1,0 +1,40 @@
+@media(max-width: 768px) {
+  #title {
+    padding-top: 10%;
+  }
+
+  #geocoder {
+    padding-left: 5% !important;
+  }
+}
+
+#map {
+position: relative;
+height: 400px;
+border-radius: 3% !important;
+}
+
+.side-bar {
+  position: absolute;
+  display: inline-block;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.location {
+  z-index: 1;
+  width: 100%;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
+
+#geocoder-container > div {
+min-width: 50%;
+margin-left: 25%;
+}

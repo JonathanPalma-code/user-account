@@ -1,0 +1,21 @@
+@media(min-width: 769px) {
+  h1.title:after {
+      content: "International History Students & H. Group";
+  }
+
+}
+
+@media(max-width: 768px) {
+    h1.title:after {
+      content: "I.H.S.H.G";
+  }
+}
+
+p {
+  font-style: italic;
+  text-align: justify;
+}
+
+div.row a:hover {
+  text-decoration: none;
+}

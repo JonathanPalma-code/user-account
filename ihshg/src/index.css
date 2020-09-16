@@ -1,0 +1,22 @@
+@font-face { 
+  font-family: 'JosefineSlab';
+  src: url('./fonts/JosefinSlab-Regular.ttf');
+}
+
+* {
+  font-family: 'JosefineSlab', 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+*::selection {
+  color: #212529;
+  background-color: rgb(233, 233, 233);
+}
+
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+@import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';
