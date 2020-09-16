@@ -34,8 +34,8 @@ app.post('/api/email', (req, res, next) => {
   const msg = {
     to: 'jonathanpalma89@gmail.com',
     from: 'jonathanpalma89@gmail.com',
-    subject: 'Heritage in Danger - ALERT!',
-    text: JSON.stringify(req.body.report)
+    subject: 'REPORT ALERT! Heritage in Danger.',
+    text: `Summary Report: \n${JSON.stringify(req.body.report)}`
   };
 
   sendGrid.send(msg)

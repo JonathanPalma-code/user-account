@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import Main from '../templates/Main';
 import mapboxgl from 'mapbox-gl';
-import { NavLink } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
 
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -129,15 +127,15 @@ class Map extends Component {
         disabled: true,
         emailSent: false
       })
-      
+
       Axios.post('http://localhost:8080/api/email', this.state)
-      .then(res => {
-        if (res.data.success) {
-          this.setState({
-            disabled: false,
-            emailSent: true
-          });
-          this.props.createReport(this.state);
+        .then(res => {
+          if (res.data.success) {
+            this.setState({
+              disabled: false,
+              emailSent: true
+            });
+            this.props.createReport(this.state);
           } else {
             this.setState({
               disabled: false,
@@ -212,11 +210,6 @@ class Map extends Component {
     return (
       <Main {...headerProps}>
         <div className='container'>
-          <Nav className='m-auto'>
-            <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
-              <i className='fa fa-undo' aria-hidden="true"></i> Back
-          </Nav.Link>
-          </Nav>
           <h2 className='text-right'>Create a new report</h2>
           <div className='row'>
             <div className='map-container col-lg-6'>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
 
 import Main from '../templates/Main';
 import { connect } from 'react-redux';
@@ -87,11 +85,6 @@ class CreatePost extends Component {
   renderForm() {
     return (
       <div className="form container pb-2">
-        <Nav className='m-auto pb-3'>
-          <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
-            <i className='fa fa-undo' aria-hidden="true"></i> Back
-          </Nav.Link>
-        </Nav>
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="form-group">
