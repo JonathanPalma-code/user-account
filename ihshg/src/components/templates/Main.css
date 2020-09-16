@@ -242,13 +242,21 @@ div.card-notification {
 /* Image Post Size */
 
 .img-fluid {
-  width: 100% !important;
+  width: 50% !important;
 }
 
 .img-restriction {
   padding-top: 10px;
   font-weight: lighter;
   font-size: 10px;
+}
+
+.post-details .image-size {
+  text-align: center;
+}
+
+.summary-image {
+  text-align: center;
 }
 
 /* VerifyEmail */

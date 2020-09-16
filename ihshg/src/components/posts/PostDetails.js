@@ -9,9 +9,6 @@ import UpdatePost from './UpdatePost';
 import { deletePost } from '../../store/actions/deletePostActions';
 import PicturePreview from '../users/PicturePreview';
 
-import { NavLink } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-
 import Main from '../templates/Main';
 import Linkify from 'react-linkify-always-blank';
 
@@ -75,12 +72,7 @@ const PostDetails = (props) => {
     return (
       <Main {...headerProps}>
         <Linkify>
-          <section className='container'>
-            <Nav className='m-auto'>
-              <Nav.Link eventKey='0' as={NavLink} to='/dashboard'>
-                <i className='fa fa-undo' aria-hidden="true"></i> Back
-          </Nav.Link>
-            </Nav>
+          <section className='container post-details'>
             <h2 className="pb-4 pt-3 text-center" >{post.title}</h2>
             <h5 className="pb-2">Subject: {post.category}</h5>
             <div className='row'>

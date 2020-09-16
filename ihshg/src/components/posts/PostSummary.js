@@ -19,7 +19,7 @@ const PostSummary = ({ post }) => {
         </span>
         <p className='m-0 p-1'>Subject: {post.category}</p>
         <p id='p_wrap' className='m-0 p-1'>{introduction(post.content, 500)}</p>
-        <div className="rounded mx-auto d-block col-12 col-lg-6">
+        <div className="summary-image col-12">
           <PicturePreview pictureURL={post.pictureURL} />
         </div>
         <p className='m-0 p-1 footer-post-summary'>Posted by {post.authorFirstName} {post.authorLastName}. {moment(post.createdAt.toDate().toString()).calendar()}</p>

@@ -8,7 +8,7 @@ const PicturePreview = (props) => {
 
   if (pictureURL) {
     return (
-      <img className='img-fluid p-1' src={pictureURL} alt="profile" max-width="100%" height="auto"/>
+      <img className='img-fluid img-thumbnail p-2 m-3' src={pictureURL} alt="profile"/>
     )
   }
   else {
