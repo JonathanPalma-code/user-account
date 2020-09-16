@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { createReport } from '../../store/actions/reportActions';
 
 import './Map.css';
+import Axios from 'axios';
 
 require('dotenv').config();
 
@@ -124,11 +125,34 @@ class Map extends Component {
     // prevent default action from submitting - prevent to refresh the page
     event.preventDefault();
     if (this.state.report.title && this.state.report.location && this.state.report.type && this.state.report.description !== '') {
-      this.props.createReport(this.state);
       this.setState({
         disabled: true,
         emailSent: false
       })
+      
+      Axios.post('http://localhost:8080/api/email', this.state)
+      .then(res => {
+        if (res.data.success) {
+          this.setState({
+            disabled: false,
+            emailSent: true
+          });
+          this.props.createReport(this.state);
+          } else {
+            this.setState({
+              disabled: false,
+              emailSent: false
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+
+          this.setState({
+            disabled: false,
+            emailSent: false
+          });
+        });
     } else {
       alert("All fields most be fielded.");
     }
@@ -167,8 +191,8 @@ class Map extends Component {
         <hr />
         <div className="row">
           <div className="col-12 d-flex justify-content-end">
-            <div className='pt-2 pr-2'>
-              {this.state.emailSent === null && <p className='success-msg'>Email Report Sent!</p>}
+            <div className='pr-2'>
+              {this.state.emailSent === true && <p className='success-msg'>Email Report Sent!</p>}
               {this.state.emailSent === false && <p className='err-msg'>Email Report Not Sent.</p>}
             </div>
             <button className="btn-input" onClick={this.handleClick}>
