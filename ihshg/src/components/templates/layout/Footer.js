@@ -12,13 +12,13 @@ const Footer = () => {
         <div className='row'>
           <div className='col-12'>
             <div className='row'>
-              <div className='col-4 col-lg-3 pt-5'>
+              {/* <div className='col-4 col-lg-3 pt-5'>
                 <div className='table-header'>About</div>
                 <div className='link-content'>Story</div>
                 <div className='link-content'>Community</div>
                 <div className='link-content'>Blog</div>
-              </div>
-              <div className='col-8 col-lg-6 pt-5'>
+              </div> */}
+              <div className='col-12 col-lg-6 pt-5'>
                 <div className='table-header'>Follow us
                   <Nav className='ml-auto d-flex justify-content-center'>
                     <Nav.Link href='https://www.facebook.com/groups/410056133057002/' target='_blank' rel='noopener noreferrer'>
@@ -36,15 +36,15 @@ const Footer = () => {
                   </Nav>
                 </div>
               </div>
-              <div className='col-12 col-lg-3 pt-5 pb-5'>
+              <div className='col-12 col-lg-6 pt-5 pb-5'>
                 <div className="form-subs m-0">
-                  <input className='form-control' type='email' id='emailLogin' autoComplete='off' required />
+                  <input className='form-control' type='email' id='emailLogin' autoComplete='off' required/>
                   <label className='form-label-subs' htmlFor='email'>
                     <span className='content-name'>Email</span>
                   </label>
                 </div>
                 <div className='button-container'>
-                  <button className='btn-subs'>Subscripe<span className='circle'></span></button>
+                  <button className='btn-subs'>Subscripe<span className='circle' disabled={true}></span></button>
                 </div>
               </div>
             </div>
