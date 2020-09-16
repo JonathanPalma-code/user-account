@@ -1,5 +1,5 @@
 footer.footer {
-  font-size: small;
+  font-size: 14px;
   background-color: var(--bg-beige);
   box-shadow: var(--shadow);
   background-image: url("../../../assets/imgs/world-footer2.jpg");
@@ -71,11 +71,14 @@ img {
 }
 
 i.footer-fa {
+  padding-top: 10px;
   color: black;
-  font-size: large;
+  font-size: xx-large;
+  font-weight: lighter;
 }
 
 i.footer-fa:hover {
+  transition: 0.4s;
   color: var(--bg-beige) !important;
 }
 

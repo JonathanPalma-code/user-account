@@ -189,10 +189,8 @@ class Map extends Component {
         <hr />
         <div className="row">
           <div className="col-12 d-flex justify-content-end">
-            <div className='pr-2'>
-              {this.state.emailSent === true && <p className='success-msg'>Email Report Sent!</p>}
-              {this.state.emailSent === false && <p className='err-msg'>Email Report Not Sent.</p>}
-            </div>
+            {this.state.emailSent === true && <p className='success-msg m-0'>Email Report Sent!</p>}
+            {this.state.emailSent === false && <p className='err-msg m-0'>Email Report Not Sent.</p>}
             <button className="btn-input" onClick={this.handleClick}>
               Send
               </button>
