@@ -24,7 +24,7 @@ Organisation of the project:
 * Implement all components needed for the website - design of the website; 
 * Add USER and POST CRUD using Firebase; 
 * Attach a map and a announce form, so we can access the localisation and send the report to the heads of the team by email;
-* Design Optimisation.
+* Design Optimisation & Responsive Design.
 
 We focused on agile methodologies throughout the project. 
 
