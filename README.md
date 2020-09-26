@@ -1,6 +1,6 @@
 # Project Outline
 
-## ./Overview
+## 👇 ./Overview 👇
 
 This project is part of Jonathan Palma and the International History Students & Historians Group - IHSHG.
 
@@ -12,17 +12,16 @@ After much consideration, we have decided to include the User and Post CRUD, so 
 
 As soon you join our cause, you will be redirect to the dashboard page where you will see all the posts made by the users and the nofications in real time, such as "Jonathan added a post" or "Joao joined our group".
 
-## ./Demo
-![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/55409351/86240935-f26f6b00-bb99-11ea-9d84-3f3b99060186.gif)
+## 👇 ./Demo 👇
+https://www.youtube.com/watch?v=Ti40BT08SQM
 
-
-## ./Approach
+## 👇 ./Approach 👇
 
 Before building the project, we add to do research on which programming language, libraries, databases, APIs and techniques to develop the website. 
 
-|Language | Runtime built | Libraries | Database | API |
-|---------|---------------|-------------|---------|-----|
-| Javascript | Node | React and Redux | Firebase | Mapbox |
+|Language | Runtime built | Libraries | Database |
+|---------|---------------|-------------|---------|
+| Javascript | Node.js | ReactJS and Redux | Firebase | 
 
 Organisation of the project:
 * Implement all components needed for the website - design of the website; 
