@@ -32,7 +32,7 @@ class Map extends Component {
     disabled: true,
     emailSent: null
   };
-
+  
   componentDidMount() {
     const { auth } = this.props
     // console.log(auth);

@@ -1,7 +1,8 @@
 import React, { useEffect} from 'react';
 import firebase from 'firebase/app';
 // import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import * as firebaseui from 'firebaseui'
+import * as firebaseui from 'firebaseui';
+import 'firebaseui/dist/firebaseui.css';
 
 const SignInWith = () => {
 

@@ -32,8 +32,8 @@ const Home = () => {
           <div className='sign-up col-12 col-lg-7'>
             <SignUp />
           </div>
-          <div className='col-lg-1' />
-          <div className='sign-up col-12 col-lg-4'>
+          <div className='col-lg-1 d-flex justify-content-end align-items-center'>Or</div>
+          <div className='sign-up col-12 col-lg-4 d-flex justify-content-end align-items-center'>
             <SignUpWith />
           </div>
         </div>
