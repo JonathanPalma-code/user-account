@@ -2,16 +2,15 @@
   #title {
     padding-top: 10%;
   }
-
   #geocoder {
     padding-left: 5% !important;
   }
 }
 
 #map {
-position: relative;
-height: 400px;
-border-radius: 3% !important;
+  position: relative;
+  height: 400px;
+  border-radius: 3% !important;
 }
 
 .side-bar {
@@ -34,7 +33,16 @@ border-radius: 3% !important;
   min-width: 100%;
 }
 
-#geocoder-container > div {
-min-width: 50%;
-margin-left: 25%;
+#geocoder-container>div {
+  min-width: 50%;
+  margin-left: 25%;
+}
+
+.mapboxgl-ctrl {
+  font-family: unset;
+  border-radius: 20px;
+}
+
+.mapboxgl-ctrl input[type='text'] {
+  font-size: medium;
 }
