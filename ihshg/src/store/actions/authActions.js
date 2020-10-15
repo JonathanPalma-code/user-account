@@ -40,12 +40,12 @@ export const signUp = (newUser) => {
         pictureURL: null
       })
     }).then(() => {
+      const user = firebase.auth().currentUser;
+      user.sendEmailVerification();
+    }).then(() => {
       dispatch({ type: 'SIGNUP_SUCCESS' })
     }).catch((err) => {
       dispatch({ type: 'SIGNUP_ERROR', err })
-    }).then(() => {
-      const user = firebase.auth().currentUser;
-      user.sendEmailVerification();
     })
   }
 }

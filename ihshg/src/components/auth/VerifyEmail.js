@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 import { verifyEmail } from '../../store/actions/authActions'
 
 import Main from '../templates/Main';
@@ -24,6 +25,7 @@ const VerifyEmail = (props) => {
     }
   }
 
+  if (!auth.uid) return <Redirect to="/" />
   return (
     <Main {...headerProps}>
       <div className='container bg-container'>

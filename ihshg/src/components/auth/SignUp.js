@@ -17,7 +17,6 @@ class SignUp extends Component {
   }
 
   updateFields = (event) => {
-    // grabs the id from one of the fields
     this.setState({
       [event.target.id]: event.target.value,
       error: false
@@ -28,7 +27,8 @@ class SignUp extends Component {
     // prevent default action from submitting - prevent to refresh the page
     // event.preventDefault();
     const letters = /^[A-Za-z]+$/;
-    if (this.state.firstName.match(letters) && this.state.lastName.match(letters)) {
+    if (this.state.firstName.match(letters) 
+    && this.state.lastName.match(letters)) {
       this.props.signUp(this.state);
     }
     else { 
@@ -79,7 +79,7 @@ class SignUp extends Component {
           </div>
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
-              {authError || this.state.error ? <Alert className='alert-Login p-1' variant="danger" >{authError || "First and Last name are required. Diacritical marks are not accepted."}</Alert> : null}
+              {authError || this.state.error ? <Alert className='alert-Login p-1' variant="danger" >{authError || "All fields are required. Diacritical marks are not accepted."}</Alert> : null}
             </div>
             <div className="col-12 d-flex justify-content-end">
               <button className="btn-input" onClick={this.handleClick}>
