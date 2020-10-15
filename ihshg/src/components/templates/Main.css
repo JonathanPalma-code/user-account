@@ -1,4 +1,4 @@
-main > div {
+main>div {
   background-color: var(--bg-beige);
   box-shadow: var(--shadow);
   width: 100%;
@@ -9,34 +9,29 @@ main > div {
   main {
     font-size: 0.8rem;
   }
-  section > div h5 {
-  font-size: 0.9rem;
+  section>div h5 {
+    font-size: 0.9rem;
   }
   div .sign-up-form {
     margin: 0;
   }
-  div > h1 {
+  div>h1 {
     font-size: 2rem;
   }
-  div > h3 {
+  div>h3 {
     font-size: 1rem;
   }
-
-  div > .form input:focus + .form-label .content-name, 
-  div > .form input:valid + .form-label .content-name {
-  transform: translateY(-100%);
-  font-size: 0.7rem;
-  color: 	black;
+  div>.form input:focus+.form-label .content-name, div>.form input:valid+.form-label .content-name {
+    transform: translateY(-100%);
+    font-size: 0.7rem;
+    color: black;
   }
-
-  section.dashboard > .row {
+  section.dashboard>.row {
     font-size: 100%;
   }
-
-  div > .card-header {
+  div>.card-header {
     font-size: 18px;
   }
-
   button {
     padding: none;
     margin: none;
@@ -82,28 +77,26 @@ main > div {
   bottom: -1px;
   height: 100%;
   width: 100%;
-  border-bottom: 2px solid	black;
+  border-bottom: 2px solid black;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
 
 .content-name {
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 0, 0, .5);
   position: absolute;
   bottom: 5px;
   left: 0px;
   transition: all 0.3s ease;
 }
 
-.form input:focus + .form-label .content-name, 
-.form input:valid + .form-label .content-name {
+.form input:focus+.form-label .content-name, .form input:valid+.form-label .content-name {
   transform: translateY(-100%);
   font-size: 0.8rem;
-  color: 	black;
+  color: black;
 }
 
-.form input:focus + .form-label:after,
-.form input:valid + .form-label:after {
+.form input:focus+.form-label:after, .form input:valid+.form-label:after {
   transform: translateX(0%);
 }
 
@@ -114,56 +107,32 @@ main > div {
 }
 
 @keyframes bg {
-    0% {
-        background-size:    0 3px,
-                            3px 0,
-                            0 3px,
-                            3px 0;
-    }
-    25% {
-        background-size:    100% 3px,
-                            3px 0,
-                            0 3px,
-                            3px 0;
-    }
-    50% {
-        background-size:    100% 3px,
-                            3px 100%,
-                            0 3px,
-                            3px 0;
-    }
-    75% {
-        background-size:    100% 3px,
-                            3px 100%,
-                            100% 3px,
-                            3px 0;
-    }
-    100% {
-        background-size:    100% 3px,
-                            3px 100%,
-                            100% 3px,
-                            3px 100%;
-    }
+  0% {
+    background-size: 0 3px, 3px 0, 0 3px, 3px 0;
+  }
+  25% {
+    background-size: 100% 3px, 3px 0, 0 3px, 3px 0;
+  }
+  50% {
+    background-size: 100% 3px, 3px 100%, 0 3px, 3px 0;
+  }
+  75% {
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 0;
+  }
+  100% {
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+  }
 }
 
 .sign-up-form {
-    padding: 1em;
-    background-repeat: no-repeat;
-    background-image:   linear-gradient(to right, var(--bg-beige) 100%, #222 100%),
-                        linear-gradient(to bottom, #222 100%, var(--bg-beige) 100%),
-                        linear-gradient(to right, var(--bg-beige) 100%, #222 100%),
-                        linear-gradient(to bottom, #222 100%, var(--bg-beige) 100%);
-    background-size:    100% 3px,
-                        3px 100%,
-                        100% 3px,
-                        3px 100%;
-    background-position:    0 0,
-                            100% 0,
-                            100% 100%,
-                            0 100%;
-    animation: bg 1.5s cubic-bezier(0.19, 1, 0.22, 1) 1;
-    animation-play-state: paused;
-    background-color: var(--bg-white);
+  padding: 1em;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, var(--bg-beige) 100%, #222 100%), linear-gradient(to bottom, #222 100%, var(--bg-beige) 100%), linear-gradient(to right, var(--bg-beige) 100%, #222 100%), linear-gradient(to bottom, #222 100%, var(--bg-beige) 100%);
+  background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  animation: bg 1.5s cubic-bezier(0.19, 1, 0.22, 1) 1;
+  animation-play-state: paused;
+  background-color: var(--bg-white);
 }
 
 div .sign-up-form:hover {
@@ -173,6 +142,25 @@ div .sign-up-form:hover {
 .form .form-group {
   margin-bottom: 0;
   overflow: hidden;
+}
+
+/* Sign In with */
+
+.firebaseui-idp-google.firebaseui-id-idp-button {
+  border-radius: 25px;
+}
+
+.firebaseui-idp-google.firebaseui-id-idp-button:hover {
+  box-shadow: 0 2px 5px 5px rgba(111, 104, 104, 0.1), 0 2px 5px 5px rgba(100, 100, 132, 0.1);
+}
+
+.firebaseui-idp-facebook.firebaseui-id-idp-button {
+  border-radius: 25px;
+}
+
+.firebaseui-idp-facebook.firebaseui-id-idp-button:hover {
+  box-shadow: 0 2px 5px 5px rgba(111, 104, 104, 0.1), 
+  0 2px 5px 5px rgba(100, 100, 132, 0.1);
 }
 
 /* general */
@@ -197,10 +185,9 @@ div .sign-up-form:hover {
   justify-content: space-around;
 }
 
-.post-actions > .btn-input {
+.post-actions>.btn-input {
   width: 25%;
 }
-
 
 div.post-summary {
   background-color: transparent;
@@ -235,7 +222,7 @@ div.card-notification {
 /* User Details */
 
 .image-container img.picture-profile {
-    width: 100%;
+  width: 100%;
 }
 
 /* Image Post Size */
@@ -293,7 +280,7 @@ div.card-notification {
   color: #57A773;
 }
 
-.err-msg  {
+.err-msg {
   padding-right: 10px;
   color: #EE6352;
 }

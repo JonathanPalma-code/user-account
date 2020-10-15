@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from '../templates/Main';
 import SignUp from '../auth/SignUp';
-import SignUpWith from '../auth/SignUpWith';
+import SignInWith from '../auth/SignInWith';
 
 import './Home.css';
 import Container from 'react-bootstrap/Container';
@@ -34,7 +34,7 @@ const Home = () => {
           </div>
           <div className='col-lg-1 d-flex justify-content-center align-items-center'>Or</div>
           <div className='sign-up col-12 col-lg-4 d-flex justify-content-center align-items-center'>
-            <SignUpWith />
+            <SignInWith />
           </div>
         </div>
         <div>
