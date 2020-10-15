@@ -9,7 +9,6 @@ import './Nav.css';
 
 const Nav =  (props) => {
   const { auth, profile } = props;
-  // console.log(auth);
   const links = auth.uid ? <LoggedInLinks profile={profile} /> : <LoggedOutLinks />;
   return (
     <section className='menu-area sticky-top'>

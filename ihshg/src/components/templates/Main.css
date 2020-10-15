@@ -182,7 +182,6 @@ div .sign-up-form:hover {
   height: 100%;
   background: #222;
   border-radius: 20px;
-  /* position: relative; */
   transition: 1s;
   color: var(--bg-beige);
 }
